@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<VendettaConfig>
+	<Fields>
+		<Width value="16" />
+		<Height value="16" />
+		
+		<Field id="0">
+			<Sprite value="9" />
+			<FacteurDeplacement value="1" />
+			<Constructible />
+			<Ressources />
+			<Probabilite value="0.99" />
+		</Field>
+		
+		<Field id="1">
+			<Sprite value="10" />
+			<FacteurDeplacement value=".5" />
+			<Probabilite value="1.0" />
+		</Field>
+	</Fields>
+</VendettaConfig>

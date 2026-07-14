@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<VendettaConfig>
+	<ItemCategories>
+		<ItemCategory id="1">
+			<Name value="Arme à une main" />
+		</ItemCategory>
+		
+		<ItemCategory id="2">
+			<Name value="Arme à deux mains" />
+		</ItemCategory>
+		
+		<ItemCategory id="3">
+			<Name value="Armure" />
+		</ItemCategory>
+		
+		<ItemCategory id="4">
+			<Name value="Casque" />
+		</ItemCategory>
+		
+		<ItemCategory id="5">
+			<Name value="Chaussures" />
+		</ItemCategory>
+		
+		<ItemCategory id="6">
+			<Name value="Dos" />
+		</ItemCategory>
+		
+		<ItemCategory id="7">
+			<Name value="Anneau à une main" />
+		</ItemCategory>
+		
+		<ItemCategory id="8">
+			<Name value="Anneau à 2 mains" />
+		</ItemCategory>
+		
+		<ItemCategory id="9">
+			<Name value="Bras" />
+		</ItemCategory>
+		
+		<ItemCategory id="10">
+			<Name value="Colliers" />
+		</ItemCategory>
+		
+		<ItemCategory id="11">
+			<Name value="Monture" />
+		</ItemCategory>
+	</ItemCategories>
+</VendettaConfig>

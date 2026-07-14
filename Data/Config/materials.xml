@@ -1,0 +1,245 @@
+<?xml version="2.0" encoding="utf-8"?>
+<VendettaConfig>
+	<Materials>
+		<IconSize value="24" />
+		
+		<Material id="1">
+			<Name value="Herbes medic." />
+			<ImageFile value="Herbes medic.png" />
+			<ConversionSpeed value="2" />
+			<Skill value="29" />
+		</Material>
+		
+		<Material id="2">
+			<Name value="Pommes" />
+			<ImageFile value="Pommes.png" />
+			<ConversionSpeed value="2.5" />
+			<Skill value="30" />
+		</Material>
+		
+		<Material id="3">
+			<Name value="Bois" />
+			<ImageFile value="Bois.png" />
+			<ConversionSpeed value="1.5" />
+			<Skill value="31" />
+		</Material>
+		
+		<Material id="4">
+			<Name value="Planches" />
+			<ImageFile value="Planches.png" />
+			<ConversionSpeed value="0.75" />
+			<Skill value="32" />
+			
+			<Requisite>
+				<Material Type="3" Amount="1" />
+			</Requisite>
+		</Material>
+		
+		<Material id="5">
+			<Name value="Laine" />
+			<ImageFile value="Laine.png" />
+			<ConversionSpeed value="1" />
+			<Skill value="33" />
+		</Material>
+		
+		<Material id="6">
+			<Name value="Bétail" />
+			<ImageFile value="Betail.png" />
+			<ConversionSpeed value="0.8" />
+			<Skill value="34" />
+		</Material>
+		
+		<Material id="7">
+			<Name value="Viande" />
+			<ImageFile value="Viande.png" />
+			<ConversionSpeed value="1" />
+			<Skill value="35" />
+			
+			<Requisite>
+				<Material Type="6" Amount="1" />
+			</Requisite>
+		</Material>
+		
+		<Material id="8">
+			<Name value="Blé" />
+			<ImageFile value="Ble.png" />
+			<ConversionSpeed value="1.2" />
+			<Skill value="36" />
+		</Material>
+		
+		<Material id="9">
+			<Name value="Pain" />
+			<ImageFile value="Pain.png" />
+			<ConversionSpeed value="0.75" />
+			<Skill value="37" />
+			
+			<Requisite>
+				<Material Type="8" Amount="1" />
+			</Requisite>
+		</Material>
+		
+		<Material id="10">
+			<Name value="Orge" />
+			<ImageFile value="Orge.png" />
+			<ConversionSpeed value="1" />
+			<Skill value="38" />
+		</Material>
+		
+		<Material id="11">
+			<Name value="Bière" />
+			<ImageFile value="Biere.png" />
+			<ConversionSpeed value="1" />
+			<Skill value="39" />
+			
+			<Requisite>
+				<Material Type="10" Amount="1" />
+			</Requisite>
+		</Material>
+		
+		<Material id="12">
+			<Name value="Cuir" />
+			<ImageFile value="Cuir.png" />
+			<ConversionSpeed value="0.8" />
+			<Skill value="40" />
+			
+			<Requisite>
+				<Material Type="6" Amount="0.75" />
+			</Requisite>
+		</Material>
+		
+		<Material id="13">
+			<Name value="Pierre" />
+			<ImageFile value="Pierre.png" />
+			<ConversionSpeed value="1.2" />
+			<Skill value="41" />
+		</Material>
+		
+		<Material id="14">
+			<Name value="Briques" />
+			<ImageFile value="Briques.png" />
+			<ConversionSpeed value="1" />
+			<Skill value="42" />
+			
+			<Requisite>
+				<Material Type="13" Amount="1" />
+			</Requisite>
+		</Material>
+		
+		<Material id="15">
+			<Name value="Fer" />
+			<ImageFile value="Fer.png" />
+			<ConversionSpeed value="0.75" />
+			<Skill value="43" />
+		</Material>
+		
+		<Material id="16">
+			<Name value="Fonte" />
+			<ImageFile value="Fonte.png" />
+			<ConversionSpeed value="1" />
+			<Skill value="44" />
+			
+			<Requisite>
+				<Material Type="15" Amount="1" />
+			</Requisite>
+		</Material>
+		
+		<Material id="17">
+			<Name value="Acier" />
+			<ImageFile value="Acier.png" />
+			<ConversionSpeed value="1" />
+			<Skill value="45" />
+			
+			<Requisite>
+				<Material Type="15" Amount="2.25" />
+			</Requisite>
+		</Material>
+		
+		<Material id="18">
+			<Name value="Cristaux" />
+			<ImageFile value="Cristaux.png" />
+			<ConversionSpeed value="1" />
+			<Skill value="46" />
+		</Material>
+		
+		<Material id="19">
+			<Name value="Fioles de soin" />
+			<ImageFile value="Fioles de soin.png" />
+			<ConversionSpeed value="0.5" />
+			<Skill value="47" />
+			
+			<Requisite>
+				<Material Type="1" Amount="3" />
+			</Requisite>
+		</Material>
+		
+		<Material id="20">
+			<Name value="Ether" />
+			<ImageFile value="Ether.png" />
+			<ConversionSpeed value="0.75" />
+			<Skill value="48" />
+			
+			<Requisite>
+				<Material Type="18" Amount="3" />
+			</Requisite>
+		</Material>
+		
+		<Material id="21">
+			<Name value="Parchemin" />
+			<ImageFile value="Parchemin.png" />
+			<ConversionSpeed value="0.6" />
+			<Skill value="49" />
+			
+			<Requisite>
+				<Material Type="6" Amount="1" />
+			</Requisite>
+		</Material>
+		
+		<Material id="22">
+			<Name value="Papier" />
+			<ImageFile value="Papier.png" />
+			<ConversionSpeed value="1" />
+			<Skill value="50" />
+			
+			<Requisite>
+				<Material Type="3" Amount="3" />
+			</Requisite>
+		</Material>
+		
+		<Material id="23">
+			<Name value="Cidre" />
+			<ImageFile value="Cidre.png" />
+			<ConversionSpeed value="0.5" />
+			<Skill value="51" />
+			
+			<Requisite>
+				<Material Type="2" Amount="3" />
+			</Requisite>
+		</Material>
+		
+		<Material id="24">
+			<Name value="Or" />
+			<ImageFile value="Or.png" />
+			<ConversionSpeed value="0.5" />
+			<Skill value="52" />
+		</Material>
+		
+		<Material id="25">
+			<Name value="Lingot d'or" />
+			<ImageFile value="Lingot d or.png" />
+			<ConversionSpeed value="1" />
+			<Skill value="53" />
+			
+			<Requisite>
+				<Material Type="24" Amount="2" />
+			</Requisite>
+		</Material>
+		
+		<Material id="26">
+			<Name value="Gisement de soufre" />
+			<ImageFile value="Soufre.png" />
+			<ConversionSpeed value="0.8" />
+			<Skill value="54" />
+		</Material>
+		
+	</Materials>
+</VendettaConfig>

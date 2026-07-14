@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<VendettaConfig>
+	<Ressources>
+		<Ressource id="1">
+			<Name value="Herbes médicinales" />
+			<Action value="Ramasser des herbes" />
+			<Sprite value="1" />
+			<Width value="32" />
+			<Height value="32" />
+			<Material value="1" />
+			<HarvestSpeed value="1" />
+		</Ressource>
+		
+		<Ressource id="2">
+			<Name value="Pommier" />
+			<Action value="Cueillir des pommes" />
+			<Sprite value="2" />
+			<Width value="32" />
+			<Height value="32" />
+			<Material value="2" />
+			<HarvestSpeed value="1.25" />
+		</Ressource>
+		
+		<Ressource id="3">
+			<Name value="Arbre" />
+			<Action value="Couper du bois" />
+			<Sprite value="3" />
+			<Width value="32" />
+			<Height value="32" />
+			<Material value="3" />
+			<HarvestSpeed value="0.75" />
+		</Ressource>
+		
+		<Ressource id="4">
+			<Name value="Gisement de pierre" />
+			<Action value="Extraire de la pierre" />
+			<Sprite value="4" />
+			<Width value="32" />
+			<Height value="32" />
+			<Material value="13" />
+			<HarvestSpeed value="0.6" />
+		</Ressource>
+		
+		<Ressource id="5">
+			<Name value="Gisement de fer" />
+			<Action value="Extraire du fer" />
+			<Sprite value="5" />
+			<Width value="32" />
+			<Height value="32" />
+			<Material value="15" />
+			<HarvestSpeed value="0.625" />
+		</Ressource>
+		
+		<Ressource id="6">
+			<Name value="Gisement de cristal" />
+			<Action value="Tailler des cristaux" />
+			<Sprite value="6" />
+			<Width value="32" />
+			<Height value="32" />
+			<Material value="18" />
+			<HarvestSpeed value="0.5" />
+		</Ressource>
+		
+		<Ressource id="7">
+			<Name value="Gisement d'or" />
+			<Action value="Prospecter de l'or" />
+			<Sprite value="7" />
+			<Width value="32" />
+			<Height value="32" />
+			<Material value="24" />
+			<HarvestSpeed value="0.25" />
+		</Ressource>
+		
+		<Ressource id="8">
+			<Name value="Gisement de soufre" />
+			<Action value="Exploiter du soufre" />
+			<Sprite value="8" />
+			<Width value="32" />
+			<Height value="32" />
+			<Material value="26" />
+			<HarvestSpeed value="0.4" />
+		</Ressource>
+	</Ressources>
+</VendettaConfig>

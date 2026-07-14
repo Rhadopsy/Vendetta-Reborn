@@ -1,0 +1,3473 @@
+<?xml version="2.0" encoding="utf-8"?>
+<VendettaConfig>
+	<Items>
+		<IconSize value="24" />
+		
+		<Item id="1">
+			<Name value="Vêtement de travail" />
+			<Description value="Habit utilisé par les ouvriers." />
+			<ManufacturingTime value="13" />
+			<Category value="3" />
+			<Skill value="2" />
+			
+			<ImageFile value="Vetement de travail.png" />
+			
+			<Requisite>
+				<Material Type="5" Amount="8" />
+			</Requisite>
+		</Item>
+		
+		<Item id="2">
+			<Name value="Vêtement de luxe" />
+			<Description value="Habit pour les bourgeois." />
+			<ManufacturingTime value="26" />
+			<Category value="3" />
+			<Skill value="2" />
+			
+			<ImageFile value="Vetement de luxe.png" />
+			
+			<Requisite>
+				<Material Type="5" Amount="14" />
+			</Requisite>
+		</Item>
+		
+		<Item id="3">
+			<Name value="Chapeau" />
+			<Description value="Chapeau décoratif." />
+			<ManufacturingTime value="10" />
+			<Category value="4" />
+			<Skill value="2" />
+			
+			<ImageFile value="Chapeau.png" />
+			
+			<Requisite>
+				<Material Type="5" Amount="6" />
+			</Requisite>
+		</Item>
+		
+		<Item id="4">
+			<Name value="Hache" />
+			<Description value="Très utile pour couper des arbres." />
+			<ManufacturingTime value="6" />
+			<Category value="2" />
+			<Skill value="12" />
+			
+			<ImageFile value="Hache.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="5" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="5">
+			<Name value="Marteau" />
+			<Description value="Très utile dans la construction de bâtiments." />
+			<ManufacturingTime value="8" />
+			<Category value="2" />
+			<Skill value="9" />
+			
+			<ImageFile value="Marteau.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="6" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="6" />
+			</Bonus>
+		</Item>
+		
+		<Item id="6">
+			<Name value="Fléau" />
+			<Description value="Très utile pour les travaux à la ferme." />
+			<ManufacturingTime value="5" />
+			<Category value="2" />
+			<Skill value="10" />
+			
+			<ImageFile value="Fleau.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="4" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="3" />
+				<Caracteristique Type="Defense" Value="2" />
+			</Bonus>
+		</Item>
+		
+		<Item id="7">
+			<Name value="Pioche" />
+			<Description value="Très utile pour tailler la pierre." />
+			<ManufacturingTime value="10" />
+			<Category value="2" />
+			<Skill value="6" />
+			
+			<ImageFile value="Pioche.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="4" />
+				<Material Type="15" Amount="2" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="4" />
+			</Bonus>
+		</Item>
+		
+		<Item id="8">
+			<Name value="Gourdin" />
+			<Description value="Arme de contact." />
+			<ManufacturingTime value="4" />
+			<Category value="1" />
+			<Skill value="9" />
+			
+			<ImageFile value="Gourdin.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="3" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="9">
+			<Name value="Bâton" />
+			<Description value="Arme de contact." />
+			<ManufacturingTime value="8" />
+			<Category value="2" />
+			<Skill value="10" />
+			
+			<ImageFile value="Baton.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="6" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="6" />
+				<Caracteristique Type="Defense" Value="10" />
+				<Caracteristique Type="Defense" Value="6" />
+			</Bonus>
+		</Item>
+		
+		<Item id="10">
+			<Name value="Fronde" />
+			<Description value="Arme de tir légère." />
+			<ManufacturingTime value="3" />
+			<Category value="2" />
+			<Skill value="14" />
+			
+			<ImageFile value="Fronde.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="1" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="3" />
+				<Caracteristique Type="Portee" Value="80" />
+			</Bonus>
+		</Item>
+		
+		<Item id="11">
+			<Name value="Veste de cuir" />
+			<Description value="Armure légère." />
+			<ManufacturingTime value="13" />
+			<Category value="3" />
+			<Skill value="16" />
+			
+			<ImageFile value="Veste de cuir.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="5" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="10" />
+				<Caracteristique Type="Defense" Value="8" />
+				<Caracteristique Type="Armure" Value="1" />
+			</Bonus>
+		</Item>
+		
+		<Item id="12">
+			<Name value="Petit bouclier" />
+			<Description value="Bouclier léger." />
+			<ManufacturingTime value="5" />
+			<Category value="1" />
+			<Skill value="19" />
+			
+			<ImageFile value="Petit bouclier.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="4" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="8" />
+				<Caracteristique Type="Defense" Value="4" />
+			</Bonus>
+		</Item>
+		
+		<Item id="13">
+			<Name value="Dague" />
+			<Description value="Arme de contact légère." />
+			<ManufacturingTime value="2" />
+			<Category value="1" />
+			<Skill value="7" />
+			
+			<ImageFile value="Dague.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="2" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="4" />
+			</Bonus>
+		</Item>
+		
+		<Item id="14">
+			<Name value="Epée" />
+			<Description value="Arme de contact standard." />
+			<ManufacturingTime value="15" />
+			<Category value="1" />
+			<Skill value="8" />
+			
+			<ImageFile value="Epee.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="7" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="10" />
+			</Bonus>
+		</Item>
+		
+		<Item id="15">
+			<Name value="Hallebarde" />
+			<Description value="Arme de contact lourde." />
+			<ManufacturingTime value="23" />
+			<Category value="2" />
+			<Skill value="10" />
+			
+			<ImageFile value="Hallebarde.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="8" />
+				<Material Type="15" Amount="8" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="20" />
+				<Caracteristique Type="Defense" Value="8" />
+				<Caracteristique Type="Defense" Value="6" />
+			</Bonus>
+		</Item>
+		
+		<Item id="16">
+			<Name value="Epée à 2 mains" />
+			<Description value="Arme de contact lourde." />
+			<ManufacturingTime value="28" />
+			<Category value="2" />
+			<Skill value="11" />
+			
+			<ImageFile value="Epee a 2 mains.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="14" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="26" />
+			</Bonus>
+		</Item>
+		
+		<Item id="17">
+			<Name value="Arc court" />
+			<Description value="Arme de tir légère." />
+			<ManufacturingTime value="7" />
+			<Category value="2" />
+			<Skill value="13" />
+			
+			<ImageFile value="Arc court.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="6" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="4" />
+				<Caracteristique Type="Portee" Value="96" />
+			</Bonus>
+		</Item>
+		
+		<Item id="18">
+			<Name value="Arc long" />
+			<Description value="Arme de tir moyenne." />
+			<ManufacturingTime value="15" />
+			<Category value="2" />
+			<Skill value="13" />
+			
+			<ImageFile value="Arc long.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="12" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="8" />
+				<Caracteristique Type="Portee" Value="144" />
+			</Bonus>
+		</Item>
+		
+		<Item id="19">
+			<Name value="Arbalète" />
+			<Description value="Arme de tir lourde." />
+			<ManufacturingTime value="19" />
+			<Category value="2" />
+			<Skill value="14" />
+			
+			<ImageFile value="Arbalete.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="14" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="10" />
+				<Caracteristique Type="Portee" Value="128" />
+				<Caracteristique Type="Portee" Value="144" />
+			</Bonus>
+		</Item>
+		
+		<Item id="20">
+			<Name value="Cotte de mailles" />
+			<Description value="Armure moyenne." />
+			<ManufacturingTime value="36" />
+			<Category value="3" />
+			<Skill value="17" />
+			
+			<ImageFile value="Cotte de mailles.png" />
+			
+			<Requisite>
+				<Material Type="16" Amount="10" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="4" />
+				<Caracteristique Type="Defense" Value="3" />
+				<Caracteristique Type="Armure" Value="3" />
+			</Bonus>
+		</Item>
+		
+		<Item id="21">
+			<Name value="Armure de plates" />
+			<Description value="Armure lourde." />
+			<ManufacturingTime value="56" />
+			<Category value="3" />
+			<Skill value="18" />
+			
+			<ImageFile value="Armure de plates.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="10" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Armure" Value="5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="22">
+			<Name value="Bouclier" />
+			<Description value="Bouclier moyen." />
+			<ManufacturingTime value="16" />
+			<Category value="1" />
+			<Skill value="19" />
+			
+			<ImageFile value="Bouclier.png" />
+			
+			<Requisite>
+				<Material Type="16" Amount="4" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="16" />
+				<Caracteristique Type="Defense" Value="12" />
+			</Bonus>
+		</Item>
+		
+		<Item id="23">
+			<Name value="Grand bouclier" />
+			<Description value="Bouclier lourd." />
+			<ManufacturingTime value="26" />
+			<Category value="1" />
+			<Skill value="19" />
+			
+			<ImageFile value="Grand bouclier.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="4" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="20" />
+				<Caracteristique Type="Defense" Value="15" />
+			</Bonus>
+		</Item>
+		
+		<Item id="24">
+			<Name value="Casque" />
+			<Description value="Casque moyen." />
+			<ManufacturingTime value="5" />
+			<Category value="4" />
+			<Skill value="17" />
+			
+			<ImageFile value="Casque.png" />
+			
+			<Requisite>
+				<Material Type="16" Amount="3" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="25">
+			<Name value="Heaume" />
+			<Description value="Casque lourd." />
+			<ManufacturingTime value="8" />
+			<Category value="4" />
+			<Skill value="18" />
+			
+			<ImageFile value="Heaume.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="3" />
+			</Requisite>
+		</Item>
+		
+		<Item id="26">
+			<Name value="Robe de mage" />
+			<Description value="Habit de lanceur de sorts." />
+			<ManufacturingTime value="35" />
+			<Category value="3" />
+			<Skill value="20" />
+			
+			<ImageFile value="Robe de mage.png" />
+			
+			<Requisite>
+				<Material Type="5" Amount="18" />
+			</Requisite>
+		</Item>
+		
+		<Item id="27">
+			<Name value="Robe de cérémonie" />
+			<Description value="Habit religieux." />
+			<ManufacturingTime value="23" />
+			<Category value="3" />
+			<Skill value="20" />
+			
+			<ImageFile value="Robe de ceremonie.png" />
+			
+			<Requisite>
+				<Material Type="5" Amount="12" />
+			</Requisite>
+		</Item>
+		
+		<Item id="28">
+			<Name value="Robe noire" />
+			<Description value="Habit de mage maléfique." />
+			<ManufacturingTime value="35" />
+			<Category value="3" />
+			<Skill value="20" />
+			
+			<ImageFile value="Robe noire.png" />
+			
+			<Requisite>
+				<Material Type="5" Amount="18" />
+			</Requisite>
+		</Item>
+		
+		<Item id="29">
+			<Name value="Chapeau de sorcier" />
+			<Description value="Chapeau de lanceur de sorts." />
+			<ManufacturingTime value="17" />
+			<Category value="4" />
+			<Skill value="20" />
+			
+			<ImageFile value="Chapeau de sorcier.png" />
+			
+			<Requisite>
+				<Material Type="5" Amount="9" />
+			</Requisite>
+		</Item>
+		
+		<Item id="30">
+			<Name value="Jet de Feu" />
+			<Description value="Sortilège de destruction de contact." />
+			<ManufacturingTime value="16" />
+			<Category value="2" />
+			<Skill value="21" />
+			
+			<ImageFile value="Jet de Feu.png" />
+			
+			<Requisite>
+				<Material Type="21" Amount="4" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="30" />
+			</Bonus>
+		</Item>
+		
+		<Item id="31">
+			<Name value="Boule de feu" />
+			<Description value="Sortilège de destruction à distance." />
+			<ManufacturingTime value="20" />
+			<Category value="2" />
+			<Skill value="21" />
+			
+			<ImageFile value="Boule de feu.png" />
+			
+			<Requisite>
+				<Material Type="21" Amount="5" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="20" />
+				<Caracteristique Type="Portee" Value="128" />
+			</Bonus>
+		</Item>
+		
+		<Item id="32">
+			<Name value="Incendie" />
+			<Description value="Sortilège de destruction contre les bâtiments." />
+			<ManufacturingTime value="23" />
+			<Category value="2" />
+			<Skill value="21" />
+			
+			<ImageFile value="Incendie.png" />
+			
+			<Requisite>
+				<Material Type="22" Amount="6" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="15" />
+			</Bonus>
+		</Item>
+		
+		<Item id="33">
+			<Name value="Conv Elément Feu" />
+			<Description value="Invoque un élémental incendiaire." />
+			<ManufacturingTime value="39" />
+			<Category value="2" />
+			<Skill value="21" />
+			
+			<ImageFile value="Conv Element Feu.png" />
+			
+			<Requisite>
+				<Material Type="22" Amount="10" />
+			</Requisite>
+		</Item>
+		
+		<Item id="34">
+			<Name value="Rayon mortel" />
+			<Description value="Sort de mort dangereux également pour son utilisateur." />
+			<ManufacturingTime value="20" />
+			<Category value="2" />
+			<Skill value="22" />
+			
+			<ImageFile value="Rayon mortel.png" />
+			
+			<Requisite>
+				<Material Type="22" Amount="5" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="30" />
+				<Caracteristique Type="Portee" Value="112" />
+			</Bonus>
+		</Item>
+		
+		<Item id="35">
+			<Name value="Anim de morts" />
+			<Description value=" " />
+			<ManufacturingTime value="23" />
+			<Category value="2" />
+			<Skill value="22" />
+			
+			<ImageFile value="Anim de morts.png" />
+			
+			<Requisite>
+				<Material Type="21" Amount="6" />
+			</Requisite>
+		</Item>
+		
+		<Item id="36">
+			<Name value="Anim de morts II" />
+			<Description value=" " />
+			<ManufacturingTime value="31" />
+			<Category value="2" />
+			<Skill value="22" />
+			
+			<ImageFile value="Anim de morts II.png" />
+			
+			<Requisite>
+				<Material Type="21" Amount="8" />
+			</Requisite>
+		</Item>
+		
+		<Item id="37">
+			<Name value="Conv Elément Mort" />
+			<Description value="Invoque un élémental très dangereux." />
+			<ManufacturingTime value="47" />
+			<Category value="2" />
+			<Skill value="22" />
+			
+			<ImageFile value="Conv Element Mort.png" />
+			
+			<Requisite>
+				<Material Type="22" Amount="12" />
+			</Requisite>
+		</Item>
+		
+		<Item id="38">
+			<Name value="Casque partiel" />
+			<Description value="Casque léger." />
+			<ManufacturingTime value="6" />
+			<Category value="4" />
+			<Skill value="16" />
+			
+			<ImageFile value="Casque partiel.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="2" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="10" />
+				<Caracteristique Type="Defense" Value="8" />
+			</Bonus>
+		</Item>
+		
+		<Item id="39">
+			<Name value="Masse" />
+			<Description value="Arme de contact standard." />
+			<ManufacturingTime value="11" />
+			<Category value="1" />
+			<Skill value="9" />
+			
+			<ImageFile value="Masse.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="6" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="8" />
+			</Bonus>
+		</Item>
+		
+		<Item id="40">
+			<Name value="Hache d'armes" />
+			<Description value="Arme de contact lourde." />
+			<ManufacturingTime value="18" />
+			<Category value="2" />
+			<Skill value="12" />
+			
+			<ImageFile value="Hache d armes.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="10" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="20" />
+			</Bonus>
+		</Item>
+		
+		<Item id="41">
+			<Name value="Guérison" />
+			<Description value="Sort qui permet de se guérir." />
+			<ManufacturingTime value="20" />
+			<Category value="2" />
+			<Skill value="23" />
+			
+			<ImageFile value="Guerison.png" />
+			
+			<Requisite>
+				<Material Type="21" Amount="5" />
+			</Requisite>
+		</Item>
+		
+		<Item id="42">
+			<Name value="Guérison d'autrui" />
+			<Description value="Sort qui guérit les proches." />
+			<ManufacturingTime value="23" />
+			<Category value="2" />
+			<Skill value="23" />
+			
+			<ImageFile value="Guerison d autrui.png" />
+			
+			<Requisite>
+				<Material Type="21" Amount="6" />
+			</Requisite>
+		</Item>
+		
+		<Item id="43">
+			<Name value="Résurrection" />
+			<Description value="Sort qui ressuscite les proches." />
+			<ManufacturingTime value="47" />
+			<Category value="2" />
+			<Skill value="23" />
+			
+			<ImageFile value="Resurrection.png" />
+			
+			<Requisite>
+				<Material Type="22" Amount="12" />
+			</Requisite>
+		</Item>
+		
+		<Item id="44">
+			<Name value="Golem de pierre" />
+			<Description value="Invoque un golem standard." />
+			<ManufacturingTime value="17" />
+			<Category value="2" />
+			<Skill value="24" />
+			
+			<ImageFile value="Golem de pierre.png" />
+			
+			<Requisite>
+				<Material Type="13" Amount="20" />
+			</Requisite>
+		</Item>
+		
+		<Item id="45">
+			<Name value="Bottes de marche" />
+			<Description value="Permet de se déplacer plus aisément." />
+			<ManufacturingTime value="5" />
+			<Category value="5" />
+			<Skill value="3" />
+			
+			<ImageFile value="Bottes de marche.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="2" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Vitesse" Value="1" />
+			</Bonus>
+		</Item>
+		
+		<Item id="46">
+			<Name value="Chaussures de ville" />
+			<Description value="Permet de se déplacer plus aisément." />
+			<ManufacturingTime value="8" />
+			<Category value="5" />
+			<Skill value="3" />
+			
+			<ImageFile value="Chaussures de ville.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="3" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Vitesse" Value="1" />
+			</Bonus>
+		</Item>
+		
+		<Item id="47">
+			<Name value="Bottes cloutées" />
+			<Description value="Bottes de combat." />
+			<ManufacturingTime value="5" />
+			<Category value="5" />
+			<Skill value="3" />
+			
+			<ImageFile value="Bottes cloutees.png" />
+			
+			<Requisite>
+				<Material Type="16" Amount="3" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="5" />
+				<Caracteristique Type="Vitesse" Value="1" />
+			</Bonus>
+		</Item>
+		
+		<Item id="48">
+			<Name value="Bottes d'acier" />
+			<Description value="Bottes de combat renforcées." />
+			<ManufacturingTime value="8" />
+			<Category value="5" />
+			<Skill value="3" />
+			
+			<ImageFile value="Bottes dacier.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="3" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Vitesse" Value="1" />
+				<Caracteristique Type="Armure" Value="1" />
+			</Bonus>
+		</Item>
+		
+		<Item id="49">
+			<Name value="Arc composite" />
+			<Description value="Arme de tir longue portée." />
+			<ManufacturingTime value="8" />
+			<Category value="2" />
+			<Skill value="13" />
+			
+			<ImageFile value="Arc composite.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="15" />
+				<Material Type="17" Amount="1" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="10" />
+				<Caracteristique Type="Portee" Value="160" />
+			</Bonus>
+		</Item>
+		
+		<Item id="50">
+			<Name value="Arbalète lourde" />
+			<Description value="Arme de tir très lourde." />
+			<ManufacturingTime value="13" />
+			<Category value="2" />
+			<Skill value="14" />
+			
+			<ImageFile value="Arbalete lourde.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="15" />
+				<Material Type="17" Amount="2" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="14" />
+				<Caracteristique Type="Portee" Value="144" />
+				<Caracteristique Type="Portee" Value="160" />
+			</Bonus>
+		</Item>
+		
+		<Item id="51">
+			<Name value="Bonnet" />
+			<Description value="Couvre-chef ordinaire." />
+			<ManufacturingTime value="7" />
+			<Category value="4" />
+			<Skill value="2" />
+			
+			<ImageFile value="Bonnet.png" />
+			
+			<Requisite>
+				<Material Type="5" Amount="4" />
+			</Requisite>
+		</Item>
+		
+		<Item id="52">
+			<Name value="Vitalité" />
+			<Description value="Sort qui redonne de la vitalité." />
+			<ManufacturingTime value="60" />
+			<Category value="2" />
+			<Skill value="23" />
+			
+			<ImageFile value="Vitalite.png" />
+			
+			<Requisite>
+				<Material Type="22" Amount="15" />
+			</Requisite>
+		</Item>
+		
+		<Item id="53">
+			<Name value="Bâton de sorcier" />
+			<Description value="Item préféré des lanceurs de sorts." />
+			<ManufacturingTime value="16" />
+			<Category value="2" />
+			<Skill value="10" />
+			
+			<ImageFile value="Baton de sorcier.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="6" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="15" />
+				<Caracteristique Type="Defense" Value="12" />
+			</Bonus>
+		</Item>
+		
+		<Item id="54">
+			<Name value="Sabre" />
+			<Description value="Arme de contact standard." />
+			<ManufacturingTime value="10" />
+			<Category value="1" />
+			<Skill value="8" />
+			
+			<ImageFile value="Sabre.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="6" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="8" />
+			</Bonus>
+		</Item>
+		
+		<Item id="55">
+			<Name value="Epée à 2 mains sertie" />
+			<Description value="Arme de contact lourde." />
+			<ManufacturingTime value="42" />
+			<Category value="2" />
+			<Skill value="11" />
+			
+			<ImageFile value="Epee a 2 mains sertie.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="21" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="40" />
+			</Bonus>
+		</Item>
+		
+		<Item id="56">
+			<Name value="Oeuf de dragon" />
+			<Description value=" " />
+			<ManufacturingTime value="83" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Oeuf de dragon.png" />
+		</Item>
+		
+		<Item id="57">
+			<Name value="Ecu impérial" />
+			<Description value="Bouclier moyen." />
+			<ManufacturingTime value="25" />
+			<Category value="1" />
+			<Skill value="19" />
+			
+			<ImageFile value="Ecu imperial.png" />
+			
+			<Requisite>
+				<Material Type="16" Amount="6" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="18" />
+				<Caracteristique Type="Defense" Value="12" />
+			</Bonus>
+		</Item>
+		
+		<Item id="58">
+			<Name value="Armure noire" />
+			<Description value="Armure lourde du chaos." />
+			<ManufacturingTime value="70" />
+			<Category value="3" />
+			<Skill value="18" />
+			
+			<ImageFile value="Armure noire.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="15" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Armure" Value="5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="59">
+			<Name value="Pique" />
+			<Description value="Arme de courte portée." />
+			<ManufacturingTime value="10" />
+			<Category value="2" />
+			<Skill value="10" />
+			
+			<ImageFile value="Pique.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="6" />
+				<Material Type="15" Amount="2" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="9" />
+				<Caracteristique Type="Defense" Value="6" />
+				<Caracteristique Type="Portee" Value="16" />
+			</Bonus>
+		</Item>
+		
+		<Item id="60">
+			<Name value="Poignard affaiblissant" />
+			<Description value="Arme de contact légère." />
+			<ManufacturingTime value="5" />
+			<Category value="1" />
+			<Skill value="7" />
+			
+			<ImageFile value="Poignard affaiblissant.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="4" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="4" />
+			</Bonus>
+		</Item>
+		
+		<Item id="61">
+			<Name value="Dent de dragon" />
+			<Description value=" " />
+			<ManufacturingTime value="22" />
+			<Category value="2" />
+			<Skill value="22" />
+			
+			<ImageFile value="Dent de dragon.png" />
+		</Item>
+		
+		<Item id="62">
+			<Name value="Casque à cornes" />
+			<Description value="Casque moyen." />
+			<ManufacturingTime value="5" />
+			<Category value="4" />
+			<Skill value="17" />
+			
+			<ImageFile value="Casque a cornes.png" />
+			
+			<Requisite>
+				<Material Type="16" Amount="3" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="63">
+			<Name value="Couronne du démon" />
+			<Description value="Couvre-chef honorifique." />
+			<ManufacturingTime value="50" />
+			<Category value="4" />
+			<Skill value="5" />
+			
+			<ImageFile value="Couronne du demon.png" />
+		</Item>
+		
+		<Item id="64">
+			<Name value="Conv Ange" />
+			<Description value="Invoque un ange doté de pouvoirs de guérisons." />
+			<ManufacturingTime value="47" />
+			<Category value="2" />
+			<Skill value="23" />
+			
+			<ImageFile value="Conv Ange.png" />
+			
+			<Requisite>
+				<Material Type="22" Amount="12" />
+			</Requisite>
+		</Item>
+		
+		<Item id="65">
+			<Name value="Couteau" />
+			<Description value="Pratique pour découper de la viande." />
+			<ManufacturingTime value="2" />
+			<Category value="1" />
+			<Skill value="7" />
+			
+			<ImageFile value="Couteau.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="2" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="3" />
+			</Bonus>
+		</Item>
+		
+		<Item id="66">
+			<Name value="Sac à dos" />
+			<Description value="Permet de transporter d'avantages de ressources." />
+			<ManufacturingTime value="33" />
+			<Category value="6" />
+			<Skill value="6" />
+			
+			<ImageFile value="Sac a dos.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="10" />
+			</Requisite>
+		</Item>
+		
+		<Item id="67">
+			<Name value="Conv Chasseur" />
+			<Description value="Invoque un chasseur très rapide." />
+			<ManufacturingTime value="6" />
+			<Category value="2" />
+			<Skill value="22" />
+			
+			<ImageFile value="Conv Chasseur.png" />
+			
+			<Requisite>
+				<Material Type="21" Amount="3" />
+			</Requisite>
+		</Item>
+		
+		<Item id="68">
+			<Name value="Explosion" />
+			<Description value="Sortilège de destruction massif." />
+			<ManufacturingTime value="46" />
+			<Category value="2" />
+			<Skill value="21" />
+			
+			<ImageFile value="Explosion.png" />
+			
+			<Requisite>
+				<Material Type="22" Amount="12" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="15" />
+				<Caracteristique Type="Portee" Value="64" />
+			</Bonus>
+		</Item>
+		
+		<Item id="69">
+			<Name value="Anneau de santé" />
+			<Description value="Augmente le nombre de points de vie." />
+			<ManufacturingTime value="22" />
+			<Category value="7" />
+			<Skill value="5" />
+			
+			<ImageFile value="Anneau de sante.png" />
+			
+			<Requisite>
+				<Material Type="25" Amount="7" />
+			</Requisite>
+		</Item>
+		
+		<Item id="70">
+			<Name value="Anneau d'endurance" />
+			<Description value="Augmente le nombre de points d'énergie." />
+			<ManufacturingTime value="22" />
+			<Category value="7" />
+			<Skill value="5" />
+			
+			<ImageFile value="Anneau d endurance.png" />
+			
+			<Requisite>
+				<Material Type="25" Amount="7" />
+			</Requisite>
+		</Item>
+		
+		<Item id="71">
+			<Name value="Anneau d'esprit" />
+			<Description value="Augmente le nombre de points de magie." />
+			<ManufacturingTime value="22" />
+			<Category value="7" />
+			<Skill value="5" />
+			
+			<ImageFile value="Anneau d esprit.png" />
+			
+			<Requisite>
+				<Material Type="25" Amount="7" />
+			</Requisite>
+		</Item>
+		
+		<Item id="72">
+			<Name value="Anneau de bravoure" />
+			<Description value="Augmente le nombre de points de moral." />
+			<ManufacturingTime value="22" />
+			<Category value="7" />
+			<Skill value="5" />
+			
+			<ImageFile value="Anneau de bravoure.png" />
+			
+			<Requisite>
+				<Material Type="25" Amount="7" />
+			</Requisite>
+		</Item>
+		
+		<Item id="73">
+			<Name value="Gants de travail" />
+			<Description value="Utile pour tous les travaux manuels." />
+			<ManufacturingTime value="11" />
+			<Category value="9" />
+			<Skill value="4" />
+			
+			<ImageFile value="Gants de travail.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="4" />
+			</Requisite>
+		</Item>
+		
+		<Item id="74">
+			<Name value="Gants de combat" />
+			<Description value="Améliore l'habileté en combat raproché." />
+			<ManufacturingTime value="13" />
+			<Category value="9" />
+			<Skill value="4" />
+			
+			<ImageFile value="Gants de combat.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="5" />
+			</Requisite>
+		</Item>
+		
+		<Item id="75">
+			<Name value="Gants de précision" />
+			<Description value="Améliore l'adresse au tir." />
+			<ManufacturingTime value="13" />
+			<Category value="9" />
+			<Skill value="4" />
+			
+			<ImageFile value="Gants de precision.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="5" />
+			</Requisite>
+		</Item>
+		
+		<Item id="76">
+			<Name value="Gants de force" />
+			<Description value="Améliore les dégâts." />
+			<ManufacturingTime value="13" />
+			<Category value="9" />
+			<Skill value="4" />
+			
+			<ImageFile value="Gants de force.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="5" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="77">
+			<Name value="Gants cloutés" />
+			<Description value="Améliore la défense." />
+			<ManufacturingTime value="10" />
+			<Category value="9" />
+			<Skill value="4" />
+			
+			<ImageFile value="Gants cloutes.png" />
+			
+			<Requisite>
+				<Material Type="16" Amount="6" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="10" />
+			</Bonus>
+		</Item>
+		
+		<Item id="78">
+			<Name value="Golem de cristal" />
+			<Description value="Invoque un golem projetant des eclats de cristal." />
+			<ManufacturingTime value="21" />
+			<Category value="2" />
+			<Skill value="24" />
+			
+			<ImageFile value="Golem de cristal.png" />
+			
+			<Requisite>
+				<Material Type="18" Amount="20" />
+			</Requisite>
+		</Item>
+		
+		<Item id="79">
+			<Name value="Golem de fer" />
+			<Description value="Invoque un golem extrèmement résistant." />
+			<ManufacturingTime value="63" />
+			<Category value="2" />
+			<Skill value="24" />
+			
+			<ImageFile value="Golem de fer.png" />
+			
+			<Requisite>
+				<Material Type="16" Amount="20" />
+			</Requisite>
+		</Item>
+		
+		<Item id="80">
+			<Name value="Golem d'acier" />
+			<Description value="Invoque un golem quasiment invincible." />
+			<ManufacturingTime value="105" />
+			<Category value="2" />
+			<Skill value="24" />
+			
+			<ImageFile value="Golem d acier.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="20" />
+			</Requisite>
+		</Item>
+		
+		<Item id="81">
+			<Name value="Gants d'acier" />
+			<Description value="Améliore la résistance." />
+			<ManufacturingTime value="16" />
+			<Category value="9" />
+			<Skill value="4" />
+			
+			<ImageFile value="Gants d acier.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="6" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Armure" Value="1" />
+			</Bonus>
+		</Item>
+		
+		<Item id="82">
+			<Name value="Pacte rebelle" />
+			<Description value="Contrat passé avec des rebelles." />
+			<ManufacturingTime value="17" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Pacte rebelle.png" />
+			
+			<Requisite>
+				<Material Type="25" Amount="4" />
+			</Requisite>
+		</Item>
+		
+		<Item id="83">
+			<Name value="Pacte d'inquisition" />
+			<Description value=" " />
+			<ManufacturingTime value="17" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Pacte d inquisition.png" />
+			
+			<Requisite>
+				<Material Type="25" Amount="4" />
+			</Requisite>
+		</Item>
+		
+		<Item id="84">
+			<Name value="Armure pure" />
+			<Description value="Armure de l'ordre." />
+			<ManufacturingTime value="70" />
+			<Category value="3" />
+			<Skill value="18" />
+			
+			<ImageFile value="Armure pure.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="15" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Armure" Value="5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="85">
+			<Name value="Eclair" />
+			<Description value="Sortilège de destruction à distance." />
+			<ManufacturingTime value="20" />
+			<Category value="2" />
+			<Skill value="28" />
+			
+			<ImageFile value="Eclair.png" />
+			
+			<Requisite>
+				<Material Type="22" Amount="5" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="10" />
+				<Caracteristique Type="Portee" Value="192" />
+			</Bonus>
+		</Item>
+		
+		<Item id="86">
+			<Name value="Orbe de givre" />
+			<Description value="Sortilège de glace à distance." />
+			<ManufacturingTime value="32" />
+			<Category value="2" />
+			<Skill value="28" />
+			
+			<ImageFile value="Orbe de givre.png" />
+			
+			<Requisite>
+				<Material Type="22" Amount="8" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="14" />
+				<Caracteristique Type="Portee" Value="192" />
+			</Bonus>
+		</Item>
+		
+		<Item id="87">
+			<Name value="Anneau de suzerain" />
+			<Description value="Augmente la loyauté des soldats." />
+			<ManufacturingTime value="45" />
+			<Category value="7" />
+			<Skill value="5" />
+			
+			<ImageFile value="Anneau de suzerain.png" />
+			
+			<Requisite>
+				<Material Type="25" Amount="14" />
+			</Requisite>
+		</Item>
+		
+		<Item id="88">
+			<Name value="Arquebuse" />
+			<Description value="Arme de tir légère utilisant du soufre." />
+			<ManufacturingTime value="26" />
+			<Category value="2" />
+			<Skill value="15" />
+			
+			<ImageFile value="Arquebuse.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="5" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="16" />
+				<Caracteristique Type="Portee" Value="128" />
+			</Bonus>
+		</Item>
+		
+		<Item id="89">
+			<Name value="Robe écarlate" />
+			<Description value="Habit de mage pyrotechnique." />
+			<ManufacturingTime value="23" />
+			<Category value="3" />
+			<Skill value="20" />
+			
+			<ImageFile value="Robe ecarlate.png" />
+			
+			<Requisite>
+				<Material Type="5" Amount="12" />
+			</Requisite>
+		</Item>
+		
+		<Item id="90">
+			<Name value="Brocart" />
+			<Description value="Riche tissu brodé de fils d'or." />
+			<ManufacturingTime value="73" />
+			<Category value="3" />
+			<Skill value="2" />
+			
+			<ImageFile value="Brocart.png" />
+			
+			<Requisite>
+				<Material Type="5" Amount="18" />
+				<Material Type="25" Amount="1" />
+			</Requisite>
+		</Item>
+		
+		<Item id="91">
+			<Name value="Souffle de soufre" />
+			<Description value="Capacité spéciale." />
+			<ManufacturingTime value="25" />
+			<Category value="2" />
+			<Skill value="21" />
+			
+			<ImageFile value="Souffle de soufre.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="20" />
+			</Bonus>
+		</Item>
+		
+		<Item id="92">
+			<Name value="Lycanthropie" />
+			<Description value="Capacité spéciale." />
+			<ManufacturingTime value="73" />
+			<Category value="2" />
+			<Skill value="8" />
+			
+			<ImageFile value="Lycanthropie.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="10" />
+				<Caracteristique Type="Armure" Value="2" />
+			</Bonus>
+		</Item>
+		
+		<Item id="93">
+			<Name value="Projection spectrale" />
+			<Description value="Capacité spéciale." />
+			<ManufacturingTime value="80" />
+			<Category value="2" />
+			<Skill value="22" />
+			
+			<ImageFile value="Projection spectrale.png" />
+		</Item>
+		
+		<Item id="94">
+			<Name value="Mousquet" />
+			<Description value="Arme de tir moyenne utilisant du soufre." />
+			<ManufacturingTime value="52" />
+			<Category value="2" />
+			<Skill value="15" />
+			
+			<ImageFile value="Mousquet.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="10" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="28" />
+				<Caracteristique Type="Portee" Value="144" />
+			</Bonus>
+		</Item>
+		
+		<Item id="95">
+			<Name value="Restauration" />
+			<Description value="Capacité spéciale." />
+			<ManufacturingTime value="60" />
+			<Category value="2" />
+			<Skill value="23" />
+			
+			<ImageFile value="Restauration.png" />
+		</Item>
+		
+		<Item id="96">
+			<Name value="Poudre de fée" />
+			<Description value="Capacité spéciale." />
+			<ManufacturingTime value="73" />
+			<Category value="2" />
+			<Skill value="23" />
+			
+			<ImageFile value="Poudre de fee.png" />
+		</Item>
+		
+		<Item id="97">
+			<Name value="Brouette" />
+			<Description value="Capacité spéciale." />
+			<ManufacturingTime value="33" />
+			<Category value="2" />
+			<Skill value="6" />
+			
+			<ImageFile value="Brouette.png" />
+			
+			<Requisite>
+				<Material Type="16" Amount="8" />
+			</Requisite>
+		</Item>
+		
+		<Item id="98">
+			<Name value="Bombarde" />
+			<Description value="Arme de tir lourde utilisant du soufre." />
+			<ManufacturingTime value="105" />
+			<Category value="2" />
+			<Skill value="15" />
+			
+			<ImageFile value="Canon.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="20" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="120" />
+				<Caracteristique Type="Portee" Value="216" />
+			</Bonus>
+		</Item>
+		
+		<Item id="99">
+			<Name value="Veste de cuir cloutée" />
+			<Description value="Armure légère renforcée." />
+			<ManufacturingTime value="21" />
+			<Category value="3" />
+			<Skill value="16" />
+			
+			<ImageFile value="Veste de cuir cloutee.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="5" />
+				<Material Type="16" Amount="2" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="6" />
+				<Caracteristique Type="Armure" Value="2" />
+			</Bonus>
+		</Item>
+		
+		<Item id="100">
+			<Name value="Anneau de protection" />
+			<Description value="Protège des attaques adverses." />
+			<ManufacturingTime value="28" />
+			<Category value="7" />
+			<Skill value="5" />
+			
+			<ImageFile value="Anneau de protection.png" />
+			
+			<Requisite>
+				<Material Type="25" Amount="9" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="10" />
+				<Caracteristique Type="Armure" Value="3" />
+			</Bonus>
+		</Item>
+		
+		<Item id="101">
+			<Name value="Panier" />
+			<Description value="Protège des attaques adverses." />
+			<ManufacturingTime value="12" />
+			<Category value="2" />
+			<Skill value="6" />
+			
+			<ImageFile value="Panier.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="2" />
+			</Requisite>
+		</Item>
+		
+		<Item id="102">
+			<Name value="Armure incandescente" />
+			<Description value="Armure de la desctruction." />
+			<ManufacturingTime value="70" />
+			<Category value="3" />
+			<Skill value="18" />
+			
+			<ImageFile value="Armure incandescente.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="15" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Armure" Value="5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="103">
+			<Name value="Fléau d'armes" />
+			<Description value="Arme de contact lourde." />
+			<ManufacturingTime value="23" />
+			<Category value="1" />
+			<Skill value="9" />
+			
+			<ImageFile value="Fleau d armes.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="12" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="10" />
+			</Bonus>
+		</Item>
+		
+		<Item id="104">
+			<Name value="Glaive blanc" />
+			<Description value="Arme de contact standard." />
+			<ManufacturingTime value="30" />
+			<Category value="1" />
+			<Skill value="8" />
+			
+			<ImageFile value="Glaive blanc.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="14" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="12" />
+			</Bonus>
+		</Item>
+		
+		<Item id="105">
+			<Name value="Hache de bataille" />
+			<Description value="Arme de contact lourde." />
+			<ManufacturingTime value="36" />
+			<Category value="2" />
+			<Skill value="12" />
+			
+			<ImageFile value="Hache de bataille.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="20" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="24" />
+			</Bonus>
+		</Item>
+		
+		<Item id="106">
+			<Name value="Egaliseur" />
+			<Description value="Arme de contact très lourde." />
+			<ManufacturingTime value="56" />
+			<Category value="2" />
+			<Skill value="11" />
+			
+			<ImageFile value="Egaliseur.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="8" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="30" />
+			</Bonus>
+		</Item>
+		
+		<Item id="107">
+			<Name value="Trident" />
+			<Description value="Arme lourde de courte portée." />
+			<ManufacturingTime value="28" />
+			<Category value="2" />
+			<Skill value="10" />
+			
+			<ImageFile value="Trident.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="12" />
+				<Material Type="15" Amount="6" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="12" />
+				<Caracteristique Type="Defense" Value="8" />
+				<Caracteristique Type="Portee" Value="16" />
+			</Bonus>
+		</Item>
+		
+		<Item id="108">
+			<Name value="Haubert" />
+			<Description value="Cotte de mailles qui recouvre tout le corps." />
+			<ManufacturingTime value="73" />
+			<Category value="3" />
+			<Skill value="17" />
+			
+			<ImageFile value="Haubert.png" />
+			
+			<Requisite>
+				<Material Type="16" Amount="20" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="4" />
+				<Caracteristique Type="Defense" Value="3" />
+				<Caracteristique Type="Armure" Value="4" />
+			</Bonus>
+		</Item>
+		
+		<Item id="109">
+			<Name value="Machine à tisser" />
+			<Description value=" " />
+			<ManufacturingTime value="36" />
+			<Category value="2" />
+			<Skill value="6" />
+			
+			<ImageFile value="Machine a tisser.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="6" />
+			</Requisite>
+		</Item>
+		
+		<Item id="110">
+			<Name value="Elixir de vie" />
+			<Description value="Permet de se ressusciter instantanément." />
+			<ManufacturingTime value="40" />
+			<Category value="2" />
+			<Skill value="26" />
+			
+			<ImageFile value="Elixir de vie.png" />
+			
+			<Requisite>
+				<Material Type="20" Amount="6" />
+			</Requisite>
+		</Item>
+		
+		<Item id="111">
+			<Name value="Arc elfique" />
+			<Description value="Arc légendaire elfe." />
+			<ManufacturingTime value="20" />
+			<Category value="2" />
+			<Skill value="13" />
+			
+			<ImageFile value="Arc elfique.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="10" />
+				<Caracteristique Type="Portee" Value="160" />
+			</Bonus>
+		</Item>
+		
+		<Item id="112">
+			<Name value="Mailles de mithril" />
+			<Description value="Armure légendaire naine." />
+			<ManufacturingTime value="110" />
+			<Category value="3" />
+			<Skill value="17" />
+			
+			<ImageFile value="Mailles de mithril.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="6" />
+				<Caracteristique Type="Defense" Value="5" />
+				<Caracteristique Type="Armure" Value="10" />
+			</Bonus>
+		</Item>
+		
+		<Item id="113">
+			<Name value="Orbe sylvestre" />
+			<Description value="Générateur de ressources." />
+			<ManufacturingTime value="16" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Orbe sylvestre.png" />
+		</Item>
+		
+		<Item id="114">
+			<Name value="Orbe des moissons" />
+			<Description value="Générateur de ressources." />
+			<ManufacturingTime value="33" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Orbe des moissons.png" />
+		</Item>
+		
+		<Item id="115">
+			<Name value="Orbe minérale" />
+			<Description value="Générateur de ressources." />
+			<ManufacturingTime value="50" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Orbe minerale.png" />
+		</Item>
+		
+		<Item id="116">
+			<Name value="Orbe précieuse" />
+			<Description value="Générateur de ressources." />
+			<ManufacturingTime value="66" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Orbe precieuse.png" />
+		</Item>
+		
+		<Item id="117">
+			<Name value="Orbe étherale" />
+			<Description value="Générateur de ressources." />
+			<ManufacturingTime value="83" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Orbe etherale.png" />
+		</Item>
+		
+		<Item id="118">
+			<Name value="Orbe de savoir" />
+			<Description value="Générateur de ressources." />
+			<ManufacturingTime value="100" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Orbe de savoir.png" />
+		</Item>
+		
+		<Item id="119">
+			<Name value="Sceau noble" />
+			<Description value="Title de noblesse." />
+			<ManufacturingTime value="50" />
+			<Category value="7" />
+			<Skill value="5" />
+			
+			<ImageFile value="Sceau noble.png" />
+		</Item>
+		
+		<Item id="120">
+			<Name value="Masse de pierre" />
+			<Description value="Arme colossale." />
+			<ManufacturingTime value="83" />
+			<Category value="1" />
+			<Skill value="9" />
+			
+			<ImageFile value="Masse de pierre.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="12" />
+			</Bonus>
+		</Item>
+		
+		<Item id="121">
+			<Name value="Bottes des 7 lieux" />
+			<Description value="Permet de se déplacer très vite." />
+			<ManufacturingTime value="83" />
+			<Category value="5" />
+			<Skill value="3" />
+			
+			<ImageFile value="Bottes des 7 lieux.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Vitesse" Value="1.5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="122">
+			<Name value="Corne d'abondance" />
+			<Description value="Vous mangerez toujours à votre faim." />
+			<ManufacturingTime value="33" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Corne d abondance.png" />
+		</Item>
+		
+		<Item id="123">
+			<Name value="Sac magique" />
+			<Description value="Permet de transporter beaucoup de ressources." />
+			<ManufacturingTime value="83" />
+			<Category value="6" />
+			<Skill value="6" />
+			
+			<ImageFile value="Sac magique.png" />
+		</Item>
+		
+		<Item id="124">
+			<Name value="Nuée de chauves-souris" />
+			<Description value="Capacité spéciale." />
+			<ManufacturingTime value="83" />
+			<Category value="2" />
+			<Skill value="22" />
+			
+			<ImageFile value="Nuee de chauves souris.png" />
+		</Item>
+		
+		<Item id="125">
+			<Name value="Baguette enchantée" />
+			<Description value="Aide à exaucer des souhaits." />
+			<ManufacturingTime value="416" />
+			<Category value="2" />
+			<Skill value="10" />
+			
+			<ImageFile value="Baguette enchantee.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="125" />
+				<Caracteristique Type="Portee" Value="128" />
+			</Bonus>
+		</Item>
+		
+		<Item id="126">
+			<Name value="Jet de soufre" />
+			<Description value="Capacité spéciale." />
+			<ManufacturingTime value="83" />
+			<Category value="2" />
+			<Skill value="21" />
+			
+			<ImageFile value="Jet de soufre.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="15" />
+				<Caracteristique Type="Portee" Value="128" />
+			</Bonus>
+		</Item>
+		
+		<Item id="127">
+			<Name value="Lycanthropie avancée" />
+			<Description value="Capacité spéciale." />
+			<ManufacturingTime value="83" />
+			<Category value="2" />
+			<Skill value="8" />
+			
+			<ImageFile value="Lycanthropie avancee.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="20" />
+				<Caracteristique Type="Armure" Value="4" />
+				<Caracteristique Type="Vitesse" Value="1" />
+			</Bonus>
+		</Item>
+		
+		<Item id="128">
+			<Name value="Orbe d'alliages" />
+			<Description value="Générateur de ressources." />
+			<ManufacturingTime value="133" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Orbe d alliages.png" />
+		</Item>
+		
+		<Item id="129">
+			<Name value="Conscription impériale" />
+			<Description value="Appel des renforts impériaux." />
+			<ManufacturingTime value="106" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Conscription imperiale.png" />
+		</Item>
+		
+		<Item id="130">
+			<Name value="Chaudron" />
+			<Description value=" " />
+			<ManufacturingTime value="41" />
+			<Category value="2" />
+			<Skill value="6" />
+			
+			<ImageFile value="Chaudron.png" />
+			
+			<Requisite>
+				<Material Type="16" Amount="10" />
+			</Requisite>
+		</Item>
+		
+		<Item id="131">
+			<Name value="Croisade" />
+			<Description value="Mobilise des troupes contre de l'argent." />
+			<ManufacturingTime value="106" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Croisade.png" />
+		</Item>
+		
+		<Item id="132">
+			<Name value="Maillet de forgeron" />
+			<Description value="L'outil indispensable pour tout bon forgeron." />
+			<ManufacturingTime value="80" />
+			<Category value="2" />
+			<Skill value="9" />
+			
+			<ImageFile value="Maillet de forgeron.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="8" />
+			</Bonus>
+		</Item>
+		
+		<Item id="133">
+			<Name value="Orbe curative" />
+			<Description value="Générateur de ressources." />
+			<ManufacturingTime value="33" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Orbe curative.png" />
+		</Item>
+		
+		<Item id="134">
+			<Name value="Brise crânes" />
+			<Description value="Accroît les dégâts mortels." />
+			<ManufacturingTime value="66" />
+			<Category value="9" />
+			<Skill value="4" />
+			
+			<ImageFile value="Brise cranes.png" />
+		</Item>
+		
+		<Item id="135">
+			<Name value="Habit de négociant" />
+			<Description value=" " />
+			<ManufacturingTime value="73" />
+			<Category value="3" />
+			<Skill value="2" />
+			
+			<ImageFile value="Habit de negociant.png" />
+		</Item>
+		
+		<Item id="136">
+			<Name value="Orbe festoyant" />
+			<Description value="Générateur de ressources." />
+			<ManufacturingTime value="83" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Orbe festoyant.png" />
+		</Item>
+		
+		<Item id="137">
+			<Name value="Diadème doré" />
+			<Description value="Bijoux féérique." />
+			<ManufacturingTime value="18" />
+			<Category value="4" />
+			<Skill value="5" />
+			
+			<ImageFile value="Diademe dore.png" />
+		</Item>
+		
+		<Item id="138">
+			<Name value="Orbe de soufre" />
+			<Description value="Générateur de ressources." />
+			<ManufacturingTime value="41" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Orbe de soufre.png" />
+		</Item>
+		
+		<Item id="139">
+			<Name value="Crocs acérés" />
+			<Description value="Capacité spéciale." />
+			<ManufacturingTime value="36" />
+			<Category value="4" />
+			<Skill value="7" />
+			
+			<ImageFile value="Crocs aceres.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="140">
+			<Name value="Cape de l'ombre" />
+			<Description value="Cape protectrice." />
+			<ManufacturingTime value="35" />
+			<Category value="3" />
+			<Skill value="20" />
+			
+			<ImageFile value="Cape de l ombre.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="15" />
+				<Caracteristique Type="Defense" Value="12" />
+			</Bonus>
+		</Item>
+		
+		<Item id="141">
+			<Name value="Orbe de prospérité" />
+			<Description value="Générateur d'argent." />
+			<ManufacturingTime value="60" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Orbe de prosperite.png" />
+		</Item>
+		
+		<Item id="142">
+			<Name value="Anneau de régénération" />
+			<Description value="Restaure la santé." />
+			<ManufacturingTime value="90" />
+			<Category value="7" />
+			<Skill value="5" />
+			
+			<ImageFile value="Anneau de regeneration.png" />
+		</Item>
+		
+		<Item id="143">
+			<Name value="Orbe spirituelle" />
+			<Description value="Restaure l'esprit." />
+			<ManufacturingTime value="93" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Orbe spirituelle.png" />
+		</Item>
+		
+		<Item id="144">
+			<Name value="Orbe de fortune" />
+			<Description value="Générateur d'argent." />
+			<ManufacturingTime value="150" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Orbe de fortune.png" />
+		</Item>
+		
+		<Item id="145">
+			<Name value="Golem d'or" />
+			<Description value="Invoque un golem qui se régénère au soleil." />
+			<ManufacturingTime value="119" />
+			<Category value="2" />
+			<Skill value="24" />
+			
+			<ImageFile value="Golem d or.png" />
+			
+			<Requisite>
+				<Material Type="25" Amount="20" />
+			</Requisite>
+		</Item>
+		
+		<Item id="146">
+			<Name value="Corne de licorne" />
+			<Description value="Permet de fabriquer une puissante lance avec du bois." />
+			<ManufacturingTime value="16" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Corne de licorne.png" />
+		</Item>
+		
+		<Item id="147">
+			<Name value="Conv Flammerole" />
+			<Description value="Appel une flamme explosive qui attaque tout ce qui bouge." />
+			<ManufacturingTime value="8" />
+			<Category value="2" />
+			<Skill value="21" />
+			
+			<ImageFile value="Conv Flammerole.png" />
+			
+			<Requisite>
+				<Material Type="21" Amount="4" />
+			</Requisite>
+		</Item>
+		
+		<Item id="148">
+			<Name value="Mine" />
+			<Description value="Permet de poser une charge explosive dans le sol." />
+			<ManufacturingTime value="20" />
+			<Category value="2" />
+			<Skill value="15" />
+			
+			<ImageFile value="Mine.png" />
+			
+			<Requisite>
+				<Material Type="16" Amount="1" />
+				<Material Type="26" Amount="8" />
+			</Requisite>
+		</Item>
+		
+		<Item id="149">
+			<Name value="Célérité" />
+			<Description value="Accroit votre vitesse de déplacement temporairement." />
+			<ManufacturingTime value="28" />
+			<Category value="2" />
+			<Skill value="28" />
+			
+			<ImageFile value="Celerite.png" />
+			
+			<Requisite>
+				<Material Type="21" Amount="7" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Vitesse" Value="0.5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="150">
+			<Name value="Elixir de force" />
+			<Description value="Accroit votre force d'attaque temporairement." />
+			<ManufacturingTime value="14" />
+			<Category value="2" />
+			<Skill value="26" />
+			
+			<ImageFile value="Elixir de force.png" />
+			
+			<Requisite>
+				<Material Type="18" Amount="17" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="20" />
+			</Bonus>
+		</Item>
+		
+		<Item id="151">
+			<Name value="Elixir de vigueur" />
+			<Description value="Accroit votre résistance temporairement." />
+			<ManufacturingTime value="15" />
+			<Category value="2" />
+			<Skill value="26" />
+			
+			<ImageFile value="Elixir de vigueur.png" />
+			
+			<Requisite>
+				<Material Type="1" Amount="10" />
+				<Material Type="18" Amount="14" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="10" />
+			</Bonus>
+		</Item>
+		
+		<Item id="152">
+			<Name value="Elixir de sagesse" />
+			<Description value="Accroit votre intelligence temporairement." />
+			<ManufacturingTime value="18" />
+			<Category value="2" />
+			<Skill value="26" />
+			
+			<ImageFile value="Elixir de sagesse.png" />
+			
+			<Requisite>
+				<Material Type="18" Amount="6" />
+				<Material Type="20" Amount="2" />
+			</Requisite>
+		</Item>
+		
+		<Item id="153">
+			<Name value="Elixir de charisme" />
+			<Description value="Accroit votre charisme temporairement." />
+			<ManufacturingTime value="4" />
+			<Category value="2" />
+			<Skill value="26" />
+			
+			<ImageFile value="Elixir de charisme.png" />
+			
+			<Requisite>
+				<Material Type="1" Amount="20" />
+			</Requisite>
+		</Item>
+		
+		<Item id="154">
+			<Name value="Scierie mobile" />
+			<Description value="Transforme 10 bois en 10 planches." />
+			<ManufacturingTime value="25" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Scierie mobile.png" />
+		</Item>
+		
+		<Item id="155">
+			<Name value="Carrière mobile" />
+			<Description value="Transforme 10 pierres en 10 briques." />
+			<ManufacturingTime value="30" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Carriere mobile.png" />
+		</Item>
+		
+		<Item id="156">
+			<Name value="Lance nacrée" />
+			<Description value="Lance équipée d'une corne de licorne." />
+			<ManufacturingTime value="35" />
+			<Category value="2" />
+			<Skill value="10" />
+			
+			<ImageFile value="Lance nacree.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="10" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="22" />
+				<Caracteristique Type="Defense" Value="4" />
+				<Caracteristique Type="Portee" Value="16" />
+			</Bonus>
+		</Item>
+		
+		<Item id="157">
+			<Name value="Conv Esprit de vie" />
+			<Description value="Appel un esprit qui va ressusciter les morts." />
+			<ManufacturingTime value="10" />
+			<Category value="2" />
+			<Skill value="23" />
+			
+			<ImageFile value="Conv Esprit de vie.png" />
+			
+			<Requisite>
+				<Material Type="21" Amount="5" />
+			</Requisite>
+		</Item>
+		
+		<Item id="158">
+			<Name value="Amulette d'extinction" />
+			<Description value="Protège contre le feu." />
+			<ManufacturingTime value="30" />
+			<Category value="10" />
+			<Skill value="5" />
+			
+			<ImageFile value="Amulette d extinction.png" />
+			
+			<Requisite>
+				<Material Type="25" Amount="9" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="159">
+			<Name value="Eau" />
+			<Description value="Protège contre le feu." />
+			<ManufacturingTime value="30" />
+			<Category value="10" />
+			<Skill value="23" />
+			
+			<ImageFile value="Eau.png" />
+		</Item>
+		
+		<Item id="160">
+			<Name value="Amulette de mort" />
+			<Description value="Ralentit votre coeur et glace votre sang." />
+			<ManufacturingTime value="60" />
+			<Category value="10" />
+			<Skill value="5" />
+			
+			<ImageFile value="Amulette de mort.png" />
+			
+			<Requisite>
+				<Material Type="25" Amount="18" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="161">
+			<Name value="Glace" />
+			<Description value="Ralentit votre coeur et glace votre sang." />
+			<ManufacturingTime value="60" />
+			<Category value="10" />
+			<Skill value="28" />
+			
+			<ImageFile value="Glace.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Vitesse" Value="-1" />
+			</Bonus>
+		</Item>
+		
+		<Item id="162">
+			<Name value="Poison affaiblissant" />
+			<Description value="Diminue vos potentiels." />
+			<ManufacturingTime value="60" />
+			<Category value="10" />
+			<Skill value="7" />
+			
+			<ImageFile value="Poison affaiblissant.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="-5" />
+				<Caracteristique Type="Defense" Value="-5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="163">
+			<Name value="Reservoir de mana" />
+			<Description value="Accroit vos points de magie pendant longtemps." />
+			<ManufacturingTime value="22" />
+			<Category value="2" />
+			<Skill value="26" />
+			
+			<ImageFile value="Reservoir de mana.png" />
+			
+			<Requisite>
+				<Material Type="18" Amount="20" />
+				<Material Type="20" Amount="1" />
+			</Requisite>
+		</Item>
+		
+		<Item id="164">
+			<Name value="Dague de cristal" />
+			<Description value="Utilisé dans l'extraction de cristaux." />
+			<ManufacturingTime value="11" />
+			<Category value="1" />
+			<Skill value="7" />
+			
+			<ImageFile value="DagueDeCristal.png" />
+			
+			<Requisite>
+				<Material Type="18" Amount="12" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="4" />
+			</Bonus>
+		</Item>
+		
+		<Item id="165">
+			<Name value="Renard klepto" />
+			<Description value="Appelle un familier qui vous ramasse des trésors." />
+			<ManufacturingTime value="26" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Renard.png" />
+		</Item>
+		
+		<Item id="166">
+			<Name value="Berserk" />
+			<Description value="Augmente votre force et vous rend incontrôlable." />
+			<ManufacturingTime value="20" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Berserk.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="40" />
+				<Caracteristique Type="Vitesse" Value="2" />
+			</Bonus>
+		</Item>
+		
+		<Item id="167">
+			<Name value="Petit chat" />
+			<Description value="Appelle un familier." />
+			<ManufacturingTime value="26" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Petit chat.png" />
+		</Item>
+		
+		<Item id="168">
+			<Name value="Zone de ténèbres" />
+			<Description value="Tous les adversaires autour de vous frappent moins bien." />
+			<ManufacturingTime value="60" />
+			<Category value="2" />
+			<Skill value="22" />
+			
+			<ImageFile value="Zone de tenebres.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="-10" />
+				<Caracteristique Type="Defense" Value="-5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="169">
+			<Name value="Fiesta féline" />
+			<Description value="Augmente votre vitalité et celle de vos amis." />
+			<ManufacturingTime value="180" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Fiesta feline.png" />
+		</Item>
+		
+		<Item id="170">
+			<Name value="Cheval de selle" />
+			<Description value="Monture très utile pour les longs trajets." />
+			<ManufacturingTime value="50" />
+			<Category value="11" />
+			<Skill value="27" />
+			
+			<ImageFile value="Cheval de selle.png" />
+			
+			<Requisite>
+				<Material Type="8" Amount="20" />
+				<Material Type="12" Amount="10" />
+				<Material Type="15" Amount="4" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Vitesse" Value="2" />
+			</Bonus>
+		</Item>
+		
+		<Item id="171">
+			<Name value="Destrier" />
+			<Description value="Monture de guerre." />
+			<ManufacturingTime value="66" />
+			<Category value="11" />
+			<Skill value="27" />
+			
+			<ImageFile value="Destrier.png" />
+			
+			<Requisite>
+				<Material Type="8" Amount="20" />
+				<Material Type="17" Amount="10" />
+				<Material Type="15" Amount="4" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Armure" Value="5" />
+				<Caracteristique Type="Vitesse" Value="2" />
+			</Bonus>
+		</Item>
+		
+		<Item id="172">
+			<Name value="Pur-sang" />
+			<Description value="Cheval de race." />
+			<ManufacturingTime value="83" />
+			<Category value="11" />
+			<Skill value="27" />
+			
+			<ImageFile value="Pur sang.png" />
+			
+			<Requisite>
+				<Material Type="8" Amount="20" />
+				<Material Type="25" Amount="15" />
+				<Material Type="15" Amount="4" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Vitesse" Value="2.5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="173">
+			<Name value="Ailes" />
+			<Description value="Permet de voler." />
+			<ManufacturingTime value="26" />
+			<Category value="11" />
+			<Skill value="1" />
+			
+			<ImageFile value="Ailes.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Vitesse" Value="1" />
+			</Bonus>
+		</Item>
+		
+		<Item id="174">
+			<Name value="Auréole" />
+			<Description value="Améliore votre spiritualité." />
+			<ManufacturingTime value="18" />
+			<Category value="4" />
+			<Skill value="5" />
+			
+			<ImageFile value="Aureole.png" />
+		</Item>
+		
+		<Item id="175">
+			<Name value="Rébellion" />
+			<Description value="Mobilise des troupes contre de l'argent." />
+			<ManufacturingTime value="106" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Rebellion.png" />
+		</Item>
+		
+		<Item id="176">
+			<Name value="Elemental d'air" />
+			<Description value="Crée des élémentaux d'air très rapides." />
+			<ManufacturingTime value="52" />
+			<Category value="2" />
+			<Skill value="28" />
+			
+			<ImageFile value="Elemental d air.png" />
+		</Item>
+		
+		<Item id="177">
+			<Name value="Elemental d'eau" />
+			<Description value="Crée des élémentaux d'eau." />
+			<ManufacturingTime value="57" />
+			<Category value="2" />
+			<Skill value="23" />
+			
+			<ImageFile value="Elemental d eau.png" />
+		</Item>
+		
+		<Item id="178">
+			<Name value="Force de la lune" />
+			<Description value="Augmente vos caractéristiques temporairement." />
+			<ManufacturingTime value="40" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Force de la lune.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="40" />
+				<Caracteristique Type="Defense" Value="20" />
+			</Bonus>
+		</Item>
+		
+		<Item id="179">
+			<Name value="Pose de mines" />
+			<Description value="Pose des charges explosives dans le sol." />
+			<ManufacturingTime value="80" />
+			<Category value="2" />
+			<Skill value="15" />
+			
+			<ImageFile value="Pose de mines.png" />
+		</Item>
+		
+		<Item id="180">
+			<Name value="Lévitation" />
+			<Description value="Permet de voler." />
+			<ManufacturingTime value="28" />
+			<Category value="2" />
+			<Skill value="28" />
+			
+			<ImageFile value="Levitation.png" />
+		</Item>
+		
+		<Item id="181">
+			<Name value="Fabrication d'éther" />
+			<Description value="Transforme 30 cristaux en 10 ether." />
+			<ManufacturingTime value="60" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Fabrication d ether.png" />
+		</Item>
+		
+		<Item id="182">
+			<Name value="Peau de pierre" />
+			<Description value="Augmente votre résistance physique." />
+			<ManufacturingTime value="83" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Peau de pierre.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Armure" Value="5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="183">
+			<Name value="Immunité au feu" />
+			<Description value="Met votre résistance au feu à son maximum." />
+			<ManufacturingTime value="73" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Immunite au feu.png" />
+		</Item>
+		
+		<Item id="184">
+			<Name value="Couronne" />
+			<Description value="Couvre-chef de sa majesté." />
+			<ManufacturingTime value="500" />
+			<Category value="4" />
+			<Skill value="5" />
+			
+			<ImageFile value="Couronne.png" />
+			
+			<Bonus>
+				<Caracteristique Type="Armure" Value="20" />
+			</Bonus>
+		</Item>
+		
+		<Item id="185">
+			<Name value="Apprenti forgeron" />
+			<Description value="Engage un apprenti qui vous livre divers métaux." />
+			<ManufacturingTime value="56" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Apprenti forgeron.png" />
+		</Item>
+		
+		<Item id="186">
+			<Name value="Domestique" />
+			<Description value="Engage un domestique qui vous apporte de la nourriture." />
+			<ManufacturingTime value="44" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Domestique.png" />
+		</Item>
+		
+		<Item id="187">
+			<Name value="Apprenti alchimiste" />
+			<Description value="Engage un apprenti qui vous livre des potions." />
+			<ManufacturingTime value="56" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Apprenti alchimiste.png" />
+		</Item>
+		
+		<Item id="188">
+			<Name value="Apprenti mage" />
+			<Description value="Engage un apprenti qui vous livre du papier et du parchemin." />
+			<ManufacturingTime value="56" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Apprenti mage.png" />
+		</Item>
+		
+		<Item id="189">
+			<Name value="Apprenti nécro" />
+			<Description value="Engage un apprenti qui vous livre des squelettes." />
+			<ManufacturingTime value="56" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Apprenti necro.png" />
+		</Item>
+		
+		<Item id="190">
+			<Name value="Apprenti tecto" />
+			<Description value="Engage un apprenti qui vous livre des golems." />
+			<ManufacturingTime value="56" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Apprenti tecto.png" />
+		</Item>
+		
+		<Item id="191">
+			<Name value="Anim de morts III" />
+			<Description value=" " />
+			<ManufacturingTime value="39" />
+			<Category value="2" />
+			<Skill value="22" />
+			
+			<ImageFile value="Anim de morts III.png" />
+			
+			<Requisite>
+				<Material Type="21" Amount="10" />
+			</Requisite>
+		</Item>
+		
+		<Item id="192">
+			<Name value="Anim de morts IV" />
+			<Description value=" " />
+			<ManufacturingTime value="39" />
+			<Category value="2" />
+			<Skill value="22" />
+			
+			<ImageFile value="Anim de morts IV.png" />
+			
+			<Requisite>
+				<Material Type="21" Amount="10" />
+			</Requisite>
+		</Item>
+		
+		<Item id="193">
+			<Name value="Golem escavateur" />
+			<Description value="Invoque un golem qui extrait des minéraux et vous les ramène." />
+			<ManufacturingTime value="21" />
+			<Category value="2" />
+			<Skill value="24" />
+			
+			<ImageFile value="Golem escavateur.png" />
+			
+			<Requisite>
+				<Material Type="18" Amount="20" />
+			</Requisite>
+		</Item>
+		
+		<Item id="194">
+			<Name value="Soldat" />
+			<Description value=" " />
+			<ManufacturingTime value="16" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Soldat imperial.png" />
+		</Item>
+		
+		<Item id="195">
+			<Name value="Cavalier" />
+			<Description value=" " />
+			<ManufacturingTime value="25" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Cavalier imperial.png" />
+		</Item>
+		
+		<Item id="196">
+			<Name value="Chevalier" />
+			<Description value=" " />
+			<ManufacturingTime value="33" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Chevalier imperial.png" />
+		</Item>
+		
+		<Item id="197">
+			<Name value="Fusilier" />
+			<Description value=" " />
+			<ManufacturingTime value="25" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Fusilier imperial.png" />
+		</Item>
+		
+		<Item id="198">
+			<Name value="Milicien" />
+			<Description value="Engage un milicien qui agit selon ses méthodes." />
+			<ManufacturingTime value="16" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Milicien.png" />
+		</Item>
+		
+		<Item id="199">
+			<Name value="Dragon doré" />
+			<Description value="Monture de sa majesté." />
+			<ManufacturingTime value="100" />
+			<Category value="11" />
+			<Skill value="27" />
+			
+			<ImageFile value="Dragon dore.png" />
+			
+			<Requisite>
+				<Material Type="7" Amount="20" />
+				<Material Type="15" Amount="4" />
+				<Material Type="25" Amount="20" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Vitesse" Value="2.5" />
+			</Bonus>
+		</Item>
+		
+		<Item id="200">
+			<Name value="Impôt" />
+			<Description value="Prélève 10% de l'argent de chaque citoyen." />
+			<ManufacturingTime value="250" />
+			<Category value="2" />
+			<Skill value="1" />
+			
+			<ImageFile value="Impot.png" />
+		</Item>
+		
+		<Item id="201">
+			<Name value="Poignard mortel" />
+			<Description value="Arme de contact légère." />
+			<ManufacturingTime value="5" />
+			<Category value="1" />
+			<Skill value="7" />
+			
+			<ImageFile value="Poignard mortel.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="4" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="4" />
+			</Bonus>
+		</Item>
+		
+		<Item id="202">
+			<Name value="Poison mortel" />
+			<Description value="Vous fait perdre progressivement des points de vie." />
+			<ManufacturingTime value="5" />
+			<Category value="1" />
+			<Skill value="7" />
+			
+			<ImageFile value="Poison mortel.png" />
+		</Item>
+		
+		<Item id="203">
+			<Name value="Conv Feu majeur" />
+			<Description value="Invoque un puissant élémental incendiaire." />
+			<ManufacturingTime value="117" />
+			<Category value="2" />
+			<Skill value="21" />
+			
+			<ImageFile value="Conv Feu majeur.png" />
+			
+			<Requisite>
+				<Material Type="22" Amount="20" />
+			</Requisite>
+		</Item>
+		
+		<Item id="204">
+			<Name value="Zone de mort" />
+			<Description value="Empoisonne tout le monde." />
+			<ManufacturingTime value="117" />
+			<Category value="2" />
+			<Skill value="22" />
+			
+			<ImageFile value="Zone de mort.png" />
+			
+			<Requisite>
+				<Material Type="22" Amount="20" />
+			</Requisite>
+		</Item>
+		
+		<Item id="205">
+			<Name value="Epées de glace" />
+			<Description value="Arme de contact standard." />
+			<ManufacturingTime value="60" />
+			<Category value="1" />
+			<Skill value="8" />
+			
+			<ImageFile value="Epee de glace.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="14" />
+				<Material Type="18" Amount="18" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="12" />
+			</Bonus>
+		</Item>
+		
+		<Item id="206">
+			<Name value="Gilet de protection" />
+			<Description value="Armure légère renforcée." />
+			<ManufacturingTime value="43" />
+			<Category value="3" />
+			<Skill value="16" />
+			
+			<ImageFile value="Gilet de protection.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="10" />
+				<Material Type="16" Amount="4" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="6" />
+				<Caracteristique Type="Armure" Value="3" />
+			</Bonus>
+		</Item>
+		
+		<Item id="207">
+			<Name value="Reservoir de sang" />
+			<Description value="Accroit vos points de vie pendant longtemps." />
+			<ManufacturingTime value="23" />
+			<Category value="2" />
+			<Skill value="26" />
+			
+			<ImageFile value="Reservoir de sang.png" />
+			
+			<Requisite>
+				<Material Type="6" Amount="20" />
+				<Material Type="19" Amount="1" />
+			</Requisite>
+		</Item>
+		
+		<Item id="208">
+			<Name value="Arc à 3 cordes" />
+			<Description value="Arme de tir longue portée en rafale." />
+			<ManufacturingTime value="11" />
+			<Category value="2" />
+			<Skill value="13" />
+			
+			<ImageFile value="Arc a 3 cordes.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="15" />
+				<Material Type="17" Amount="2" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="10" />
+				<Caracteristique Type="Portee" Value="160" />
+			</Bonus>
+		</Item>
+		
+		<Item id="209">
+			<Name value="Arbalète à répétition" />
+			<Description value="Arme de tir très lourde à cadence rapide." />
+			<ManufacturingTime value="20" />
+			<Category value="2" />
+			<Skill value="14" />
+			
+			<ImageFile value="Arbalete a repetition.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="15" />
+				<Material Type="17" Amount="4" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="14" />
+				<Caracteristique Type="Portee" Value="160" />
+			</Bonus>
+		</Item>
+		
+		<Item id="210">
+			<Name value="Masse de feu" />
+			<Description value="Arme de contact lourde enflammée." />
+			<ManufacturingTime value="46" />
+			<Category value="1" />
+			<Skill value="9" />
+			
+			<ImageFile value="Masse de feu.png" />
+			
+			<Requisite>
+				<Material Type="15" Amount="12" />
+				<Material Type="18" Amount="16" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="10" />
+			</Bonus>
+		</Item>
+		
+		<Item id="211">
+			<Name value="Broyeuse" />
+			<Description value="Arme de contact très très lourde." />
+			<ManufacturingTime value="113" />
+			<Category value="2" />
+			<Skill value="11" />
+			
+			<ImageFile value="Broyeuse.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="16" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="40" />
+				<Caracteristique Type="Defense" Value="-20" />
+			</Bonus>
+		</Item>
+		
+		<Item id="212">
+			<Name value="RazorBack" />
+			<Description value="Hache de jet." />
+			<ManufacturingTime value="106" />
+			<Category value="2" />
+			<Skill value="12" />
+			
+			<ImageFile value="RazorBack.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="15" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="24" />
+				<Caracteristique Type="Portee" Value="64" />
+			</Bonus>
+		</Item>
+		
+		<Item id="213">
+			<Name value="Bâton de mage" />
+			<Description value="Hache de jet." />
+			<ManufacturingTime value="50" />
+			<Category value="2" />
+			<Skill value="10" />
+			
+			<ImageFile value="Baton de mage.png" />
+			
+			<Requisite>
+				<Material Type="18" Amount="12" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="10" />
+			</Bonus>
+		</Item>
+		
+		<Item id="214">
+			<Name value="Coiffe d'officier" />
+			<Description value="Chapeau de gradé militaire." />
+			<ManufacturingTime value="55" />
+			<Category value="4" />
+			<Skill value="2" />
+			
+			<ImageFile value="Coiffe d officier.png" />
+			
+			<Requisite>
+				<Material Type="5" Amount="9" />
+				<Material Type="25" Amount="1" />
+			</Requisite>
+		</Item>
+		
+		<Item id="215">
+			<Name value="Chapeau de mage" />
+			<Description value="Puissant chapeau de lanceur de sorts." />
+			<ManufacturingTime value="35" />
+			<Category value="4" />
+			<Skill value="20" />
+			
+			<ImageFile value="Chapeau de mage.png" />
+			
+			<Requisite>
+				<Material Type="5" Amount="18" />
+			</Requisite>
+		</Item>
+		
+		<Item id="216">
+			<Name value="Gants de tirailleur" />
+			<Description value="Améliore l'utilisation d'armes à feu." />
+			<ManufacturingTime value="16" />
+			<Category value="9" />
+			<Skill value="4" />
+			
+			<ImageFile value="Gants de tirailleur.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="6" />
+			</Requisite>
+		</Item>
+		
+		<Item id="217">
+			<Name value="Catalyseur" />
+			<Description value="Multiplie vos projectiles." />
+			<ManufacturingTime value="60" />
+			<Category value="9" />
+			<Skill value="4" />
+			
+			<ImageFile value="Catalyseur.png" />
+			
+			<Requisite>
+				<Material Type="25" Amount="18" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="2" />
+			</Bonus>
+		</Item>
+		
+		<Item id="218">
+			<Name value="Chaussures ailées" />
+			<Description value="Permet de voler." />
+			<ManufacturingTime value="58" />
+			<Category value="5" />
+			<Skill value="3" />
+			
+			<ImageFile value="Chaussures ailees.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="20" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Vitesse" Value="1" />
+			</Bonus>
+		</Item>
+		
+		<Item id="219">
+			<Name value="Bottes d'hiver" />
+			<Description value="Protège du froid." />
+			<ManufacturingTime value="23" />
+			<Category value="5" />
+			<Skill value="3" />
+			
+			<ImageFile value="Bottes d hiver.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="8" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Vitesse" Value="1" />
+			</Bonus>
+		</Item>
+		
+		<Item id="220">
+			<Name value="Capitaine" />
+			<Description value=" " />
+			<ManufacturingTime value="66" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Capitaine imperial.png" />
+		</Item>
+		
+		<Item id="221">
+			<Name value="Général" />
+			<Description value=" " />
+			<ManufacturingTime value="166" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="General imperial.png" />
+		</Item>
+		
+		<Item id="222">
+			<Name value="Vouge" />
+			<Description value="Arme de contact lourde." />
+			<ManufacturingTime value="46" />
+			<Category value="2" />
+			<Skill value="10" />
+			
+			<ImageFile value="Vouge.png" />
+			
+			<Requisite>
+				<Material Type="3" Amount="16" />
+				<Material Type="15" Amount="16" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="20" />
+				<Caracteristique Type="Portee" Value="16" />
+				<Caracteristique Type="Defense" Value="2" />
+			</Bonus>
+		</Item>
+		
+		<Item id="223">
+			<Name value="Armure de cristal" />
+			<Description value="Armure moyenne magique." />
+			<ManufacturingTime value="97" />
+			<Category value="3" />
+			<Skill value="17" />
+			
+			<ImageFile value="Armure de cristal.png" />
+			
+			<Requisite>
+				<Material Type="16" Amount="20" />
+				<Material Type="18" Amount="20" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="3" />
+				<Caracteristique Type="Armure" Value="3" />
+			</Bonus>
+		</Item>
+		
+		<Item id="224">
+			<Name value="Armure de combat" />
+			<Description value="Armure lourde et lente." />
+			<ManufacturingTime value="113" />
+			<Category value="11" />
+			<Skill value="18" />
+			
+			<ImageFile value="Armure de combat.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="20" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Armure" Value="8" />
+				<Caracteristique Type="Vitesse" Value="-1" />
+			</Bonus>
+		</Item>
+		
+		<Item id="225">
+			<Name value="Ecu" />
+			<Description value="Armure lourde et lente." />
+			<ManufacturingTime value="53" />
+			<Category value="1" />
+			<Skill value="19" />
+			
+			<ImageFile value="Ecu.png" />
+			
+			<Requisite>
+				<Material Type="17" Amount="8" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Defense" Value="20" />
+			</Bonus>
+		</Item>
+		
+		<Item id="226">
+			<Name value="Cuirassier impérial" />
+			<Description value=" " />
+			<ManufacturingTime value="66" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Cuirassier imperial.png" />
+		</Item>
+		
+		<Item id="227">
+			<Name value="Conv Arc ange" />
+			<Description value="Invoque un ange doté de pouvoirs de resurrection." />
+			<ManufacturingTime value="78" />
+			<Category value="2" />
+			<Skill value="23" />
+			
+			<ImageFile value="Conv Arc Ange.png" />
+			
+			<Requisite>
+				<Material Type="22" Amount="20" />
+			</Requisite>
+		</Item>
+		
+		<Item id="228">
+			<Name value="Apprenti artisan" />
+			<Description value="Engage un apprenti qui vous livre divers matériaux." />
+			<ManufacturingTime value="51" />
+			<Category value="2" />
+			<Skill value="25" />
+			
+			<ImageFile value="Apprenti artisan.png" />
+		</Item>
+		
+		<Item id="229">
+			<Name value="Tempête" />
+			<Description value="Déclenche une tempête qui dévaste tout." />
+			<ManufacturingTime value="117" />
+			<Category value="2" />
+			<Skill value="28" />
+			
+			<ImageFile value="Tempete.png" />
+			
+			<Requisite>
+				<Material Type="22" Amount="20" />
+			</Requisite>
+		</Item>
+		
+		<Item id="230">
+			<Name value="Elixir de dextérité" />
+			<Description value="Accroit votre dextérité d'attaque temporairement." />
+			<ManufacturingTime value="14" />
+			<Category value="2" />
+			<Skill value="26" />
+			
+			<ImageFile value="Elixir de dexterite.png" />
+			
+			<Requisite>
+				<Material Type="1" Amount="10" />
+				<Material Type="18" Amount="12" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Attaque" Value="10" />
+			</Bonus>
+		</Item>
+		
+		<Item id="231">
+			<Name value="Sacoche" />
+			<Description value="Permet de transporter plus de ressources." />
+			<ManufacturingTime value="16" />
+			<Category value="6" />
+			<Skill value="6" />
+			
+			<ImageFile value="Sacoche.png" />
+			
+			<Requisite>
+				<Material Type="12" Amount="5" />
+			</Requisite>
+		</Item>
+		
+		<Item id="232">
+			<Name value="Dragon bleu" />
+			<Description value="Très grande monture de sa majesté." />
+			<ManufacturingTime value="200" />
+			<Category value="11" />
+			<Skill value="27" />
+			
+			<ImageFile value="Dragon bleu.png" />
+			
+			<Requisite>
+				<Material Type="7" Amount="40" />
+				<Material Type="15" Amount="8" />
+				<Material Type="25" Amount="40" />
+			</Requisite>
+			
+			<Bonus>
+				<Caracteristique Type="Vitesse" Value="2.5" />
+			</Bonus>
+		</Item>
+		
+	</Items>
+</VendettaConfig>

@@ -1,0 +1,2 @@
+Les instructions de compilation actuelles pour Fedora et Windows se trouvent
+dans README.md. Le projet utilise désormais CMake, C++17 et SFML 2.6.

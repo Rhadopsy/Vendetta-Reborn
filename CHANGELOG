@@ -1,0 +1,264 @@
+//*	Game (RPG, management and strategy)
+//*	Copyright (C) 2010  Santos Quentin
+//*	
+//*	This program is free software: you can redistribute it and/or modify
+//*	it under the terms of the GNU General Public License as published by
+//*	the Free Software Foundation, either version 3 of the License, or
+//*	(at your option) any later version.
+//*	
+//*	This program is distributed in the hope that it will be useful,
+//*	but WITHOUT ANY WARRANTY; without even the implied warranty of
+//*	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//*	GNU General Public License for more details.
+//*	
+//*	You should have received a copy of the GNU General Public License
+//*	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//*	
+//*	
+0.0.08.3:
+- Ajout des fichiers "todo" et "changelog" au projet
+- Correction du système d'ajout de ressource dans la classe Personnage
+
+0.0.08.4::
+- Correction d'un bug dans la construction des bâtiments (non vérification de la quantité de ressource déjà apportée)
+- Prise en compte le décalage du sprite Personnage par rapport aux coordonnées (survol de la souris)
+- Correction d'une inversion de propriétés dans la méthode virtuelle Catch de la classe Etre
+- Suppression de la surchage de cette méthode par la classe héritée Batiment
+
+0.0.08.5:
+- Sauvegarde mQuantitesRessourcesConstruction de Batiment
+
+0.0.08.6 (30/08/2009):
+- Infobulle de bâtiment: les ressources nécessaires restent affichées tant qu'elle n'ont pas été intégralement fournie (et non pas affichage à 0)
+- Précision au centième pour les ressources (possibilité de moficiation ultérieure)
+
+0.0.08.7 (30/08/2009):
+- Mise en place de la sauvegarde des ressources des Personnages
+- Ajustement de la précision d'affichage des ressources
+- Amélioration de la sauvegarde des batiments (liste, avancements, objets)
+
+0.0.08.8 (31/08/2009):
+- Correction d'un léger bug lors du chargement des ressources des personnages
+
+0.0.09.0 (31/08/2009):
+- Sauvegarde de l'interface (emplacement des fenêtres)
+
+0.0.09.1 (31/08/2009):
+- Correction de la casse du répertoire Donnees/Images/Ressources
+- Ajour d'un fichier en vue d'améliorer la compilation
+
+0.0.10.0 (02/09/2009):
+- Infobulle sur les objets, les ressources et les éléments de la sous-fenêtre de bâtiment
+
+0.1.00.0 (02/09/2009):
+- Publication de la version de démonstration 0.1
+
+0.1.00.1 (05/12/2009):
+- Correction de quelques bugs mineurs
+- Eclaircicement du code du gestionnaire
+
+0.1.00.2 (06/12/2009):
+- Création d'une classe Vector
+- Adaptation du code à la classe Vector
+- Simplification du code pour le chargement de l'inventaire
+
+0.1.00.3 (06/12/2009):
+- Mise en place du système de races
+- Création de la sous-fenêtre d'équipement
+- Mise en place d'un drag général vers l'équipement
+9100-9200 lignes
+
+0.1.01.0 (08/12/2009):
+- Délégation du chargement de la configuration des fichiers XML (Manager::ChargeXml)
+- Changement de nom: Manager devient Configurateur et GestionnaireDonnes devient Configuration, pour plus de cohérence
+- Suppression de CalculeDistance, utilisée dans Monde::ChercheTerRessource et simplification du test d'inégalité (par monotonie de sqrt)
+- Suppression de CastErreur: la configuration de std::cerr sera amplement suffisante
+- Simplficiations possibles de certaines surchages de ChargeXmlValeur
+- Suppression de commentaires inutiles
+- Simplification de Batiment::EnleveElementListeTravail et de fonctions similaires par l'utilisation d'un pointeur sur pointeur
+- Suppression de nombreux commentaires
+8403 lignes
+
+0.1.01.1 (11/12/2009):
+- Correction d'un problème d'affichage de la jauge de vie des bâtiments
+- Suppression de transtypages dynamiques (sf::Uint8 et float)
+
+0.1.01.2 (12/12/2009):
+- Affichage de l'avancement du travail dans les infobulles
+- Modification du système de gestion des sprites par adressage absolu et copie
+- Si un sprite n'existe pas, il est remplacé par un sprite blanc
+- Suppression de méthodes inutiles
+- Fusion de Batiment::Construit avec Batiment::Travaille
+8254 lignes
+- Création systématique des listes d'intialisation
+8305 lignes
+
+0.1.02.0 (26/12/2009):
+- Correction d'un problème avec le changement de page dans sfInventaire et sfBatiment
+- Destructeur de mMonde remis en place
+- Correction d'une erreur de sauvegarde de la liste de travail pour les quantités de ressources (type entier au lieu de double)
+8283 lignes
+- Correction d'un bogue provoquand la disparition d'objets dans l'inventaire
+- Modification de la structure en boucles-captures (rechercher «if (capture)» ou «if (!capture)»)
+- Ajout d'échanges d'objets avec l'équipement
+- Ajout d'une illustration pour l'équipement
+- Ajout des noms des ressources nécessaires dans la sous-fenêtre de bâtiment
+
+0.1.02.1 (27/12/2009):
+- Suppression de l'objet lors du dépôt dans un bâtiment
+- Déplacement de la configuration de l'illustration pour l'équipement dans le fichier des races
+- Modification du titre de la fenêtre (plus adapté)
+8254 lignes
+- Le format des fichiers XML est rendu plus flexible (possibilité de créer une balise fille ou un argument pour définir une valeur)
+- Centrage du titre de la sous-fenêtre d'équipement
+- Suppression de ChargeXmlParametre (remplacée par ChargeXmlValeur)
+8239 lignes
+- Mise à jour des numéros de version des fichiers XML
+- Suppression des dernières occurences de Query* hors de fonctions.cpp
+8232 lignes
+
+0.1.03.0 (29/12/2009):
+- Perte des modifications de la veille (dont changelog) et les fichiers sfequipement.hpp et sfequipement.cpp
+- Remise en place de la sous-fenetre d'equipement, avec illustration et drag'n drop
+- Remise en place du système de compétences
+8305 lignes
+- Délégation des captures d'évènements pour la classe Interface
+- Révision de la capture de touches par la classe Champ
+8194 lignes
+- Correction d'un bug: apparition d'une page supplémentaire lorsque page pleine
+- Simplification de la redimension du fond des Texte's
+8172 lignes
+
+0.1.03.1 (30/12/2009):
+- Prise en compte des caractères spéciaux pour la parole
+- Simplification des système de «capture»
+8169 lignes
+
+0.1.03.2 (30/12/2009):
+- Mise en place du système de compétences
+8286 lignes
+
+0.1.04.0 (30/12/2009):
+- Refonte au niveau des paramètres (const et passages de références plutôt que de copies)
+- Correction d'un bug: non-redimensionnement des sprites de construction de bâtiment (ModuleInterface::Interface)
+- Correction d'un bug: action de la molette dans la sous-fenêtre de bâtiment lors de l'affichage des objets
+- Correction d'un bug: Etre::Sauvegarde non surchargée
+- Correction d'un bug: utilisation du type d'objet au lieu de sa catégorie dans l'équipement
+- Suppression du bouton de SFBatiment lorsque pas d'objet
+8288 lignes
+
+0.1.04.1 (30/12/2009):
+- Pour éviter les arrangements, Dessine devient non-const
+- Passage des Sauvegarde à const (ne doit pas influer sur le déroulement du jeu)
+- Suppression de globales inutiles
+- Simplificiation de Configurateur::ChargeXml
+- Simplficication du main
+- Correction d'une erreur dans Configurateur::GetRandomRace
+8184 lignes
+
+0.1.05.0 (31/12/2009):
+- Délégation de la configuration aux sous-fenêtres
+- Réorganisation du chargement et de la configuration
+- La sous-fenêtre de bâtiment charge seulement un nouveau bâtiment
+8143 lignes
+
+0.1.06.0 (01/01/2010):
+- Réécriture d'une grande partie du système de chargement, sauveagrde et configuration
+7988 lignes
+
+0.1.07.0 (02/01/2010):
+- Gestion de la redimensionnement de la fenêtre
+- Délégation de l'interface à... ModuleInterface::Interface
+7828 lignes
+
+0.1.07.1 (02/01/2010):
+- Suppression des inclusions de data.hpp inutiles
+- Revue de certaines fonctions de GS::Monde, ModuleInterface::Interface et GS::Personnage
+7820 lignes
+
+0.1.07.2 (04/01/2010):
+- Modification du nom de certains fichiers pour clarté
+
+0.1.08.0 (04/01/2010):
+- Ajout des fichiers de LICENCE: Vendetta est officiellement un logiciel libre !
+
+0.1.08.1 (09/01/2010):
+- Correction d'un bug: disparition du curseur lors de la sélection d'un type de bâtiment
+- Correction d'un bug: impossibilité de construire un bâtiment
+- Normalisation du chargement des informations compactes avec stringstream
+
+0.1.08.2 (10/01/2010):
+- Correction d'un bug: chargement des terrains erronés (suppression d'un string)
+- Normalisation des clear() et str("")
+- Le reste du fichier config.xml passe dans interface.xml (plus approprié)
+7745 lignes
+
+0.1.09.0 (17/02/2010):
+- Correction d'un bug: mauvais cadrage des terrains pour le test de constructibilité
+
+0.1.10.0 (28/03/2010):
+- Suppression de l'ancien système de cibles
+- Mise en place des listes d'actions
+- Créations d'IAs simples
+- Correction des emplacements des librairies
+
+0.1.10.1 (29/03/2010):
+- Correction d'include pour la compilation (luabind notamment)
+- Priorité du clic de souris
+
+0.1.10.2 (30/03/2010):
+- Sauvegarde de la liste d'actions
+- Remise en place du batiment actuel
+- Suppression de la masse transportée (non en place)
+8506 lignes
+
+0.1.11.0 (08/04/2010):
+- Passage au Python comme langage de script
+
+0.1.11.1 (08/04/2010):
+- Simplification du constructeur des GS::Etre's (pas de paramètre)
+- GS::Monde n'est plus un GS::Etre
+- Maintenir Shift pour enchaîner les actions
+8668 lignes
+
+0.1.11.2 (09/04/2010):
+- Préparation dy système de combat
+- Simplification du système d'identifiants
+- Correction d'un bug: parcours des terrains dans Monde::GetPeutPlacerRessource
+
+0.1.12.0 (12/04/2010):
+- Mise en place des fonctions de base pour les bots
+- Suppression d'une rustine
+- Création de scripts de combat simples
+8655 lignes
+
+0.1.12.1 (13/04/2010):
+- Correction d'un bug: vidage de la chaîne d'affichage
+
+0.1.13.0 (05/06/2010):
+- Séparation de la gestion du curseur de la classe Interface
+- Correction d'un bug: parfois lors du chargement de l'image d'attente
+
+0.1.13.1 (09/06/2010):
+- Ajout d'une ébauche de menu
+- Modification de ModuleInterface::SFenetre pour gérer l'affichage pour des dimensions quelconques
+8802 lignes (dont licence)
+7846 lignes (sans licence)
+
+0.1.14.0 (juillet 2010):
+- Début de la traduction
+- Mise à jour de TinyXml
+- Mise au propre de diverses choses
+- Suppression (temporaire ?) du thread
+7426 lignes
+
+0.1.14.1 (01/08/2010):
+- On continue la traduction
+- ::GS devient ::GameSystem
+- Création du namespace Types
+7400 lignes
+
+0.1.14.2 (01/08/2010):
+- Correction d'un bug lors du chargement des CompactString
+- Séparation de l'inventaire du personnage et de l'affichage
+7289 lignes

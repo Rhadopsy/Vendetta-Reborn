@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<VendettaConfig>
+	<Images>
+		<Image id="1" File="ressources.png" />
+		<Image id="2" File="perso.png" />
+		<Image id="3" File="terrains.png" />
+		<Image id="4" File="Interface/buttons.png" />
+		<Image id="5" File="Interface/curseurs.png" />
+		<Image id="6" File="Interface/bulle.png" />
+		<Image id="7" File="Buildings/construction.png" />
+		<Image id="8" File="Buildings/debutconstruction.png" />
+		<Image id="9" File="Interface/sfenetre.png" />
+		<Image id="10" File="Interface/arrows.png" />
+		<Image id="11" File="Interface/grilleinventaire.png" />
+		<Image id="12" File="Interface/emplacement_equipement.png" />
+		<Image id="13" File="Interface/illustration_equipement.png" />
+		<Image id="14" File="Interface/selection.png" />
+		<Image id="15" File="Interface/cible.png" />
+	</Images>
+</VendettaConfig>

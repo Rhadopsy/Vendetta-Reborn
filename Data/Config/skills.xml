@@ -1,0 +1,59 @@
+<?xml version="2.0" encoding="utf-8"?>
+<VendettaConfig>
+	<Skills>
+		<Skill id="1" Name="Sans" />
+		<Skill id="2" Name="Vêtements" />
+		<Skill id="3" Name="Chaussures" />
+		<Skill id="4" Name="Gants" />
+		<Skill id="5" Name="Bijoux" />
+		<Skill id="6" Name="Outils" />
+		<Skill id="7" Name="Armes légères" />
+		<Skill id="8" Name="Armes tranchantes" />
+		<Skill id="9" Name="Armes contondantes" />
+		<Skill id="10" Name="Armes d'hast" />
+		<Skill id="11" Name="Armes lourdes" />
+		<Skill id="12" Name="Haches" />
+		<Skill id="13" Name="Arcs" />
+		<Skill id="14" Name="Armes de tir" />
+		<Skill id="15" Name="Armes à feu" />
+		<Skill id="16" Name="Armures légères" />
+		<Skill id="17" Name="Armures moyennes" />
+		<Skill id="18" Name="Armures lourdes" />
+		<Skill id="19" Name="Boucliers" />
+		<Skill id="20" Name="Vêtements magiques" />
+		<Skill id="21" Name="Magie pyrotechnique" />
+		<Skill id="22" Name="Magie nécromantique" />
+		<Skill id="23" Name="Magie rédemptrice" />
+		<Skill id="24" Name="Magie tectonique" />
+		<Skill id="25" Name="Recrutement" />
+		<Skill id="26" Name="Elixirs magiques" />
+		<Skill id="27" Name="Equitation" />
+		<Skill id="28" Name="Magie répressive" />
+		<Skill id="29" Name="Ramasser des herbes" />
+		<Skill id="30" Name="Cueillir des pommes" />
+		<Skill id="31" Name="Couper du bois" />
+		<Skill id="32" Name="Scier des planches" />
+		<Skill id="33" Name="Tondre des moutons" />
+		<Skill id="34" Name="Elever du bÃ©tail" />
+		<Skill id="35" Name="DÃ©couper de la viande" />
+		<Skill id="36" Name="Cultiver du blÃ©" />
+		<Skill id="37" Name="Cuire du pain" />
+		<Skill id="38" Name="Cultiver de l'orge" />
+		<Skill id="39" Name="Brasser de la biÃšre" />
+		<Skill id="40" Name="Tanner du cuir" />
+		<Skill id="41" Name="Extraire de la pierre" />
+		<Skill id="42" Name="Tailler des briques" />
+		<Skill id="43" Name="Extraire du fer" />
+		<Skill id="44" Name="Fondre du fer" />
+		<Skill id="45" Name="Couler de l'acier" />
+		<Skill id="46" Name="Tailler des cristaux" />
+		<Skill id="47" Name="Concocter des fioles" />
+		<Skill id="48" Name="Concocter de l'Ã©ther" />
+		<Skill id="49" Name="Fabriquer parchemin" />
+		<Skill id="50" Name="Fabriquer papier" />
+		<Skill id="51" Name="Presser du cidre" />
+		<Skill id="52" Name="Prospecter de l'or" />
+		<Skill id="53" Name="Fondre de l'or" />
+		<Skill id="54" Name="Exploiter du soufre" />
+	</Skills>
+</VendettaConfig>
