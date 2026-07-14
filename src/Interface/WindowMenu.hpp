@@ -25,7 +25,6 @@ namespace InterfaceModule
 	class WinMenu : public Window
 	{
 		public:
-			using Window::Save;
 			WinMenu();
 			
 			TiXmlElement* Save() const;

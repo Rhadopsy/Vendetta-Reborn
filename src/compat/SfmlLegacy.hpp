@@ -19,7 +19,7 @@ class Image
 public:
     Image() : mState(std::make_shared<State>()) {}
 
-    Image(unsigned int width, unsigned int height, const sf::Color& color = sf::Color::Black)
+    Image(unsigned int width, unsigned int height, const sf::Color& color = sf::Color::Black) : Image()
     {
         create(width, height, color);
     }
