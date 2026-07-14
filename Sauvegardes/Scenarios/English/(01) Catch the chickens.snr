@@ -1,0 +1,43 @@
+Nombre_Fiefs=3
+Nombre_Ressources=16
+Nombre_Persos=40
+Monde_Largeur=100
+Monde_Hauteur=75
+Choix_terrain=1
+Epoque=1
+
+DEBUT
+
+Fief(1)_Peuple=1
+Fief(1)_Equipe=1
+Fief(2)_Peuple=5
+Fief(2)_Equipe=1
+Fief(3)_Peuple=2
+Fief(3)_Equipe=2
+Fief(1)_Position=800,600
+Fiefs(2-3)_Vie=0
+
+Personnages(1-6)_Fief=1
+Personnages(1-6)_Objet=8
+#La ville.
+Maisons(1)_Type=1
+Maisons(2)_Type=2
+Maisons(3)_Type=3
+Maisons(4)_Type=4
+Maisons(5)_Type=5
+Maisons(6)_Type=6
+Maisons(1-6)_Stock=85
+
+#Les villageois.
+Personnages(1-6)_DansUnChateau=1
+
+#Grand-père.
+Personnage(7)_Fief=2
+Personnage(7)_Position=928,728
+Personnage(7)_Grade=5
+
+#Les poules de grand-père.
+Personnages(8-40)_Fief=3
+Personnages(8-40)_Grade=2
+
+FIN

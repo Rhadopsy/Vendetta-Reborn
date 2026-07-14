@@ -1,0 +1,6 @@
+Sub Jouer()
+        If Me.Inactif Then
+		Me.Deplacement_Aleatoire
+                Me.Dire_Commentaires = "Je vais à X=" & Me.DirectionX & ", Y= " & Me.DirectionY 
+        End If
+End Sub

@@ -1,0 +1,261 @@
+Sub Commencer()
+	Persos(1).Objet_Inventaire_Vider_Tout
+        Persos(1).Objet_Equipes_Vider_Tout
+	Persos(1).Energie = Persos(1).MaxEnergie * 0.45
+	Persos(2).IA = False
+	Jeu.VictoireStandard = False
+	Interface.AfficherBoutonsConstruire = True
+	Interface.AfficherBoutonsInfos = True
+	'Interface.AfficherBarresStatut = True
+	Interface.Fermer_Toutes_les_fenetres
+End Sub
+
+Sub Jouer()
+	Interface.ForcerCurseurSurBoutonConstruire = False
+	If Persos(1).Action = 300 then
+		Persos(2).Aller_A Persos(1).PositionX + Persos(1).Largeur, Persos(1).PositionY
+		Persos(2).Definir_Commentaires = ""
+		If Langue.Definir_Langue = 0 then
+			Persos(2).Definir_Commentaires = "LAISSEZ cet animal tranquille !!!#Ce n'est pas l'initation au combat !!!"
+		Else
+			Persos(2).Definir_Commentaires = "LEAVE this animal alone !!!#This isn't the battle tutorial !!!"
+		End If
+	ElseIf Persos(1).Vivant then
+		If Persos(1).Definir_Ressources(8) >= 1 Or Jeu.Definir_Victoire then
+			If Persos(1).Energie < Persos(1).MaxEnergie * 0.5 then
+				If Interface.Fenetres_Visible(1) Then
+					If Interface.Definir_BoutonMangerVisible(3) Then
+						Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonMangerPositionX(3) + 13, Interface.Definir_BoutonMangerPositionY(3) + 14
+					End If
+				Else
+					Interface.Affichage_PleinEcran = False
+					Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonInfoPositionX(1) + 13, Interface.Definir_BoutonInfoPositionY(1) + 14
+				End If
+				If Langue.Definir_Langue = 0 then
+					Persos(2).Definir_Commentaires = "Des ressources comme le pain peuvent être mangés.#Vous avez un bouton MANGER dans la FENETRE RESSOURCES.#(Cliquez sur l'icone en haut à droite)#Cliquez dessus pour récupérer votre énergie#et ramener votre barre d'état jusqu'au vert."
+					Interface.Objectifs_Ajouter "- Manger un morceau de pain."
+				Else
+					Persos(2).Definir_Commentaires = "Resources like bread can be eaten.#There is a EAT button in the RESOURCES WINDOW.#(Click on the up right icon)#Clik on to restore your stamina#and get up your status bar to green color."
+					Interface.Objectifs_Ajouter "- Eat bread."
+				End If
+			Else
+				Persos(2).Definir_Commentaires = ""
+				Select Case Persos(1).FragsPersos
+				Case 0:
+					Persos(2).Objet_Equipes_Vider_Tout
+					If Langue.Definir_Langue = 0 then
+						Persos(2).Definir_Commentaires = "Bien, vous avez récupéré votre énergie.#Faîtes quelques parties pour découvrir#l'utilité de chaque ressource.#Cette partie d'initiation se termine ici.#Bonne continuation " & Persos(1).Nom & "."
+					Else
+						Persos(2).Definir_Commentaires = "Well, you've retored your satamina.#Play several games to learn#the use of all resources.#This tutorial is finished.#Good bye " & Persos(1).Nom & "."
+					End if
+				Case 1:
+					If Langue.Definir_Langue = 0 then
+						Persos(2).Definir_Commentaires = "Bien, vous avez récupéré votre énergie.#Faîtes quelques parties pour découvrir#l'utilité de chaque ressource.#Cette partie d'initiation se termine ici.#Mais vous avez tué " & Persos(1).FragsPersos & " animal innocent.#Je ne vous salue pas " & Persos(1).Nom & "."
+					Else
+						Persos(2).Definir_Commentaires = "Well, you've retored your satamina.#Play several games to learn#the use of all resources.#This tutorial is finished.#But you killed " & Persos(1).FragsPersos & " innocent animal.#I don't salute you " & Persos(1).Nom & "."
+					End if
+
+				Case Else:
+					If Langue.Definir_Langue = 0 then
+						Persos(2).Definir_Commentaires = "Bien, vous avez récupéré votre énergie.#Faîtes quelques parties pour découvrir#l'utilité de chaque ressource.#Cette partie d'initiation se termine ici.#Mais vous avez tué " & Persos(1).FragsPersos & " animaux innocents.#Je ne vous salue pas " & Persos(1).Nom & "."
+					Else
+						Persos(2).Definir_Commentaires = "Well, you've retored your satamina.#Play several games to learn#the use of all resources.#This tutorial is finished.#But you killed " & Persos(1).FragsPersos & " innocent animals.#I don't salute you " & Persos(1).Nom & "."
+					End if
+
+				End Select
+				Jeu.Definir_Victoire = True
+				Interface.Objectifs_Ajouter " "
+			End if
+		ElseIf Maisons(1).Construit then
+			If Persos(2).Definir_Ressources(7) > 1 then
+				Persos(2).Aller_A Maisons(1).PositionX + Maisons(1).Largeur * 1 , Maisons(1).PositionY + Maisons(1).Hauteur * 0.5
+			Else
+				Persos(2).Aller_A Maisons(1).PositionX + Maisons(1).Largeur * 1 , Maisons(1).PositionY + Maisons(1).Hauteur * 0.5 + 32
+			End If
+			Select Case Maisons(1).TypeBatiment
+			Case 6:
+				'Le Personnage possède une boulangerie.
+				If Persos(1).Definir_Ressources(7) < 1 and Persos(2).Definir_Ressources(7) > 1 then
+       					Persos(2).Ressources_Prendre 7, 20
+					Persos(2).Ressources_Deposer_Sol
+					If Langue.Definir_Langue = 0 then
+						Interface.Objectifs_Ajouter "- Rammasser le sac de blé."
+					Else
+						Interface.Objectifs_Ajouter "- Pick up wheat bag."
+					End If
+					Persos(2).Aller_A Persos(2).PositionX, Persos(2).PositionY + 32
+					Persos(2).Definir_Commentaires = ""
+					If Langue.Definir_Langue = 0 then
+						Persos(2).Definir_Commentaires = "Voilà un peu de blé pour faire du pain.#Cliquez dessus pour le PRENDRE."
+					Else
+						Persos(2).Definir_Commentaires = "Here some wheat to make bead.#Clic on to TAKE this."
+					End If
+				Elseif Persos(1).Definir_Ressources(7) >= 1 then
+					If Persos(1).Visible or Persos(1).Inactif then
+						Persos(2).Definir_Commentaires = ""
+						If Langue.Definir_Langue = 0 then
+							Persos(2).Definir_Commentaires = "Cliquez sur votre BOULANGERIE pour#commencer la production de pain."
+						Else
+							Persos(2).Definir_Commentaires = "Clic on your BAKER'S SHOP to make bread."
+						End if
+					Else
+						Persos(2).Definir_Commentaires = ""
+						If Langue.Definir_Langue = 0 then
+							Persos(2).Definir_Commentaires = "Vous transformez votre blé en PAIN."
+						Else
+							Persos(2).Definir_Commentaires = "You're changing your wheat into BREAD."
+						End if
+					End if
+					If Langue.Definir_Langue = 0 then
+						Interface.Objectifs_Ajouter "- Fabriquer du pain avec le blé."
+					Else
+						Interface.Objectifs_Ajouter "- Make bread with wheat."
+					End If
+				End if
+			Case 2:
+				'Le personnage possède une scierie.
+				If Langue.Definir_Langue = 0 then
+					Interface.Objectifs_Ajouter "- Fabriquer des planches avec le bois."
+				Else
+					Interface.Objectifs_Ajouter "- Make plank with wood."
+				End If
+				If Persos(1).Definir_Ressources(3) >= 4 then
+					'Si le personnage a assez de planches, il lui conseil de fabriquer une boulangerie.
+					Persos(2).Definir_Commentaires = ""
+					If Langue.Definir_Langue = 0 then
+						Persos(2).Definir_Commentaires = "Parfait, vous avez maintenant assez de planches#pour BATIR une BOULANGERIE. Construisez là."
+					Else
+						Persos(2).Definir_Commentaires = "Well done, you have enough plank#for building a BAKER'S SHOP."
+					End If
+					If Langue.Definir_Langue = 0 then
+						Interface.Objectifs_Ajouter "- Construire une boulangerie."
+					Else
+						Interface.Objectifs_Ajouter "- Build a baker's shop."
+					End If
+					Interface.Affichage_PleinEcran = False
+					Interface.ForcerCurseurSurBoutonConstruire = True
+					Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonConstruirePositionX(7) + 14, Interface.Definir_BoutonConstruirePositionY(7) + 14
+				ElseIf Persos(1).Definir_Ressources(2) < 1 then
+					Persos(2).Definir_Commentaires = ""
+					If Langue.Definir_Langue = 0 then
+						Persos(2).Definir_Commentaires = "Vous avez besoin de plus de BOIS.#Recliquez sur l'arbre."
+					Else
+						Persos(2).Definir_Commentaires = "You're needing more WOOD.#Clic on the tree again."
+					End If
+				Else
+					If Persos(1).Visible then
+						Persos(2).Definir_Commentaires = ""
+						If Langue.Definir_Langue = 0 then
+							Persos(2).Definir_Commentaires = "Cliquez sur votre Scierie pour continuer#à transformer votre bois en PLANCHES."
+						Else
+							Persos(2).Definir_Commentaires = "Clic on your Sawmill for #changing your wood into PLANKS."
+						End If
+					Else
+						Persos(2).Definir_Commentaires = ""
+						If Langue.Definir_Langue = 0 then
+							Persos(2).Definir_Commentaires = "La Scierie tranforme votre bois en PLANCHES.#Attendez d'avoir suffisamment de planches."
+						Else
+							Persos(2).Definir_Commentaires = "The Sawmill change your wood into PLANKS.#Wait for get enough planks."
+						End If
+					End if
+				End if
+			Case Else:
+				Persos(2).Definir_Commentaires = ""
+				If Langue.Definir_Langue = 0 then
+					Persos(2).Definir_Commentaires = "Hé, vous n'avez pas construit la bonne maison !#DEMOLISSEZ là !"
+				Else
+					Persos(2).Definir_Commentaires = "Hey, you don't built the right house !#RAZE it !"
+				End If
+				Interface.Affichage_PleinEcran = False
+				Interface.ForcerCurseurSurBoutonConstruire = True
+				Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonConstruirePositionX(0) + 14, Interface.Definir_BoutonConstruirePositionY(0) + 14
+			End Select
+		ElseIf Maisons(1).Visible then
+			Persos(2).Aller_A Maisons(1).PositionX + Maisons(1).Largeur * 1 , Maisons(1).PositionY + Maisons(1).Hauteur * 0.5
+			If Persos(1).Action <> 6 and Persos(1).Action <> 7 then
+				Persos(2).Definir_Commentaires = ""
+				If Langue.Definir_Langue = 0 then
+					Persos(2).Definir_Commentaires = "Cliquez sur votre maison pour#poursuivre la CONSTRUCTION."
+				Else
+					Persos(2).Definir_Commentaires = "Clic on your house to BUILD it."
+				End If
+			Else
+				Persos(2).Definir_Commentaires = ""
+				If Langue.Definir_Langue = 0 then
+					Persos(2).Definir_Commentaires = "La construction d'une maison prend un certain temps.#Patience."
+				Else
+					Persos(2).Definir_Commentaires = "Building a house take a time. Be patient"
+				End if
+			End if
+		ElseIf Persos(1).Definir_Ressources(3) >= 4 then
+			'Si le personnage a assez de planches, il lui conseil de fabriquer une boulangerie.
+			Persos(2).Definir_Commentaires = ""
+			If Langue.Definir_Langue = 0 then
+				Persos(2).Definir_Commentaires = "Parfait, vous avez maintenant assez de planches pour BATIR#une BOULANGERIE. Construisez là."
+				Interface.Objectifs_Ajouter "- Construire une boulangerie."
+			Else
+				Persos(2).Definir_Commentaires = "Splendid ! You're having enough planks#to BUILD a BAKER'S SHOP."
+				Interface.Objectifs_Ajouter "- Build a baker's shop."
+			End If
+			Interface.Affichage_PleinEcran = False
+			Interface.ForcerCurseurSurBoutonConstruire = True
+			Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonConstruirePositionX(7) + 14, Interface.Definir_BoutonConstruirePositionY(7) + 14
+		ElseIf Persos(1).Definir_Ressources(2) >= 8 then
+			Persos(2).Aller_A 896,600
+			Persos(2).Definir_Commentaires = ""
+			If Langue.Definir_Langue = 0 then
+				Persos(2).Definir_Commentaires = "Bravo, vous avez maintenant assez de bois pour CONSTRUIRE#une maison. Sélectionnez la SCIERIE sur le coté de l'écran#et cliquez quelque part sur le terrain là où vous voulez la placer."
+				Interface.Objectifs_Ajouter "- Construire une scierie."
+			Else
+				Persos(2).Definir_Commentaires = "Well done, you're having enough wood to build a house.#Select the SAWMILL on the side of the screen and#clic on the ground where it is possible."
+				Interface.Objectifs_Ajouter "- Build a sawmill."
+			End If
+			Interface.Affichage_PleinEcran = False
+			Interface.ForcerCurseurSurBoutonConstruire = True
+			Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonConstruirePositionX(3) + 14, Interface.Definir_BoutonConstruirePositionY(3) + 14
+		ElseIf Persos(1).Definir_Ressources(2) > 1 then
+			Persos(2).Aller_A 896,600
+			Persos(2).Definir_Commentaires = ""
+			If Langue.Definir_Langue = 0 then
+				Persos(2).Definir_Commentaires = "Bien, vous commencez à collecter du BOIS."
+				Interface.Objectifs_Ajouter "- Couper du bois."
+			Else
+				Persos(2).Definir_Commentaires = "Good, you are gathering WOOD."
+				Interface.Objectifs_Ajouter "- Gather wood."
+			End If
+		Else
+			If Jeu.Duree > 12 then
+				Persos(2).Aller_A 896,600
+				Persos(2).Definir_Commentaires = ""
+				If Langue.Definir_Langue = 0 then
+					Persos(2).Definir_Commentaires = "Pour commencer, cliquez sur cet ARBRE là."
+					Interface.Objectifs_Ajouter "- Couper du bois."
+				Else
+					Persos(2).Definir_Commentaires = "To start, clic on this TREE."
+					Interface.Objectifs_Ajouter "- Gather wood."
+				End If
+			ElseIf Jeu.Duree > 6 then
+				Persos(2).Definir_Commentaires = ""
+				If Langue.Definir_Langue = 0 then
+					Persos(2).Definir_Commentaires = "Je vais vous apprendre comment utiliser les ressources."
+				Else
+					Persos(2).Definir_Commentaires = "I will teach how to use resources."
+				End If
+        		Else
+				If Langue.Definir_Langue = 0 then
+					Persos(2).Definir_Commentaires = "Bienvenue " & Persos(1).Nom & " dans la première partie d'initation."
+				Else
+					Persos(2).Definir_Commentaires = "Welcome " & Persos(1).Nom & " in the first tutorail.                "
+				End If
+		        End if
+		End If
+	Else
+		Persos(2).Definir_Commentaires = ""
+		If Langue.Definir_Langue = 0 then
+			Persos(2).Definir_Commentaires = "Ce n'était pas la partie d'initation au combat.#Vous avez été mauvais."
+		Else
+			Persos(2).Definir_Commentaires = "It wasn't fighting tutorial.#You were pitiful."
+		End if
+		Jeu.Definir_Defaite = True
+	End If
+End Sub

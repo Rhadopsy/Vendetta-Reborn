@@ -1,0 +1,110 @@
+############################################################################################
+					SOMMAIRE :
+############################################################################################
+
+
+I> F.A.Q : Général.
+	1) C'est quel genre de jeu ?
+	2) Comment Vendetta a été créé ?	
+II> F.A.Q : Aide de jeu.
+	1) Que peut-on faire dans un château ?
+	2) Comment fonctionnent les barres de statuts ?
+	3) Comment utiliser les touches de raccourci pour l'équipement ?
+	4) Comment utiliser au mieux l'équipement pour gagner de l'expérience ?
+	5) Comment changer de personnage en cours de jeu ?
+	6) Quels ordres peut-on donner à une armée sans les sélectionner ?
+
+############################################################################################
+I> F.A.Q : Général.
+############################################################################################
+
+
+1) C'est quel genre de jeu ?
+
+Vendetta est un jeu de rôle, de gestion et de stratégie. En effet, dans ce jeu, vous pouvez jouer un personnage qui devra récolter des ressources pour travailler et gagner de l'argent. De plus, vous pourrez créer des créatures qui obéiront à vos ordres.
+La particularité de ce jeu est que tous les personnages dans le jeu obéissent aux même règles que le joueur et peuvent ainsi faire toutes ces actions et vice-versa. Rien n'empêche le joueur de devenir forgeron et de fournir des armes à d'autres personnages qui vont affronter des donjons. Tout est possible, c'est comme un moteur de jeu de rôle en ligne où tous les humains (même les fermiers) peuvent être des joueurs.
+Le monde est dynamique. Le village dans lequel vous commencez prospère et produit de l'équipement de plus en plus puissant. Votre village peut être détruit vous laissant tout seul ou peut devenir une véritable forteresse où chaque villageois est équipé comme un guerrier/mage.
+Les parties sont très variables. Vous pouvez faire une partie de 5 minutes comme une partie de 2 heures sur des cartes immenses dans lesquelles il faut compter au moins 6 minutes pour se rendre d'un point à un autre.
+--------------------------------------------------------------------------------------------
+
+2) Comment Vendetta a-t-il été créé ?
+
+Vendetta est programmé à 100% avec visual basic 6 en utilisant DirectX. Le moteur fut commencé en mai 2003 à partir de zéro et il a fallut 3 mois de programmation intensive à une personne pour arriver à une version jouable avec l'économie, les objets, l'expérience et les combats.
+La version 1 fut terminée en septembre 2003. (Après au moins 400 heures de programmation et de tests)
+La version 1.1 en novembre 2003 ajoutant les sorts et de nombreux objets. C'est la première version à pouvoir être directement téléchargeable sur Internet.
+--------------------------------------------------------------------------------------------
+
+
+############################################################################################
+II> F.A.Q : Aide de jeu.
+############################################################################################
+
+
+1) Que peut-on faire dans un château ?
+
+- Y vendre vos ressources avec les boutons à droite dans la fenêtre "Ressource".
+- Y acheter des ressources dans la fenêtre "bâtiment".
+- Y vendre vos objets en cliquant droit sur vos objets dans l'inventaire.
+- Y ressusciter quand vous êtes mort. Vous devez y rester un certain temps, la progression est indiquée par une barre de progression au-dessus du château. Plus il y a de morts dans votre fief et plus la résurrection prend de temps.
+- Réparer le château avec les boutons "Restaurer château" dans la fenêtre "bâtiment". Vous lui rendez quelques points de vie contre de l'argent.
+--------------------------------------------------------------------------------------------
+
+2) Comment fonctionnent les barres de statuts ?
+
+En bas de l'écran, vous avez 4 barres de statut qui vous indiquent votre niveau de vie, d'énergie, de magie et de moral.
+En fonction de votre niveau la couleur de la barre change.
+Plus de 50 %, la barre est verte.
+Entre 25 et 50 %, la barre est orange.
+Entre 10 et 25 % la barre est rouge.
+Moins de 10 % la barre est rouge foncé.
+Attention, si votre énergie et votre moral deviennent orange, la vitalité de votre personnage baissera.
+En cliquant gauche sur vos barres de statut, vous pouvez faire remonter votre jauge si vous disposez de certaines ressources.
+En cliquant droit sur vos barres de statut, celui-ci s'entoure d'un rectangle orange. Cela indique que chaque fois que votre barre descend trop, votre personnage utilisera automatique n'importe quelle ressource (s'il lui en reste) pour faire remonter la barre au-dessus de 50 %. Pour la vie, ce mode automatique s'arrangera pour remonter toujours au maximum.
+--------------------------------------------------------------------------------------------
+
+3) Comment utiliser les touches de raccourci pour l'équipement ?
+
+Pour utiliser les touches de raccourci pour l'équipement, il faut mettre le curseur sur un objet de l'inventaire et appuyer sur le bouton 1,2,3... ou... 9. (0, retire la touche de raccourci)
+Quand vous avez le curseur hors de l'inventaire et que vous appuyez sur l'une de ces touches, vous vous équipez avec le ou les objets ou vous utilisez un sort.
+Par exemple : 
+- 1 : Veste de travaille, pioche, chapeau.
+- 2 : Armure de plates, épée, épée, casque.
+- 3 : Veste de cuir, arbalète, chapeau.
+- 4 : Guérison.
+- 5 : Invocation de morts, Invocation de morts II, Convoquer ...
+- 6 : Boule de feu, Robe de mage.
+- 7 : Marteau.
+- 8 : Hache.
+- 9 : Résurrection.
+Si vous mettez plusieurs sorts sur la même touche de raccourci, en appuyant sur cette touche, vous n'utiliserez qu'un sort à la fois.
+Ces touches sont sauvegardées d'une partie à une autre dans le fichier personnage.
+--------------------------------------------------------------------------------------------
+
+4) Comment utiliser au mieux l'équipement pour gagner de l'expérience ?
+
+Dans Vendetta, vous gagnez de l'expérience dans la compétence de l'objet pour lequel vous dépensez des points dans une caractéristique dotée d'un bonus. Ainsi, quand vous frappez avec une arme qui donne un bonus d'attaque, vous gagner de l'expérience avec cette arme.
+Quand vous travaillez, il vaut mieux porter des objets qui augmentent vos points d'énergie et de moral.
+Quand vous combattez, il vaut mieux porter des objets qui offrent des bonus en attaque. Pour les combats faciles, privilégiez la défense. Dans les combats dangereux, privilégiez les bonus de points de vie.
+Pour le tir à l'arc, privilégiez les objets qui augmentent l'énergie.
+Pour l'utilisation de sort, les objets qui augmentent la magie. Et de préférence les objets qui augmentent la compétence de votre sort.
+Certains objets donnent des bonus pour les compétences d'autre objets. Si vous fabriquez ou utilisez ce deuxième, vous gagnez également de l'expérience dans ce premier.
+Note : Les objets qui donnent des bonus importants ne donnent pas plus d'expérience. Par contre, si un objet vous donne différent bonus, vous avez plus souvent l'occasion de gagner de l'expérience avec celui-ci.
+Note : En portant 2 fois la même arme dans chaque main vous gagner 2 fois plus d'expérience dans cette compétence.
+--------------------------------------------------------------------------------------------
+
+5) Comment changer de personnage en cours de jeu ?
+
+Si vous sélectionnez plusieurs personnages, pendant le jeu, vous pouvez changer de personnage avec "²" et "Shift+²". Tous les autres personnages que celui avec lequel vous commencez démarrent en mode automatique.
+--------------------------------------------------------------------------------------------
+
+6) Quels ordres peut-on donner à une armée sans les sélectionner ?
+
+- RAPPELER VOS HOMMES AUPRES DE VOUS : Pour cela cliquez sur le bouton "Donner des ordres" quand votre personnage est à l'arrêt.
+- DEMANDER DE VOUS COUVRIR : Cliquez sur le bouton "Donner des ordres quand un adversaire vous fonce dessus.
+- ENVOYER L'ARMEE A UN ENDROIT : Cliquez sur le bouton "Donner des ordres quand vous marchez, votre armée se rendra à votre destination.
+- ORDONNER D'ATTAQUER : Cliquez avec le bouton droit de la souris sur une cible. Ou cliquez sur le bouton "Donner des ordres" quand vous attaquer une cible. Vous pouvez aussi cliquer avec le bouton droit sur les boutons "Attaquer ennemi" et "Attaquer Château" ou utiliser leurs touches de raccourci en appuyant sur "Crlt", "Shift" ou "Alt".
+- DEFINIR LE NOMBRE DE SOLDATS : Avec tous les ordres précédents, il est possible de définir le nombre de soldat que l'on envoie en maintenant les touches "Ctrl" et "Shift" enfoncés. 	Avec "Crlt" : vous envoyez 1 soldat. 
+	Avec "Shift" : 5 soldats. 
+	Avec "Crlt" et "Shift" simultanément : 10 soldats.
+- ANNULER VOS ORDRES : Appuyer sur le bouton "Stop". Vos unités arrêteront de combattre ou de se déplacer. Vous pouvez ainsi leur redonner d'autres ordres.
+--------------------------------------------------------------------------------------------

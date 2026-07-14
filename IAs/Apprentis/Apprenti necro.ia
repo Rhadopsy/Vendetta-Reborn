@@ -1,0 +1,35 @@
+#IA officielle utilisée pour l'apprenti nécromancien.
+Equiper_0
+
+Age_1
+#Collecte des ressources pour son maître.
+Batiment_5
+Travailler
+
+Age_2
+#Collecte des ressources pour son maître.
+Batiment_5
+Travailler
+
+Age_3
+#Collecte des ressources pour son maître.
+Objet_35=1
+ChangerMode_3
+Batiment_31
+Travailler
+
+Age_4
+#Collecte des ressources pour son maître.
+Objet_35=1
+ChangerMode_3
+Batiment_31
+Travailler
+
+Age_5
+#Collecte des ressources pour son maître.
+Objet_35=1
+ChangerMode_3
+Batiment_31
+Travailler
+
+#Fin

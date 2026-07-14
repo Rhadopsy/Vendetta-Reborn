@@ -1,0 +1,28 @@
+############################################################################################
+	        	    L'éditeur d'Intelligence Artificielle
+############################################################################################
+
+Cet éditeur permet de paramétrer les différentes intelligences artificielles du jeu. Depuis la version 1.5 de Vendetta, l'intelligence des personnages dans le jeu obéit à des fichiers qui leur dictent leur manière de se comporter.
+De plus, vous pouvez affecter l'une des IA à votre personnage quand celui-ci est en mode automatique.
+
+
+Pour éditer les IA, vous devez choisir une liste d'étapes en fonction de chaque époque.
+
+Pendant le jeu, l'IA va accomplir les différentes étapes dans l'ordre. Elle ne passe à l'étape suivante que si elle a remplit les conditions de toutes les étapes précédentes.
+--------------------------------------------------------------------------------------------
+
+Les différents types d'étapes sont :
+- GAGNER X ARGENT : L'IA va faire travailler avec le métier que vous aurez spécifier jusqu'à ce qu'il ait accumulé suffisamment d'argent pour passer à l'étape suivante.
+- COLLECTER RESSOURCES : L'IA va collecter la ressource jusqu'à arriver à son maximum (Sauf si elle peut payer la ressource, elle n'en achètera que la quantité voulue). Si la ressource peut être récoltée sur le terrain, elle ira la récolter sans jamais l'acheter. S'il s'agit d'une ressource transformée, elle fabriquera automatiquement la quantité de matière première nécessaire avant de la convertir. Elle fabrique automatiquement cette ressource dès qu'elle est en dessous de la valeur indiquée en paramètre.
+- CONSTRUIRE BATIMENT : L'IA fabrique un bâtiment. Pour cela elle cherchera tous les matériaux nécessaires. De plus, elle collectera préalablement toutes les ressources nécessaires pour y travailler. Si le bâtiment est détruit, elle recommencera la collecte de matériaux avant son réaménagement.
+- EQUIPER OBJET : L'IA va acheter ou se fabriquera elle-même cet objet. Si elle perd cet objet, elle recommencera à nouveau d'essayer de se le procurer.
+- TRAVAILLER, PATROUILLER, ATTAQUER ENNEMI, ATTAQUER DONJON : Il s'agit de choisir l'une de ces étapes pour terminer les actions. L'IA va soit travailler dans la maison qu'on lui aura indiqué de construire (sinon, il choisira lui même sa maison), soit patrouiller autour du village, soit attaquer immédiatement une cible à proximité.
+- CHANGER MODE : L'IA change son comportement et passe à l'action suivante.
+--------------------------------------------------------------------------------------------
+
+Règles à respecter :
+- Il est inutile de lui donner 2 fois l'action CONSTRUIRE BATIMENT dans une époque.
+- Ne définir qu'une seule action TRAVAILLER, PATROUILLER, ATTAQUER ENNEMI, ATTAQUER DONJON à la fin seulement. L'une de ces actions est obligatoire à chaque époque.
+Si ces règles ne son pas respectées, l'IA risque de réitérer les actions en boucle, rester définitivement immobile ou d'ignorer certaines étapes.
+- Ne pas lui affecter plus d'1 fois le même objet, sauf pour les invocations. Pour les armes à 1 main, pas plus de 2 fois le même objet.
+--------------------------------------------------------------------------------------------

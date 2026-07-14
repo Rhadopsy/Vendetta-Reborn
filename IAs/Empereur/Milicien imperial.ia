@@ -1,0 +1,61 @@
+#IA officielle. Un soldat équipé moyennement qui protège le village.
+
+Age_1
+#S'équipe avec un équipement léger
+ChangerMode_1
+Ressource_15=20
+Ressource_13=20
+Ressource_1=3
+ChangerMode_2
+ChangerMode_4
+Patrouiller
+
+Age_2
+#S'équipe avec un équipement de fer.
+ChangerMode_1
+Objet_14=1
+Ressource_1=3
+ChangerMode_2
+Objet_20=1
+Objet_24=1
+Batiment_CASERNE
+ChangerMode_4
+Travailler
+
+Age_3
+#S'équipe avec de l'équipement de fer.
+ChangerMode_1
+Objet_14=1
+Ressource_1=3
+ChangerMode_2
+Objet_20=1
+Objet_24=1
+Batiment_CASERNE
+ChangerMode_4
+Travailler
+
+Age_4
+#S'équipe avec de l'équipement de fer.
+ChangerMode_1
+Objet_14=1
+Ressource_1=3
+ChangerMode_2
+Objet_20=1
+Objet_24=1
+Batiment_CASERNE
+ChangerMode_4
+Travailler
+
+Age_5
+#S'équipe avec de l'équipement de fer.
+ChangerMode_1
+Objet_14=1
+Ressource_1=3
+ChangerMode_2
+Objet_20=1
+Objet_24=1
+Batiment_CASERNE
+ChangerMode_4
+Travailler
+
+#Fin

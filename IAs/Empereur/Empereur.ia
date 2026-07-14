@@ -1,0 +1,68 @@
+#IA officielle utilisée par l'empereur.
+
+Age_1
+#Fabrique des troupes et envahit le fief voisin.
+ChangerMode_8
+Objet_2=1
+Objet_186=1
+Objet_198=1
+ChangerMode_7
+Patrouiller
+
+Age_2
+#Fabrique des troupes et envahit le fief voisin.
+ChangerMode_8
+Objet_2=1
+Objet_186=1
+Objet_198=1
+Objet_195=1
+Objet_194=1
+ChangerMode_7
+Patrouiller
+
+Age_3
+#Fabrique des troupes et envahit le fief voisin.
+ChangerMode_8
+Objet_186=1
+Objet_196=1
+Objet_195=1
+Objet_194=1
+ChangerMode_7
+Patrouiller
+
+Age_4
+#Fabrique des troupes et envahit le fief voisin.
+ChangerMode_8
+Objet_104=1
+ChangerMode_2
+Objet_87=2
+Objet_186=1
+Objet_220=1
+Objet_197=1
+Objet_196=1
+Objet_195=1
+Objet_194=1
+ChangerMode_7
+Patrouiller
+
+Age_5
+#Fabrique des troupes et envahit le fief voisin.
+ChangerMode_8
+Objet_205=1
+Objet_223=1
+Objet_81=1
+Objet_199=1
+ChangerMode_2
+Objet_87=2
+Objet_186=1
+Objet_221=1
+Objet_226=1
+Objet_220=1
+Objet_197=1
+Objet_196=1
+Objet_195=1
+Objet_194=1
+ChangerMode_7
+Patrouiller
+
+#Fin

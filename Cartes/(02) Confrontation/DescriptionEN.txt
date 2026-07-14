@@ -1,0 +1,5 @@
+Official map
+
+Size : 128*128
+
+Small map with two kingdoms divided by a mountain.

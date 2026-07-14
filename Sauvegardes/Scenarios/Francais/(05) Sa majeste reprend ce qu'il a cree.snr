@@ -1,0 +1,74 @@
+Nombre_Fiefs=4
+Nombre_Ressources=50
+Nombre_Persos=202
+Monde_Largeur=128
+Monde_Hauteur=192
+Choix_terrain=1
+Epoque=3
+
+DEBUT
+
+Fief(1)_Peuple=1
+Fief(1)_Equipe=1
+Fief(2)_Peuple=10
+Fief(2)_Equipe=1
+Fief(3)_Peuple=3
+Fief(3)_Equipe=1
+Fief(4)_Peuple=1
+Fief(4)_Equipe=2
+Fief(4)_Position=1024,1536
+Fief(1-3)_Vie=0
+
+#Le commandant.
+Personnage(1)_Fief=1
+Personnage(1)_Position=1060,288
+Personnage(1)_Ressource=0,20
+Personnage(1)_Objet=14
+Personnage(1)_Objet=22
+Personnage(1)_Objet=21
+Personnage(1)_Objet=25
+Personnage(1)_Objet=48
+Personnage(1)_Objet=81
+Personnage(1)_Objet=69
+Personnage(1)_Objet=87
+Personnage(1)_Objet=32
+Personnage(1)_Objet=33,2
+
+#L'Armée impériale.
+Personnages(101-200)_Fief=2
+Rangees=5
+#Bataillon principal.
+Personnages(101-200)_Position=830,128
+personnages(101-200)_Chef=1
+personnages(101-200)_Grade=2
+personnages(131-140)_Grade=1
+personnages(161-170)_Grade=1
+personnages(101-110)_Grade=3
+Personnages(101-110)_Position=480,128
+personnages(191-200)_Grade=3
+Personnages(191-200)_Position=1660,128
+personnages(150)_Grade=4
+personnages(155)_Grade=4
+personnages(130)_Grade=4
+personnages(175)_Grade=4
+Personnages(101-200)_Parole=1
+
+#Les 2 tigres.
+Personnages(201-202)_Fief=3
+Personnage(201)_Position=1036,288
+Personnage(202)_Position=1084,288
+personnages(201-202)_Chef=1
+Personnages(201)_Grade=3
+Personnages(202)_Grade=5
+
+#La ville.
+Personnages(2-100)_Fief=4
+Maisons(2-100)_Type=0
+Maisons(2-100)_Stock=35
+#Les villageois.
+Personnages(2-100)_Argent=1000,80
+Personnages(2-100)_Ressource=0,10
+personnages(2-100)_Equipement=7,25
+Personnages(2-100)_DansUnChateau=4
+
+FIN

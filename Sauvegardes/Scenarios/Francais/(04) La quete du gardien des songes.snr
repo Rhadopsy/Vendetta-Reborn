@@ -1,0 +1,49 @@
+Nombre_Fiefs=5
+Nombre_Ressources=200
+Nombre_Persos=250
+Monde_Largeur=192
+Monde_Hauteur=192
+Choix_terrain=3
+Epoque=4
+
+DEBUT
+
+Fief(1)_Peuple=13
+Fief(1)_Equipe=1
+Fief(2-5)_Peuple=6
+Fief(2-5)_Equipe=2
+Fief(1)_Position=1536,1536
+Fief(2)_Position=512,512
+Fief(3)_Position=512,2560
+Fief(4)_Position=2560,512
+Fief(5)_Position=2560,2560
+
+#Les dragons.
+Personnages(1-50)_Fief=1
+Personnages(1-50)_DansUnChateau=1
+Personnages(1-50)_Parole=1
+#Le gardien des songes.
+Personnages(1)_Objet=59
+Personnages(1)_Objet=58
+Personnages(1)_Objet=62
+Personnages(1)_Objet=48
+Personnages(1)_Objet=74
+Personnages(1)_Objet=69
+Personnages(1)_Objet=72
+Personnages(1)_Objet=61,6
+
+#Les 4 domaines des hommes bêtes.
+Personnages(51-100)_Fief=2
+Personnages(51-100)_DansUnChateau=2
+Personnages(101-150)_Fief=3
+Personnages(101-150)_DansUnChateau=3
+Personnages(151-200)_Fief=4
+Personnages(151-200)_DansUnChateau=4
+Personnages(201-250)_Fief=5
+Personnages(201-250)_DansUnChateau=5
+
+#Les bommes bêtes et leurs oeufs.
+Personnages(51-250)_IA_Equiper=0
+Personnages(51-250)_Objet=56,4
+
+FIN

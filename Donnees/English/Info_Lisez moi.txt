@@ -1,0 +1,14 @@
+Vendetta, a role-playing strategy and economic game.
+Project begin by Sylvain Harlaut, may 2003 (sharlaut@netcourrier.com)
+Web site : http://franck.leveque2.free.fr/Vendetta (WebMaster : varaxor@free.fr)
+
+Minimum settings :
+Pentium III 800 Mhz
+Ram 64 Mo
+
+System requirement :
+Windows 98 SE, 2000, XP
+Anything display card.
+DirectX7 or more.
+20 Mo on hard disk.
+Visual basic 6 Run Time files

@@ -1,0 +1,63 @@
+#IA officielle utilisée pour l'escavateur golem.
+
+Age_1
+#Collecte des métaux pour son maître.
+Ressource_13=5
+ChangerMode_3
+Ressource_18=5
+ChangerMode_3
+Ressource_15=5
+ChangerMode_3
+Ressource_24=5
+ChangerMode_3
+Patrouiller
+
+Age_2
+#Collecte des métaux pour son maître.
+Ressource_13=5
+ChangerMode_3
+Ressource_18=5
+ChangerMode_3
+Ressource_15=5
+ChangerMode_3
+Ressource_24=5
+ChangerMode_3
+Patrouiller
+
+Age_3
+#Collecte des métaux pour son maître.
+Ressource_13=5
+ChangerMode_3
+Ressource_18=5
+ChangerMode_3
+Ressource_15=5
+ChangerMode_3
+Ressource_24=5
+ChangerMode_3
+Patrouiller
+
+Age_4
+#Collecte des métaux pour son maître.
+Ressource_13=5
+ChangerMode_3
+Ressource_18=5
+ChangerMode_3
+Ressource_15=5
+ChangerMode_3
+Ressource_24=5
+ChangerMode_3
+Patrouiller
+
+Age_5
+#Collecte des métaux pour son maître.
+Ressource_13=5
+ChangerMode_3
+Ressource_18=5
+ChangerMode_3
+Ressource_15=5
+ChangerMode_3
+Ressource_24=5
+ChangerMode_3
+Patrouiller
+
+#Fin

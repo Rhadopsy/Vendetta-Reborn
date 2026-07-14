@@ -1,0 +1,8 @@
+# Preserve the bytes and legacy encodings of the original VB6 snapshot.
+* -text
+
+# Repository documentation uses UTF-8 and LF.
+*.md text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+SOURCE_ARCHIVE.sha256 text eol=lf

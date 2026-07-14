@@ -1,0 +1,41 @@
+Nombre_Fiefs=2
+Nombre_Ressources=1
+Nombre_Persos=10
+Monde_Largeur=100
+Monde_Hauteur=75
+Choix_terrain=0
+Epoque=1
+
+DEBUT
+
+Fief(1)_Peuple=1
+Fief(1)_Equipe=1
+Fief(2)_Peuple=2
+Fief(2)_Equipe=2
+Fiefs(TOus)_Vie=0
+
+Personnages(1-2)_Fief=1
+
+#Le joueur.
+Personnage(1)_Position=800,600
+
+#Son Entraineur.
+Personnage(2)_Position=800,472
+Personnage(2)_Race=7
+Personnage(2)_Nom=Kitty
+Personnage(2)_Sexe=1
+Personnage(2)_ressource=8,20
+Personnage(2)_Objet=3
+
+#Un Arbre.
+Ressources(1)_Type=3
+Ressources(1)_Position=864,600
+
+#Des animaux.
+Personnages(3-10)_Fief=2
+Personnages(3-6)_Grade=2
+Personnages(7-8)_Grade=3
+Personnages(9)_Grade=4
+Personnages(10)_Grade=5
+
+FIN

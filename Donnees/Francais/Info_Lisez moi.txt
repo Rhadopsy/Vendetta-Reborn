@@ -1,0 +1,516 @@
+Vendetta, le jeu de rôle de stratégie et de gestion.
+Projet démarré par Sylvain Harlaut en mai 2003 (sharlaut@netcourrier.com)
+Site internet : http://franck.leveque2.free.fr/Vendetta (WebMaster : varaxor@free.fr)
+
+Configuration conseillée pour jouer sur des cartes moyennes :
+Pentium III 800 Mhz
+Ram 128 Mo
+
+Nécessite :
+Windows 98 SE, 2000, XP
+Tous types d'écrans.
+Carte graphique compatible DirectDraw.
+DirectX7 ou plus.
+24 Mo sur le disque dur.
+Fichiers Run Time de Visual basic 6.
+
+PREVUS POUR LES PROCHAINES VERSIONS
+- Moteur réseau complet.
+- Pouvoir devenir le seigneur de son fief.
+- Campagne d'aventures.
+
+V3.0 (AVRIL 2007)
+*** Moteur réseau en mode confrontation uniquement.
+* Possibilité de jouer sur des cartes précréées.
+* Possibilité d'avoir des montures.
+* L'interface des fenêtres d'achat et de vente des ressources a été améliorée.
+* Certains objets ont un temps de rechargement.
++ Ajout du jour et de la nuit. (désactivé par défaut)
++ Le pavé numérique permet maintenant de contrôler le curseur en mode 1 joueur.
++ La fenêtre de création du personnage a été modifiée.
++ La fenêtre des options a été modifiée.
++ Toutes les fenêtres dans le jeu ont été redessinées.
++ Ajouts d'icônes dans les listes de ressources.
++ Les vêtements offrent maintenant un bonus de vitalité.
++ Ajout des facultés Poison, Berserk et Volant pour les objets.
++ Certains objets peuvent lancer des effets sur les ennemis et alliés.
++ Les invocations peuvent avoir des IAs et des apparences personnalisées.
++ Possibilité de réparer les maisons des autres.
++ Possibilité de rentrer dans sa maison sans la réparer.
++ Possibilité de donner l'ordre à ses soldats de protéger un personnage allié.
++ Ajout de la touche "Ctrl+I" pour inverser la sélection des armées.
++ Ajout d'une nouvelle compétence : équitation.
++ Ajout de nouveaux bâtiments l'écurie, la tourelle de défense et le marché.
++ Nouveaux objets.
++ Nouveaux effets visuelS.
+* Nouveaux bruitages. Tous les anciens bruitages ont été remplacés.
++ Nouveaux monstres.
++ Nouvelles apparences pour les nains.
++ Nouvelles IAs.
+- Le rectangle de sélection est maintenant remplacé par un cercle.
+- La navigation sur la carte se fait maintenant avec le clique droit.
+- Affichage d'une barre de temps pour les effets temporaires.
+- Pour la lecture des fichiers HTML, le jeu ouvre le navigateur web par défaut.
+- Possibilité de désactiver les captures d'écran des sauvegardes dans les options.
+- On ne peut plus sortir de la carte avec les touches fléchées.
+- Des bugs dans l'éditeur d'IA ont été corrigés.
+- Plusieurs optimisations et améliorations pour les IAs.
+- L'éditeur d'IA charge maintenant les images des objets des fichiers mods.
+- Des fautes d'orthographe ont été corrigées.
+
+v2.5 (MAI 2006)
+*** Version Multilingue. Ajout de la version anglaise.
+* Possibilité d'ajouter des fichiers de modification.
+* Ajout des résistances.
+* Affichage en mode fenêtré possible.
++ Ajout de 8 résistances différentes aux attaques.
+* Possibilité d'affecter différents ordres aux soldats.
+- Les soldats n'oublient pas le dernier ordre donné.
++ Certaines armes causent des effets temporaires négatifs.
++ Les personnages marchent en tenant compte d'une accélération.
++ Affichage des tombes à la mort de certains personnages.
++ Ajouts de nouveaux boutons de raccourci objets avec "Shift" et "Alt".
++ Les personnages restent orienté vers leur adversaire pendant les combats.
++ Possibilité de se déplacer et de tirer avec le clique milieu de la souris.
++ Un objet en court de construction n'est plus interrompu.
++ Certains objets se superposent dans l'inventaire.
++ Certaines armes déclenchent des effets temporaires négatifs.
++ Possibilité de déplacer le champ de vision sur la carte.
++ Possibilité de définir le seuil d'auto restauration des caractéristiques.
++ Possibilité de choisir les la quantité de ressource au commencement de la partie.
++ Possibilité de choisir le nombre de fois que l'on peut ressusciter au château.
++ Possibilité de choisir la vitesse de résurrection.
++ Possibilité de choisir son navigateur Web dans les options.
++ Ajout de la capacité piétinement.
++ L'augmentation de la compétence coups critique n'augmente plus les dégâts que de 50%.
++ Ajout de 5 nouveaux objets.
++ Ajout d'1 nouveau monstre.
++ Ajout d'1 nouveau projectile.
++ Ajout de 4 nouveaux effets visuels.
++ Ajout de 2 nouveaux sons.
++ Ajout d'1 nouveau décor.
+- Le rectangle de sélection des unités est maintenant une ellipse sous les pieds.
+- Les berkersers attaquent instantanément.
+- Les orbes sont maintenant des effets permanents.
+- La compétence "contruire bâtiment" influence maintenant la vie du bâtiment.
+- Plus de problèmes avec les boutons de construction radiaux.
+- Il n'y a plus de décalage d'époque dans les sauvegardes.
+- Les attaques de zones ne rapportent plus d'expérience supplémentaire.
+- La compétence "percevoir des primes" a été réajusté.
+- Les IAs ne ressuscitent plus dans les temples détruits.
+- Des erreurs de calculs des messages d'informations ont été corrigés.
+- Des erreurs de calculs des dégâts des projectiles ont été corrigés.
+- Des fautes d'orthographe ont été corrigées.
+
+v2.4 (DECEMBRE 2005)
+* Ajout du mode campagne.
+* Possibilité de scripter ses scénarios.
++ Ajout de 3 parties d'initation.
+* Possibilité de personnaliser l'apparence de son personnage.
++ Ajout de 206 fichiers d'apparences.
+* Lecture de musiques MIDI avec DirecMusic.
++ Ajout de 49 fichiers MIDI.
+* Ajout de pouvoirs aux effets temporaires.
+* Les personnages se déplacent maintenant de manière rectiligne.
+* Certaines armes tirent des projectiles.
+- Les routes sont maintenant rectilignes.
++ Possibilité de déposer son équipement dans sa maison.
++ Ajout d'une fenêtre "carte".
++ Les variations de caractéristiques sont maintenant temporisées.
++ L'affichage de l'interface est maintenant temporisé.
+- La touche pour changer de personnage est maintenant la touche "²".
+- Possiblité de déplacer les fenêtres de l'interface de jeu.
+- Ajout d'un tri par nom et score pour les compétences.
+* Ajouts de boutons radiaux accessibles par un clique droit.
++ Ajout de boutons pour s'équiper rapidement.
++ Ajout d'un nouveau comportement pour les unités.
+- Possibilité d'exporter la fiche de son personnage au format HTML.
+- Le personnage peut être déplacé avec les touches de directions.
+- La touche entrée permet d'interagir avec l'objet sur lequel le personnage se trouve.
+- L'évolution des fiefs est maintenant indépendant de la vie du château.
+- Les boutons de déplacement se masquent automatiquement.
+- Les points sont affichés en chiffres sur les barres de statut.
++ Possibilité de choisir la vitesse d'évolution d'un age à l'autre.
++ Affichage des points de vie perdus pendant les combats.
++ Ajout d'1 nouvelle compétence.
++ Ajout d'1 nouveau bâtiment.
++ Ajout de 2 nouveaux monstres.
++ Ajout de 11 nouveaux objets.
++ Ajout de 5 nouveaux projectiles.
++ Ajout de 5 nouveaux effets visuels.
++ Ajout de 3 nouveaux bruitages.
++ Ajout de nouveaux conseils.
++ Ajout d'1 nouvelle IA.
+- L'optimisation de l'affichage peut être annulé pendant le chargement.
+- Tous les effets visuels d'attaques s'affichent.
+- Plus un personnage expérimenté travaille vite et plus il se fatigue vite.
+- La vitesse de guérison de la vie a été augmenté de 50%.
+- Les bonus de défense de certains objet ont été diminué de 20%.
+- L'anneau de régénération est plus efficace.
+- Ajout de détails sur les boutons de construction des maisons qui font des objets.
+- Possibilité de modifier les ressources du terrain dans les scénarios.
+- Nouvelle propriété "Nom" pour les fiefs dans les scénarios.
+- Il n'y a plus d'images plus grandes que 1024 pixels. (compatibilité avec Windows 98 PE)
+- Il n'y a plus de variation de caractéristiques quand on reprend une sauvegarde.
+- En mode 2 joueurs, les commentaires du joueur de droite ne s'affichent plus à gauche.
+- Des fautes d'orthographe ont été corrigées.
+- Certains personnages ne restent plus bloqués en frappant un bâtiment.
+- Le bestiaire dans les stastistiques est maintenant trié par ordre alphabétique.
+- Il n'est plus possible de donner ses trésors.
+- Il n'est plus possible de faire des rectangle de sélection quand on a pas de soldats.
+
+v2.3.1 (JUIN 2005)
+- Il n'y a plus de personnages invisibles quand on reprend une sauvegarde.
+- Le changement de résolution dans les options est de nouveau possible.
+- Décocher l'option "Masquer les boutons de construction" ne pose plus de problèmes.
+
+v2.3.0 (MAI 2005)
+* Possibilité de jouer en même temps à deux joueurs sur le même ordinateur.
+* Possibilité de déplacer les objets de son inventaire avec le clique gauche.
+* Possibilité d'affecter ses personnages dans des équipes différentes.
+* Tous les monstres dépendent des mêmes paramètres que les races jouables.
+* Possiblité de donner son argent, ses ressources et ses objets à d'autres personnages.
++ Tous les monstres ont été modifiés.
++ Possibilité d'avoir plus de 5 monstres par fief.
++ les informations du jeu sont maintenant au format HTML.
++ Ajout de stastistiques en fin de partie.
++ Ajout du tableau des informations des peuples.
++ Les boutons de construction se masquent automatiquement. (fonction optionnelle)
++ Ajout d'1 nouveau peuple.
++ Ajout de 5 nouveaux monstres.
++ Ajout de 2 nouveaux objets.
++ Ajout d'1 nouvel effet visuel.
++ Ajout d'1 nouvelle catégorie de commentaires.
+- Possibilité passer en mode Plein Ecran avec la touche "BackSpace".
+- Possibilité de se diriger vers un bâtiment en cliquant droit sur un bouton de contruction.
+- Les bâtiments démolis par leurs propriétaires laissent un trésor par terre.
+- Les objets donnant un bonus en défense rapportent 60% d'expérience supplémentaire.
+- La défense augmente 25% moins vite en fonction de l'expérience.
+- Les étiquettes des modes de jeu ont été renommées.
+- La fenêtre de création de personnages a été modifié.
+- Le déplacement des personnages a été optimisé.
+- Le bug de fabrication avec les joueurs volants a été corrigé.
+- Le moteur ne charge plus qu'1 fois les images des objets au lieu de 6.
+- Le temps de chargement de "l'optimisation de l'affichage" a été amélioré.
+- "L'optimisation de l'affichage" fonctionne maintenant sur des grandes cartes.
+- La vitesse d'affichage de la fenêtre "ressources" a été fortement optimisée.
+- La fonction de zoom a été désactivée.
+- Les Ias ne vont plus chercher les trésors trop éloignés.
+
+V2.2.1 (FEVRIER 2005)
++ Ajout de la possibilité de zoomer. (Avec +/- et * pour revenir en zoom normal)
+- Le rectangle de sélection des armées doit être au moins de 16 pixels de coté.
+- La défense augmente 25% plus vite en fonction de l'expérience.
+- La barre de défilement peut-être déplacée en maintenant le curseur enfoncé.
+- Le bug quand un personnage va chercher un trésor a été corrigé.
+- Le chef ne peut plus récupérer les trésors de ses invocations s'il est mort.
+
+V2.2.0 (JANVIER 2005)
+* Les monstres peuvent maintenant avoir leurs propres IAs et leurs propres bâtiments.
+* Ajout de trésors que chaque personnage peut sélectionner avant la partie.
+* Les FPS sont maintenant illimités.
+* Possibilité de sélectionner ses soldats 1 à 1 ou avec des rectangles de sélection.
+* Possiblité d'avoir des personnages de taille différente.
++ Possibilié de demander aux soldats de garder une maison ou un château.
++ Possibilité de changer la difficulté du jeu.
++ Ajout de stastistiques pendant la partie.
++ Ajout des boutons attaquer bâtiment et ramasser trésor.
++ Ajout d'une barre de défilement entre les boutons de défilement.
++ Ajout d'1 nouvelle race jouable.
++ Ajout de 4 nouveaux bâtiments pour les monstres.
++ Ajout d'1 nouveau monstre.
++ Ajout de 34 nouveaux objets.
+- Ajout d'une nouvelle catégorie d'objets : les orbes.
+- Certains objets génèrent maintenant de l'argent et des ressources.
+- Certains objets regénèrent maintenant les caractéristiques.
++ Ajout d'un boutons menu et de 2 sous-boutons dans ce menu.
++ Ajout de 13 nouvelles touches de raccourci pour sélectionner son armée.
++ Ajout de touches de raccourci pour récupérer et déposer de l'argent.
+- Les IAs s'en prennent maintenant directement aux invocateurs.
++ Ajout de 26 nouvelles apparences pour personnaliser son personnage.
++ Ajout de 9 nouvelles catégories de commentaires.
+- Les graphismes de certaines ressources ont été remplacées.
+- Les graphismes de certains monstres ont été remplacées.
+- Les graphismes des boutons d'information ont été remplacées.
+- L'IA a été améliorée.
+- L'interface a été optimisée.
+- L'icone a été remplacé.
+- Ajout de nouveaux noms pour le générateur de personnages.
+- La portée de la surface d'attaque n'augmente plus que de 25% selon le bonus de compétence.
+
+V2.1 (SEPTEMBRE 2004)
+* Ajout de bruitages.
++ Ajout d'une file d'attente pour la fabrication des objets.
++ Ajout de 13 nouveaux objets.
++ Possibilité de choisir son équipement pour les batailles.
++ Ajout d'un nouveau type de terrain : l'eau.
++ Nouvelles options dans l'éditeur d'IAs.
+* La première génération d'IA a été complètement remplacée.
++ La musique peut maintenant être au format MP3, WAV ou MIDI.
++ Les coefficients de combat sont maintenant paramétrables un fichier .ini.
++ Certains monstres possèdent maintenant des intelligences spécifiques.
+- Le premier chargement a été fortement optimisé.
+- Les bâtiments peuvent maintenant fabriquer plus de 6 objets différents.
+- Le château récupère des ressources à chaque objet qui lui est vendu.
+- Il n'y a plus de trésors vides.
+- La portée n'est plus augmentée que de 25% quand on gagne 20 points à sa comptétence.
++ Ajout de 7 nouvelles apparences pour personnaliser son personnage.
+- Les races ont été réajustées.
+- Les caractéristiques et les facultés de certains monstres et objets ont changé.
+- Le jeu ne fait plus d'erreur avec les dragons.
+- Des fautes d'orthographes ont été corrigées.
+- Des problèmes avec l'achat de quantité max ont été corrigés.
+- Le générateur de personnage a été remis.
+- Les touches de raccourci de l'inventaire prennent en compte les objets à 2 mains.
+- La durée des commentaires est maintenant paramétrable.
+- Des IAs ont été corrigées.
+
+V2.0 (JUIN 2004)
+* Ajout d'un nouvel age : "L'age d'or"
+* Possibilité d'appartenir à une autre race que celle des humains.
+* Ajout de nouveaux reliefs pour le terrain (montagne, routes...)
+* Ajout de trésors que l'on peut ramasser sur le terrain.
+* Les personnages peuvent maintenant se déplacer en diagonale.
++ Ajout de 10 races.
++ Possibilité de modifier la vitesse de jeu dans les options.
++ Possibilité de mettre le jeu en pause avec la touche F10.
++ Nouveau système qui permet d'ajouter des musiques MP3 sans renommer les fichiers.
++ Ajout d'effets visuels quand les maisons et les chateaux sont détruits.
++ Ajout des emplacements "Bras", "Dos", "Doigt1" et "Doigt2" dans l'inventaire.
++ Ajout de commentaires quand les invocations sont convoquées.
++ Ajout des facultés "Berserk" et "kamikaze" pour les monstres.
++ Ajout de la faculté "SurfaceAttaque" pour les armes.
++ Ajout de la faculté "BonusMaxRessources" pour les objets.
++ Certaines armes peuvent utiliser des ressources à chaque attaque.
++ Ajout de messages en cas de gain ou de perte de soldats.
+- La vitalité dépend maintenant du niveau de vie.
+- La magie se récupère plus lentement et proportionnellement score maximum de magie.
+- La rapport proportionnel entre les 2 générations d'IAs est maintenant de 50-50.
+- Les touches du clavier sont désactivées quand on bascule.
+- Le stock des bâtiments est maintenant proportionnel à la compétence "construire bâtiment"
+- Les transactions de ressources se font maintenant avec des valeurs entières.
+- Possibilité de reformer les rangs en cliquant sur le bouton formation (droit pour changer)
+- Possibilité d'arrêter seulement les soldats en cliquant droit sur le bouton stop (Alt+S)
++ Ajout de 7 nouveaux bâtiments.
++ Ajout de 2 nouvelles ressources.
++ Ajout de 32 nouveaux objets.
++ Ajout de 7 nouveaux monstres.
++ Ajout de 7 nouveaux effets visuels.
++ Ajout de 91 nouvelles apparences pour personnaliser son personnage.
+- Suppression de 33 anciennes apparences pour personnaliser son personnage.
+- Nouveaux graphismes pour les chateaux.
+- 1 effet visuel a été remplacé.
+- 1 apparence de personnage personnalisable a été remplacée.
+- 1 apparence de monstre a été remplacée.
+- Ajout de nombreux nouveaux commentaires.
+- Les images des effets visuels sont maintenant nominatives.
+- Les calculs des combats ont été optimisés.
+- Des fautes d'orthographes ont été corrigées.
+- Les monstres de grade 5 sont maintenant 2 fois plus rare.
+- En mode bataille, il n'y a plus d'erreur quand les 2 armées sont disproportionnées.
+
+V1.5 (MARS 2004)
+* Ajout d'une nouvelle Intelligence Artificielle 2e génération obéissant à des scripts.
+* Ajout d'un éditeur pour modifier les IA2s.
++ Ajout de 2 nouvelles résolutions d'affichage.
++ Ajout de 3 nouveaux scénarios.
++ Ajout d'une nouvelle caractéritique : armure.
++ Ajout d'un bouton qui permet de définir les formations.
++ Ajout de boutons pour vendre l'ensemble des ressources.
++ Ajout de 2 nouvelles ressources : Parchemin et Vin.
++ Ajout de 2 nouveaux batiments : Parcheminerie et Pressoire.
++ Affiche des infos bulles sur les éléments du terrain.
++ On peut prendre des objets en tuant un adversaire ou en frappant une maison.
+* Les monstres peuvent maintenant commencer avec des ressources et des objets.
+* Les monstres ont maintenant des comportements différents.
++ Ajout de 10 nouveaux objets exclusifs aux monstres.
++ Ajout de messages quand on gagne ou perd un objet.
++ Ajout d'1 nouveau monstre.
++ Ajout d'une nouvelle apparence pour le port d'objet.
+- L'apparence d'1 monstre a été changé.
+- Les invocations redonnent maintenant l'ensemble de leur butin à leur invocateur.
+- La régénération des points de magie n'est plus proportionnelle au score de base.
+- Les monstres se régénèrent en rentrant dans leurs donjons.
+- Les monstres restaurent maintenant leur donjon comme les humains.
+- Les humains restaurent maintenant leur chateau proportionnellement à leur dégât.
+- Les fichiers images des monstres sont maintenant individuels.
+- Les touches de raccourci sont maintenant affichés sur les objets équipés.
++ Possibilité de sauvegarder la configuration de l'équipement avec les touches ctrl+n°.
++ L'affichage a été optimisé en passant en 256 couleurs.
+- Sauvegarde automatique de la partie quand on quitte le jeu.
+- Ajout du fichier de paramètre "Ini_SavMonde.ini"
+- Le fichier "Paramètres.ini" a été fragmenté en plusieurs petits fichiers.
+- Le personnage ne donne plus de petites attaques si utilise un sort.
+- La barre d'attaque se décharge et se recharge maintenant plus vite.
+- Les ia appellent moins souvent à l'aide et repondent moins souvent aux appels.
+* Pendant une partie, il est maintenant possible de basculer sans erreur.
+- Des problèmes occasionnés par la compétence marchandage ont été corrigés.
+- Des problèmes d'intelligence artificielle ont été corrigés.
+- Les IA vendent maintenant les objets qu'ils ont en trop.
+- Des problèmes de gestion d'erreur au niveau de la gestion des scénarios sont corrigés.
+- Les monstres faibles n'ont plus leur caractériques augmentés dans les sauvegardes.
+- Des fautes d'orthographes ont été corrigées.
+- La phase de chargement gère maintenant de nombreuses erreurs.
+- Ajout de nouveaux conseils. Certains conseils ont été modifiés.
+- Ajout de nouveaux noms pour le générateur de personnages.
+
+V1.4 (JANVIER 2004)
+* Ajout de messages d'information pendant le jeu.
++ Ajout d'une compétence marchandage qui permet de diminuer le prix d'achat des boutiques.
++ Ajout d'un bouton qui permet de définir le comportement des soldats.
+* Système qui rend les compétences objets 100% compatibles avec les versions ultérieures.
++ Ajout de l'objet bâton de sorcier.
++ Ajout de 5 nouvelles apparences pour les métiers.
+- 2 apparences de métiers ont été remplacés.
++ Ajout de 20 nouvelles apparences pour personnaliser son personnage.
+- 5 apparences de monstres ont été remplacés.
+- 4 apparences de donjons ont été remplacés.
+- 1 apparence d'objet a été remplacé.
+- Affiche le métier préféré du personnage dans l'écran de démarrage.
+- Ajout de nouveaux noms pour le générateur de personnages.
+- Ajout de nouveaux commentaires.
+- Certains batiments et objets ont été modifiés.
+- L'expérience des compétences a été réajusté.
+* Les effets visuels sont plus fluides et ralentissent moins l'affichage. (De 15% environ)
++ Ajout de 2 nouveaux effets visuels.
+- 4 Effets visuels ont été remplacés.
+- Le personnage n'a plus ses caractéristiques augmentées dans les parties chargées.
+
+V1.3 (DECEMBRE 2003)
++ Ajout d'un fichier FAQ, ce fichier est consultable dans le menu "?"
++ Ajout des boutons attaquer ennemi proche et attaquer chateau proche.
+- Les armes à distance font perdre de l'énergie.
++ Ajout des objets arc composite et arbalète lourde.
++ Ajout de l'objet bonnet.
++ Ajout du sort vitalité.
+- Quand une invocation tue un adversaire, l'invocateur n'a plus son bestiaire incrémenté.
+- Ajout de nouveaux noms pour le générateur de personnages.
+- Possibilité d'accéder au site web et d'envoyer des mails dans la fenêtre "A Propos".
+- L'IA peut maintenant contruire directement des batiments évolués.
+- L'IA recherche 3x plus qu'avant. (utilise plus de procésseur et améliore le raisonnement)
+- La précédente modification rend aussi les monstres et les mercenaires 3x plus agressifs.
+- L'IA récupère son argent à la maison quand il en a besoin.
+- L'IA peut maintenant aller acheter des ressources pour regagner de la magie.
+- L'affichage a été optimisé en réduisant les calculs sur l'apparence des humains.
+- Le personnage ne souffre plus d'hermaphrodisme dans les scénarios.
+
+V1.2 (NOVEMBRE 2003)
+* Possiblité de générer un monde à partir d'un fichier scénario.
++ Ajout de 4 nouveaux scénarios. L'ancien scénario à été modifié.
+* Possibilité de définir des fiefs alliés pour une nouvelle partie.
++ Les touches de raccourci sont paramétrables un fichier .ini.
++ Ajout d'1 nouveau peuple : Les animaux domestiques.
++ Ajout d'une compétence "armes lourdes". L'épée à 2 mains est maintenant une arme lourde.
++ Ajout de 3 nouveux effets visuels. 2 effets visuels existants ont été modifiés.
++ Ajout d'une nouvelle dimension de monde.
++ On peut définir le nombre de soldats que l'on envoie en attaque avec Shift et Ctrl.
++ Ajout de nouveaux commentaires utilisés pour le commandement.
+- Le jeu mémorise l'ensemble des personnages sélectionnés.
+- Le jeu mémorise le dernier scénario joué.
+- Certains monstres sont maintenant infatigables.
+- On ne peut plus vendre ou se débarrasser d'objets quand on est mort.
+- Quand on commence à des époques évoluées, les chateaux humains démarrent avec plus de vie.
+- Le sort de guérison n'est plus automatiquement activé quand on l'achète.
+- Le sort de guérison rend des points de vie proportionnels aux bonus de vie de la cible.
+- Le sort de resurrection fait récupérer lentement tous les points de vie à la cible.
+- Les sorts de soins peuvent maintenant affecter plusieurs personnes.
+- L'expérience de la compétence coup critique ne dépend plus de la puissance de l'arme.
+- Le jeu ne quitte plus automatiquement en cas de défaite.
+- Les messages de victoire et de défaite sont maintenant transparents.
+- Les infos bulles pour la fabrication des objets indiquent les ressources qui manquent.
+- Il n'y a plus de problèmes d'affichage à minuit.
+- Le site internet est mensionné dans la fenêtre "A propos".
+- Le bouton "Commencer" n'est actif que quand on a sélectionné un personnage et un monde.
+- Ne crée plus de fichier "Erreur.txt" à chaque démarrage.
+- Amélioration du comportement l'IA pendant les combats.
+
+V1.1 (NOVEMBRE 2003)
+* Possibilité de sélectionner plusieurs personnages.
+- Nouvelles touches "Tab" et "Shift Tab" pour changer de personnage en cours de jeu.
+- Ajout du menu "Personnage" comprenant 4 sous menus.
+- Les informations images et texte des mondes sont maintenant sauvegardés.
+- Ajout du menu "Monde" comprenant 3 sous menus.
+* Plusieurs objets peuvent maintenant dépendre d'une seule compétence.
+* Certains objets permettent maintenant d'invoquer des monstres.
+* Certains objets permettent de se guérir, de guérir ou de ressusciter les autres.
+* Nouvelle catégorie d'objets : bottes
+* Certains objets peuvent maintenant offrir un bonus à la vitesse de déplacement.
+* Touches de raccourci pour changer d'équipement instantanément.
+- Certaines propriétés de l'interface sont maintenant sauvegardées dans le personnage.
+- Possibilité de cacher les boutons de construction de bâtiments avec la touche "Backspace".
+* Nouveaux boutons pour aller automatiquement récolter les ressources les plus proches.
++ Ajout du bouton stop qui permet de s'arrêter et d'arrêter les invocations.
++ Ajout du bouton "Chargez" qui permet de donner des ordres aux invocations.
+- Ordonne l'offensive en cliquant droit sur une cible.
+* Possibilité d'afficher ou non les différents éléments de l'interface dans les options.
+* Possibilité de changer la résolution graphique. (3 modes graphiques possibles)
+- Les fenêtres sont maintenant transparentes et l'on peut cliquer à travers.
+- Nouveau fichier .ini permettant de personnaliser l'interface.
+- Les jauges des caractéristiques restent visibles quand on est mort.
+- Nouvelles infos-bulles sur les jauges des caractéristiques et les boutons manquants.
+- Les infos bulles des bâtiments indiquent les ressources qui manquent au joueur.
+- Les infos bulles ne sortent plus de l'écran.
+- La vitesse de récupération de la vie est augmentée de 50%.
+- La vitesse de résurrection est recalculée.
+* Le changement d'époque est maintenant temporisé. Le jeu ne comprend plus que 3 époques.
+- Possibilité de choisir l'époque de départ
+* Les objets peuvent maintenant offrir des bonus à toutes les compétences.
+* Les armures peuvent maintenant changer l'apparence du personnage.
+- Ajout de 2 nouvelles apparences pour les armures.
++ Ajout de 4 nouveaux peuples (Impériaux, Sorciers, Technologistes et Elémentaux)
++ Ajout d'une compétence coup critique. (Certaines armes en offrent des bonus)
++ Ajout des objets Robe de cérémonie et Marteau.
++ Ajout des objets casques partiels, masses et haches d'armes.
++ Ajout de 2 nouveaux sorts de feu avec des bonus à la destruction de bâtiments.
++ Ajout du livre qui permet d'invoquer un élémental de feu.
++ Ajout d'une cordonnerie permettant de fabriquer des bottes.
++ Ajout de 4 objets chaussures.
++ Ajout d'une aciérie. Certains objets sont maintenant fabriqués avec de l'acier.
+- Les armes de la forge sont maintenant fabriquées simplement avec du fer brut.
+- Le papier est maintenant fabriqué avec du bois.
++ Ajout d'une guilde de magie qui fabrique des objets pour les lanceurs de sorts.
++ Ajout des objets Robe de mage, robe noire et Chapeau de sorcier.
++ Ajout de l'objet golem de pierre.
++ Ajout d'un bâtiment fabriquant des potions de magie.
++ Ajout du bâtiment nécropole qui vend des objets de magie noire.
++ Ajout de 4 livres de magie noire.
++ Ajout du bâtiment Ecole vitae qui vend des objets magiques de guérison.
++ Ajout de 3 livres de guérison.
++ Ajout du tableau pour consulter la liste des ressources dans le menu "?".
+- Ajout d'une barre de progression à l'écran de chargement du jeu.
+- Ajout de 8 nouveaux effets visuels.
+- Ajout de 3 nouvelles apparences pour les métiers.
+- Ajout de 5 nouvelles apparences pour personnaliser son personnage.
+- Ajout de nombreux nouveaux commentaires.
+- Ajout de 3 nouvelles dimensions de cartes.
+- Ajustement de la vitesse de gain d'expérience.
+- Certains éléments du jeu ont été renommés et modifiés.
+- Les fiefs équilibrent maintenant leurs ressources.
+- L'IA n'appel moins souvent à l'aide dans les cas où cela semble inutile.
+- Amélioration, optimisation et débuggage de l'IA.
+- Les bâtiments de grande taille ne se superposent plus.
+- Le jeu ne plante plus de manière "hasardeuse" au lancement d'une nouvelle partie.
+- L'interface a été optimisée.
+
+V1.0 (SEPTEMBRE 2003)
+- 3 modes de jeu (Nouveau Monde, Nouvelle Bataille, Charger un Monde)
+- 4 époques.
+- 25 bâtiments différents.
+- 18 ressources dont 5 disponibles sur le terrain.
+- 25 objets. (armes, armures et casques)
+- 6 caractéristiques et 47 compétences.
+- 30 monstres répartis en 6 peuples.
+- Affichage plein écran en 1024*768 avec une interface réduite.
+- 6 fenêtres d'interface (Bâtiment, Ressources, Personnage, Compétences, Inventaire et Bestiaire)
+- Barres de statut des caractéristiques et de l'état du travail.
+- 10 effets visuels.
+- Boutons de retour à la maison et au château.
+- Bouton laissant l'IA piloter le personnage.
+- Bouton permettant de demander le soutien aux autres joueurs.
+- Possibilité de consulter les tableaux des bâtiments, des monstres et des objets.
+- Edition du jeu à partir de 5 fichiers .ini
+- Le joueur peut personnaliser son personnage avec l'une des 78 apparences.
+- Lecture de 7 types de musiques .mp3 d'ambiance.
+- Sauvegardes de personnages compatibles avec les versions antérieures et ultérieures.
+- Sauvegarde du monde (touche F12). Le monde est indépendant du personnage.
+- Un scénario disponible.

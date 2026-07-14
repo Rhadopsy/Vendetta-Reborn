@@ -1,0 +1,180 @@
+Nombre_Fiefs=6
+Nombre_Ressources=150
+Nombre_Persos=1300
+Monde_Largeur=128
+Monde_Hauteur=384
+Type_Terrain=2
+Epoque=4
+
+DEBUT
+
+#Modification du terrain.
+
+#La Plaine
+Terrain_CarrePlein(0-119)=128,145
+
+#La muraille.
+Choix_Terrain=6
+Terrain_CarrePlein(0-144)=16,147
+Terrain_CarrePlein(17-128)=112,131
+Terrain_CarrePlein(113-144)=128,147
+
+Terrain_CarrePlein(13-128)=16,144
+Terrain_CarrePlein(113-128)=116,144
+
+Terrain_CarrePlein(32-120)=48,128
+Terrain_CarrePlein(80-120)=96,128
+
+Choix_Terrain=7
+Terrain_CarrePlein(0-148)=16,148
+Terrain_CarrePlein(17-132)=112,132
+Terrain_CarrePlein(113-148)=128,148
+
+Choix_Terrain=8
+Terrain_CarrePlein(0-149)=16,150
+Terrain_CarrePlein(17-133)=112,134
+Terrain_CarrePlein(113-149)=128,150
+
+Choix_Terrain=9
+Terrain_CarrePlein(0-151)=16,151
+Terrain_CarrePlein(17-135)=112,135
+Terrain_CarrePlein(113-151)=128,151
+
+#Les douves.
+Choix_Terrain=10
+Terrain_CarrePlein(0-153)=17,155
+Terrain_CarrePlein(18-137)=111,139
+Terrain_CarrePlein(112-153)=128,155
+
+Terrain_CarrePlein(18-138)=20,155
+Terrain_CarrePlein(109-138)=111,155
+
+#Les routes.
+Choix_Terrain=5
+Terrain_CarreVide(63-137)=66,138
+Terrain_CarreVide(16-32)=112,96
+Terrain_CarreVide(17-33)=111,95
+Terrain_CarreVide(64-64)=65,384
+Terrain_CarreVide(0-256)=64,257
+Terrain_CarreVide(64-320)=128,321
+
+#Ajoute des décors
+Decor(1)=1004,2160
+Decor(2)=940,2108
+Decor(2)=1104,2108
+Decor(3)=994,1477
+
+Fief(1-3)_Peuple=1
+Fief(4)_Peuple=11
+Fief(5)_Peuple=3
+Fief(6)_Peuple=13
+
+Fief(1-3)_Equipe=1
+Fief(4-6)_Equipe=2
+
+Fief(1)_Position=976,960
+Fief(2)_Position=1728,1472
+Fief(3)_Position=192,1472
+
+Fief(4)_Position=64,4032
+Fief(5)_Position=1856,5056
+Fief(6)_Position=960,5952
+
+#Les villageois.
+Personnages(1-100)_Fief=1
+Rangees=5
+#Personnages(1-50)_Position=1296,1920
+#Personnages(51-100)_Position=528,1920
+Personnages(1-50)_Position=1040,2688
+Personnages(51-100)_Position=784,2688
+Personnages(1-100)_AllerChateau=1
+Personnages(1-100)_Argent=2000,50
+Personnages(1-100)_Ressource=0,20
+personnages(1-100)_Equipement=7,75
+
+#La ville.
+Maisons(201-400)_Type=0
+Maisons(201-400)_Stock=85
+
+#Les protecteurs de la ville.
+Personnages(201-250)_Fief=2
+Personnages(301-350)_Fief=2
+Personnages(251-300)_Fief=3
+Personnages(351-400)_Fief=3
+#Personnages(201-400)_Fichier_IA=Bataille.ia
+Rangees=2
+#Les fantassins.
+#Personnages(201-250)_Position=384,2224
+#Personnages(251-300)_Position=1088,2224
+Personnages(201-250)_Position=384,1576
+Personnages(251-300)_Position=1088,1576
+Personnages(201-300)_AttaquerPersos=501
+Personnages(201-300)_Objet=15
+Personnages(201-300)_Objet=21
+Personnages(201-300)_Objet=25
+Personnages(201-300)_Objet=48
+Personnages(201-300)_Objet=74
+Personnages(201-300)_Objet=69
+Personnages(201-300)_Objet=72
+
+#Les archers.
+#Personnages(301-350)_Position=384,2046
+#Personnages(351-400)_Position=1088,2046
+Personnages(301-350)_Position=384,1078
+Personnages(351-400)_Position=1088,1078
+Personnages(301-400)_AttaquerPersos=401
+Personnages(301-400)_Ressource=3,6
+Personnages(301-400)_Objet=18
+Personnages(301-400)_Objet=20
+Personnages(301-400)_Objet=24
+Personnages(301-400)_Objet=47
+Personnages(301-400)_Objet=75
+Personnages(301-400)_Objet=69
+Personnages(301-400)_Objet=70
+
+#Les envahisseurs.
+Personnages(401-1000)_Grade=1
+Rangees=2
+#Les 2 premiers bataillons.
+Personnages(401-1000)_Fief=4
+Personnages(401-1000)_Vitesse=4
+Personnages(401-450)_Position=384,3072
+Personnages(451-500)_Position=1088,3072
+Personnages(501-550)_Position=384,3120
+Personnages(551-600)_Position=1088,3120
+#Les 4 bataillons suivants.
+Rangees=10
+Personnages(601-700)_Position=384,3264
+Personnages(701-800)_Position=1444,3264
+Personnages(801-900)_Position=740,3264
+Personnages(901-1000)_Position=1088,3264
+#La rangée d'animaux.
+Rangees=2
+Personnages(1201-1300)_Fief=5
+Personnages(1201-1300)_Grade=4
+Personnages(1201-1250)_Position=384,3936
+Personnages(1251-1300)_Position=1088,3936
+
+Personnages(401-1000)_Direction=0,-2048
+Personnages(1201-1300)_Direction=0,-2368
+
+#2 bataillons en renfort.
+Rangees=4
+Personnages(1001-1200)_Fief=4
+Personnages(1001-1200)_Vitesse=4
+Personnages(1001-1100)_Position=384,5120
+Personnages(1101-1200)_Position=1088,5120
+Personnages(1001-1200)_Direction=0,-4096
+
+#La rangée de dragons.
+Rangees=2
+Personnages(101-200)_Fief=6
+Personnages(101-130)_Grade=1
+Personnages(131-170)_Grade=5
+Personnages(171-200)_Grade=2
+#Personnages(101-200)_Vitesse=4
+Personnages(101-150)_Position=384,5376
+Personnages(151-200)_Position=1088,5376
+Personnages(101-200)_Direction=0,-4096
+
+FIN

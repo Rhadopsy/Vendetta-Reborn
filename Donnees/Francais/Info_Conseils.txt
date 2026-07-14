@@ -1,0 +1,197 @@
+Le saviez-vous ?#
+
+###################################################################
+#Nouveautés de la version 3.0.
+- En maintenant ctrl ou shift enfoncé, vous pouvez contruire
+plusieurs tours de défense à la suite.
+- En maintenant ctrl enfoncé, vous pouvez rentrez dans votre maison
+sans la réparer ou réparer les maisons de vos alliés.
+- Pour démolir l'un de vos bâtiments secondaires, rentrez dedans
+et cliquez sur "Démolir bâtiment (suppr)".
+- Vous pouvez attaquer vos adversaire avec des armes à distance
+tout en restant à l'intérieur d'une tourelle de défense.
+- Avec le 3e bouton de votre souris, vous pouvez lancer des
+projectiles dans la direction de votre curseur sans déplacer votre
+personnage. Si vous n'avez pas ce bouton sur votre souris, utilisez
+"." du pavé numérique de votre clavier.
+- Après avoir sélectionné des ressources et objets, cliquez sur le
+château pour aller les vendre directement. Un clique droit annule
+votre transaction.
+- En utilisant le bouton droit de la souris sur la carte, vous
+pouvez déplacer la zone de visualisation. L'écran se recentre
+automatiquement sur votre personnage quand vous fermez la carte.
+- Les vêtements augmentent votre vitalité au delà de 100%. Avec une
+vitalité accrue, vous travaillez plus vite que si vous portiez une
+armure ou une robe magique.
+###################################################################
+#Nouveautés de la version 2.5.
+- Avec la roulette de la souris, vous pouvez régler le niveau
+de restauration automatique sur vos barres de vie, d'énergie, de
+magie et de moral.
+- En maintenant Shift et Alt enfoncés, vous disposez de 18 touches
+de raccourci objets supplémentaires.
+- Cliquer gauche sur un objet en mainteant Ctrl enfoncé permet de
+le déposer ou de le vendre directement cet objet.
+###################################################################
+#Nouveautés de la version 2.4.
+- En cliquant droit sur le bouton "déplacer" de vos fénêtres,
+celles-ci se remettent à leurs positions d'origine.
+- En cliquant gauche sur le rectangle des effets temporaires, vous
+relancez une nouvel fois cet effet. (A condition de disposer de
+l'équipement approprié) La durée du deuxième effet vient s'ajouter
+au premier.
+- Cliquer droit sur le carré d'un effet temporaire en haut de
+l'écran pour stopper cet effet.
+- En cliquant droit sur un bâtiment, vous ouvrez l'interface
+radiale directement sur le bouton bâtiment. En cliquant droit sur
+une ressource, vous l'ouvrez sur le bouton ressource. En cliquant
+droit sur le sol, vous êtes directement sur le bouton inventaire.
+- En cliquant droit sur un adversaire, vous donner l'ordre à vos
+soldats de l'attaquer sans être obligé de les sélectionner. Seuls
+les soldats inactifs prendront en compte cet ordre.
+- Appuyez sur la touche "Entrée" pour agir sur l'objet sur lequel
+votre personnage se situe. S'il s'agit d'une ressource, votre
+personnage la récoltera. S'il s'agit d'un bâtiment, il rentrera
+dedans. S'il s'agit d'une cible, votre personnage l'attaquera.
+- Avant de partir vous battre, vous pouvez déposer votre argent et
+vos objets dans votre maison. Cela vous évitera de les perdre si
+vous vous faîtes tuer. Par contre veillez à ce que votre maison
+reste en sécurité.
+###################################################################
+#Moteur.
+- Vous pouvez entièrement personnaliser Vendetta en modifiant les
+fichiers .ini ainsi que les graphismes. Rien ne vous empêche de
+concevoir un mod Star Wars ou Dune par exemple.
+###################################################################
+#Partie.
+- Vous pouvez jouer avec plusieurs personnages. Générez 50
+personnages et sélectionnez les tous avec Ctrl-A. Au début de la
+partie, vous commencez avec le personnage dont les caractéristiques
+étaient affichées à droite de la liste. Les autres personnages
+commencent en mode automatique. Vous pouvez ensuite changer de
+personnage avec les touches ² et Shift-².
+###################################################################
+#Interface.
+- Avec la barre d'espacement, vous pouvez effacer les messages
+comme celui-ci et fermer toutes les fenêtres. 
+- Appuyez sur F9 pour avoir un autre conseil. Vous pouvez aussi
+désactivez les conseils dans le menu option de la fenêtre de
+démarrage.
+- Vous sauvegardez le monde avec la touche F12. Vous pouvez rejouer 
+après dans ce monde avec votre personnage ou avec d'autres
+personnages plus ou moins expérimentés.
+- Utilisez la roulette de la souris pour faire défiler rapidement
+les listes dans les fenêtres.
+- En cliquant gauche sur vos barres de statut en bas de l'écran,
+vous récupérez des points si vous disposez des ressources
+nécessaires. En cliquant droit, vous mettez cette fonction en mode
+automatique.
+- Appuyer sur la touche 1,2,3..ou..9 quand votre curseur est sur un
+objet de votre équipement. En réappuyant sur cette même touche, 
+vous vous équipez instantanément avec l'objet désigné. Vous pouvez
+annuler cette fonction de la même manière avec la touche 0. La
+manière dont vous configurez les touches de raccourci de
+l'équipement est sauvegardé dans votre fichier personnage.
+- En appuyant sur la touche Ctrl + un numéro de 1 à 9, vous
+enregistrez dans la touche de raccourci du même numéro, votre
+configuration d'équipement. Cela vous permet par exemple avec les
+touches 1 et 2 d'alterner entre un équipement de sorcier (sort &
+robe) à celui de guerrier (armes et armure). En appuyant sur Ctrl+0
+vous effacer toutes les touches de raccourci des objets sur vous.
+- La barre de statut blanche au dessus de votre personnage indique
+la progression de votre travail. Les 3 barres de statut en dessous
+indiquent respectivement de haut en bas le niveau de vie, d'attaque
+et de défense. Ces barres de santés ne sont pas affichés quand ils
+sont à leurs maximums.
+- Le cercle autour de votre personnage change de couleur en
+fonction de vos actions. Si le cercle est blanc, votre
+personnage ne fait rien. Bleu, il se déplace ou travaille. Rouge,
+votre personnage combat ou se dirige vers un adversaire.
+###################################################################
+#Règles-Compétences.
+- La compétence marchandage aide à diminuer le prix d'achat dans
+les boutiques. Cette compétence d'affecte pas les achats dans les
+châteaux, ni le prix de vente.
+- Plus vos compétences sont élevées et plus les bonus des objets
+sont importants. Cela affecte la vitesse de fabrication, les bonus
+de caractéristiques, la portée, le nombre de créatures invoquées...
+Mis à part l'armure qui reste constante.
+- Quand votre compétence Chaussure arrive à 40, les bottes offrent
+un bonus de 2 points de vitesse. Quand votre compétence Magie
+rédemptrice arrive à 40, vos sorts de guérison et de résurrection
+affectent 2 personnes au lieu d'1.
+- Quand vous gagnez un niveau à l'une de vos compétences de
+ressources, votre personnage travaille 5% plus vite et peut
+transporter une unité de ressource supplémentaire.
+###################################################################
+#Jeu-économie.
+- Si vous coupez du bois avec une hache, vous gagnez de
+l'expérience dans la compétence hache. C'est pareil pour tous les 
+autres outils.
+- Quand vous travaillez, laissez votre armement de côté pour
+privilégier des vêtements simples. Vous vous fatiguerez moins vite
+et gagnerez de l'expérience dans la compétence vêtement.
+- Quand vous détruisez votre maison, vous récupérez une partie des
+ressources qui ont été nécessaires à sa construction en fonction de
+son état.
+- La barre blanche à gauche du bâtiment indique la quantité de
+matières premières dont vous disposez. La barre d'en haut indique
+la quantité de ressource que vous avez produit. La barre de droite
+indique le niveau de stock dans la maison.
+- Quand votre vitalité baisse, vous vous déplacez moins vite, vous
+travaillez moins vite et combattez moins vite. Votre vitalité est
+affectée par votre niveau de vie, d'énergie et de moral. Votre
+vitalité est optimale quand toutes ces jauges sont vertes.
+- Quand votre énergie ou votre moral descendent à 0, votre
+personnage ne peut plus attaquer.
+- Quand vous restez dans votre maison sans travailler, vous
+récupérez un peu de moral. De même, votre énergie se recharge plus
+vite que si vous restiez dehors.
+###################################################################
+#Jeu-combats.
+- La dague offre un bonus à la compétence coup critique. Utilisez-
+la avec une arme qui augmente beaucoup vos points d'attaque pour
+faire un maximum de dégâts et de points d'expérience.
+- N'hésitez pas à utiliser un bouclier pour les duels qui durent
+plusieurs assauts. Vous perdrez ainsi beaucoup moins de points de
+vie que votre adversaire. En utilisant deux boucliers en même temps
+vous résistez facilement à n'importe quel attaque. Cela vous
+laissera le temps d'arriver au contact ou de vous enfuir.
+- Utilisez des armures lourdes pour les combats périlleux et des
+armures moyennes pour les combats simples. Vous gagnerez d'avantage
+d'expérience dans les 2 situations. La veste de cuir est l'armure
+la plus adaptée pour les combats à distance.
+- Plus vous utilisez une arme de tir lourde et plus vous vous
+utilisez une importante quantité de ressources. Ne les utilisez que
+quand vous avez fait le plein de ressources.
+- En utilisant 2 fois la même arme dans chaque main, vous gagnez 2
+fois plus d'expérience avec celle-ci.
+- Quand vous frappez sur un bâtiment, vous ne gagnez pas
+d'expérience avec votre arme sauf si vous utilisez une arme
+contondante ou un sort de feu.
+- Plus vous êtes puissant et plus vos points d'attaque et de
+défense mettent de temps à se recharger. Quand vous affrontez des
+adversaires moins forts que vous, reculez un peu le temps de
+récupérer entièrement vos barres de combat. Par contre, vos armes
+et boucliers accélèrent la vitesse de rechargement.
+- En cliquant plusieurs fois sur un même adversaire, votre
+personnage donne pleins de petits coups qui traversent sa défense.
+Avec cette technique, vous accélérez le combat et faîtes d'avantage
+de dégâts quand vous n'arrivez pas à passer les défenses adverses.
+- Quand vous vous arrêtez à l'extérieur ou dans un bâtiment, votre
+vie et votre énergie se rechargent lentement. Dans votre maison,
+vous récupérez du moral en plus de regagner votre vie et votre
+energie plus rapidement. Votre magie se récupère automatiquement et
+toujours à la même vitesse, quelles que soient vos actions.
+###################################################################
+#Jeu-stratégie.
+- Cliquez droit sur le bouton "attaquer adversaire" ou le bouton
+"attaquer château" pour envoyer vos unités à l'attaque. Vous
+pouvez faire pareil en utilisant Alt avec la touche de raccourci.
+- Si vous ne sélectionnez pas vos troupes, vous pouvez définir le
+nombre d'unités que vous envoyez à l'attaque avec les touches
+Ctrl (1), Shift (5) et Alt (Tous).
+Ctrl et Shift simultanément : 10 hommes.
+- Manoeuvrer vos unités n'est pas toujours évident au beau milieu
+de l'action. Mettez le jeu en pause (touche F10) pour pouvoir
+affecter tranquillement tous vos ordres.

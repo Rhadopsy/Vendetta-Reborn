@@ -1,0 +1,61 @@
+Nombre_Fiefs=2
+Nombre_Ressources=50
+Nombre_Persos=550
+Monde_Largeur=128
+Monde_Hauteur=128
+Choix_terrain=1
+Epoque=4
+
+DEBUT
+
+Fief(1)_Peuple=1
+Fief(1)_Equipe=1
+Fief(2)_Peuple=4
+Fief(2)_Equipe=2
+Fief(1)_Position=1024,1024
+Fief(1)_MaxVie=9000
+Fief(1)_Ressources=1000
+Fief(2)_Vie=0
+
+Personnages(1-100)_Fief=1
+#La ville.
+#Maisons(1-100)_Type=0
+#Maisons(1-100)_Stock=85
+
+#Les villageois.
+Personnages(1-100)_Argent=3000
+Personnages(1-100)_Ressource=0,20
+Personnages(1-100)_DansUnChateau=1
+#Personnages(2-10)_Fichier_IA=Arbalétrier offensif.ia
+#Personnages(11-20)_Fichier_IA=Paladin offensif.ia
+Personnages(21-30)_Fichier_IA=Prêtre.ia
+#Personnages(31-40)_Fichier_IA=Assassin offensif.ia
+#Personnages(41-50)_Fichier_IA=Barbare offensif.ia
+Personnages(51-60)_Fichier_IA=Chevalier offensif.ia
+#Personnages(61-70)_Fichier_IA=Commandant offensif.ia
+Personnages(71-80)_Fichier_IA=Elémentaliste offensif.ia
+Personnages(81-90)_Fichier_IA=Mercenaire.ia
+#Personnages(91-100)_Fichier_IA=Magicien offensif.ia
+#Le Messager
+Personnage(2)_Position=1088,1280
+Personnage(2)_Direction=0,-128
+
+#L'Armée de squelettes.
+Personnages(101-550)_Fief=2
+Personnages(101-550)_Grade=2
+
+Rangees=20
+#Bataillon de Gauche.
+Personnages(101-200)_Position=70,768
+
+#Bataillon de droite.
+Personnages(201-300)_Position=1958,768
+
+Rangees=5
+#Bataillon d'en haut.
+Personnages(301-400)_Position=830,128
+
+#Bataillon d'en bas.
+Personnages(401-550)_Position=710,1888
+
+FIN

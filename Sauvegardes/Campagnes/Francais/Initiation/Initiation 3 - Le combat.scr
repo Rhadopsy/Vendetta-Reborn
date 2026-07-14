@@ -1,0 +1,376 @@
+Sub Commencer()
+	Persos(1).Objet_Inventaire_Vider_Tout
+        Persos(1).Objet_Equipes_Vider_Tout
+	Persos(2).IA = False
+	Persos(3).IA = False
+	Persos(4).IA = False
+	Persos(5).IA = False
+	Persos(6).IA = False
+	Persos(7).IA = False
+	Persos(8).IA = False
+	Persos(9).IA = False
+	Persos(10).IA = False
+	Persos(11).IA = False
+	Persos(12).IA = False
+	Persos(13).IA = False
+	Persos(14).IA = False
+	Persos(5).Vivant = False
+	Persos(6).Vivant = False
+	Persos(7).Vivant = False
+	Persos(8).Vivant = False
+	Persos(9).Vivant = False
+	Persos(10).Vivant = False
+	Persos(11).Vivant = False
+	Persos(12).Vivant = False
+	Persos(13).Vivant = False
+	Persos(14).Vivant = False
+	Jeu.VictoireStandard = False
+	Interface.AfficherBoutonsInfos = True
+	Interface.AfficherBoutonsDeplacement = True
+	Interface.Fermer_Toutes_les_fenetres
+	Persos(1).Objet_Ajouter_Inventaire 59, Parametres, Commentaires
+	Persos(1).Objet_Ajouter_Inventaire 13, Parametres, Commentaires
+	Persos(1).Objet_Ajouter_Inventaire 38, Parametres, Commentaires
+	Persos(1).Objet_Ajouter_Inventaire 58, Parametres, Commentaires
+	Persos(1).Objet_Ajouter_Inventaire 15, Parametres, Commentaires
+	Persos(1).Objet_Ajouter_Inventaire 39, Parametres, Commentaires
+	Persos(2).Objet_Ajouter_Inventaire 119, Parametres, Commentaires
+	Persos(2).Objet_Ajouter_Inventaire 20, Parametres, Commentaires
+	Persos(2).Objet_Ajouter_Inventaire 73, Parametres, Commentaires
+	Persos(2).Definir_Ressources(6) = 20
+End Sub
+
+Sub Jouer()
+	If Not Persos(2).Vivant Then
+		Persos(2).Vivant = True
+                Persos(2).PositionX = Chateaux(1).PositionX + Chateaux(1).Largeur / 2 - Persos(2).Largeur / 2 + Chateaux(1).EntreePositionX
+                Persos(2).PositionY = Chateaux(1).PositionY + Chateaux(1).Hauteur / 2 - Persos(2).Hauteur / 2 + Chateaux(1).EntreePositionY
+                Persos(2).DansSonChateau = True
+	End If
+	If Persos(1).Vivant Then
+		If Persos(1).FragsPersos + Persos(2).FragsPersos > 11  Or Jeu.Definir_Victoire Then
+			Persos(2).Definir_Commentaires = ""
+			Persos(2).Definir_Commentaires = "Bravo, vous avez vaincu tous vos adversaires.#Dans ce jeu, l'équipement ne se limite pas à ce type d'armes.#A vous de les découvrir en faisant d'autres parties."
+			If not Jeu.Definir_Victoire Then
+				Persos(2).Aller_A Persos(1).PositionX + Persos(1).Largeur, Persos(1).PositionY
+				Persos(2).IA = False
+			End If
+			Jeu.Definir_Victoire = True
+			Interface.Objectifs_Ajouter " "
+			DESACTIVER_AUTOMATES
+		ElseIf Persos(5).NumeroEquipe = 2 Then
+			If Persos(2).Action = 300 Then
+				Persos(2).Definir_Commentaires = "Prenez ça, espèces de brindilles sur pattes !!!"
+			End If
+			DESACTIVER_AUTOMATES
+		ElseIf Not Persos(4).Vivant Then
+			If Persos(1).Objet_Nombre_Total < 4 Then
+				Persos(1).Objet_Inventaire_Vider_Tout
+			        Persos(1).Objet_Equipes_Vider_Tout
+				Persos(1).Objet_Ajouter_Inventaire 59, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 13, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 38, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 58, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 15, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 39, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 21, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 17, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 18, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 87, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 10, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 37, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 19, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 23, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 20, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 24, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 73, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 74, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 46, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 47, Parametres, Commentaires
+			End If
+			If (Persos(1).Objet_Equipes_Actif(0) Or Persos(1).Objet_Equipes_Actif(1)) And Persos(1).Objet_Equipes_Actif(2) And Persos(1).Objet_Equipes_Actif(3) And Persos(1).Objet_Equipes_Actif(4) And Persos(1).Objet_Equipes_Actif(8) Then
+				ACTIVER_AUTOMATES
+			ElseIf Interface.Fenetres_Visible(4) Then
+				If Not Persos(1).Objet_Equipes_Actif(0) And Not Persos(1).Objet_Equipes_Actif(1) Then
+					Persos(2).Definir_Commentaires = ""
+					Persos(2).Definir_Commentaires = "La suite va être plus difficile " & Persos(1).Nom & ",#je te conseille de bien t'équiper.#Prend une ARME pour augmenter ton ATTAQUE."
+					EFFETS_SUR_INVENTAIRE_CATEGORIE 0
+					EFFETS_SUR_INVENTAIRE_CATEGORIE 1
+				ElseIf Not Persos(1).Objet_Equipes_Actif(2) Then
+					Persos(2).Definir_Commentaires = ""
+					Persos(2).Definir_Commentaires = "La suite va être plus difficile " & Persos(1).Nom & ",#je te conseille de bien t'équiper.#Revêt une ARMURE pour augmenter ta VIE et ta DEFENSE."
+					EFFETS_SUR_INVENTAIRE_CATEGORIE 2
+				ElseIf Not Persos(1).Objet_Equipes_Actif(3) Then
+					Persos(2).Definir_Commentaires = ""
+					Persos(2).Definir_Commentaires = "La suite va être plus difficile " & Persos(1).Nom & ",#je te conseille de bien t'équiper.#Coiffe toi d'un CASQUE, ça permet de garder sa tête."
+					EFFETS_SUR_INVENTAIRE_CATEGORIE 3
+				ElseIf Not Persos(1).Objet_Equipes_Actif(4) Then
+					Persos(2).Definir_Commentaires = ""
+					Persos(2).Definir_Commentaires = "La suite va être plus difficile " & Persos(1).Nom & ",#je te conseille de bien t'équiper.#Chausse des BOTTES pour augmenter ta VITESSE."
+					EFFETS_SUR_INVENTAIRE_CATEGORIE 4
+				ElseIf Not Persos(1).Objet_Equipes_Actif(8) Then
+					Persos(2).Definir_Commentaires = ""
+					Persos(2).Definir_Commentaires = "La suite va être plus difficile " & Persos(1).Nom & ", je te#conseille de bien t'équiper.#Enfile des GANTS pour augmenter ton potentiel de combat."
+					EFFETS_SUR_INVENTAIRE_CATEGORIE 8
+				End If
+				Interface.Objectifs_Ajouter "- S'équiper entièrement"
+			Else
+				'Active l'effet sur le bouton Fenetre inventaire.
+				Interface.Affichage_PleinEcran = False
+				Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonInfoPositionX(4) + 12, Interface.Definir_BoutonInfoPositionY(4) + 14
+				Persos(2).Definir_Commentaires = ""
+				Persos(2).Definir_Commentaires = "La suite va être plus difficile " & Persos(1).Nom & ".#Ouvre ton inventaire pour t'équiper complètement."
+				Interface.Objectifs_Ajouter "- S'équiper entièrement"
+			End If
+			Persos(4).IA = False
+		ElseIf Persos(4).NumeroEquipe = 2 Then
+			ACTIVER_ROBOT
+		ElseIf Not Persos(3).Vivant Then
+			If Persos(1).Objet_NombreType(17) = 0 And Persos(1).Objet_NombreType(18) = 0 And Persos(1).Objet_NombreType(87) = 0 Then
+				Persos(1).Objet_Inventaire_Vider_Tout
+			        Persos(1).Objet_Equipes_Vider_Tout
+				Persos(1).Objet_Ajouter_Inventaire 17, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 18, Parametres, Commentaires
+				Persos(1).Objet_Ajouter_Inventaire 87, Parametres, Commentaires
+			End If
+			If Persos(1).Objet_Equipes_Actif(0) Or Persos(1).Objet_Equipes_Actif(1) Then
+				Select case Persos(1).Objet_Equipes_Type(0)
+				Case 17:
+					If Persos(1).Definir_Ressources(2) < 4 then
+						If Persos(1).Definir_Ressources(2) = 0 then
+							Persos(2).Definir_Commentaires = ""
+							Persos(2).Definir_Commentaires = "Vous avez besoin de BOIS pour tirer à l'arc.#Cliquez sur l'arbre en dessous."
+						Else
+							Persos(2).Definir_Commentaires = ""
+							Persos(2).Definir_Commentaires = "Bien, plus vous avez de BOIS en réserve.#et plus vous pourrez tirer avec cet arc."
+						End If
+						Interface.Objectifs_Ajouter "- Collecter des munitions."
+						Persos(2).Aller_A 832, 632
+					Else
+						ACTIVER_ROBOT
+					End If
+				Case 18:
+					If Persos(1).Definir_Ressources(2) < 4 then
+						If Persos(1).Definir_Ressources(2) = 0 then
+							Persos(2).Definir_Commentaires = ""
+							Persos(2).Definir_Commentaires = "Vous avez besoin de BOIS pour tirer à l'arbalète.#Cliquez sur l'arbre en dessous."
+						Else
+							Persos(2).Definir_Commentaires = ""
+							Persos(2).Definir_Commentaires = "Bien, plus vous avez de BOIS en réserve.#et plus vous pourrez tirer avec cet arbalète."
+						End If
+						Interface.Objectifs_Ajouter "- Collecter des munitions."
+						Persos(2).Aller_A 832, 632
+					Else
+						ACTIVER_ROBOT
+					End If
+				Case 87:
+					If Persos(1).Definir_Ressources(25) < 4 then
+						If Persos(1).Definir_Ressources(25) = 0 then
+							Persos(2).Definir_Commentaires = ""
+							Persos(2).Definir_Commentaires = "Vous avez besoin de SOUFRE pour faire feu au pistolet.#Cliquez sur le gisement de soufre en dessous."
+						Else
+							Persos(2).Definir_Commentaires = ""
+							Persos(2).Definir_Commentaires = "Bien, plus vous avez de SOUFRE en réserve.#et plus vous pourrez faire feu avec ce pistolet."
+						End If
+						Interface.Objectifs_Ajouter "- Collecter des munitions."
+						Persos(2).Aller_A 864, 632
+					Else
+						ACTIVER_ROBOT
+					End If
+				End Select
+			Else
+				If Interface.Fenetres_Visible(4) Then
+					EFFETS_SUR_INVENTAIRE
+					Persos(2).Definir_Commentaires = ""
+					Persos(2).Definir_Commentaires = "C'était facile hein ? Ces automates ne sont pas vraiment solides..#Par contre, pour affronter un robot, je vous#conseille l'une de ces ARMES A DISTANCE."
+				Else
+					'Active l'effet sur le bouton Fenetre inventaire.
+					Interface.Affichage_PleinEcran = False
+					Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonInfoPositionX(4) + 12, Interface.Definir_BoutonInfoPositionY(4) + 14
+					Persos(2).Definir_Commentaires = ""
+					Persos(2).Definir_Commentaires = "C'était facile hein ? Ces automates ne sont pas vraiment solides.#Par contre, pour affronter un robot, je vous#conseille une arme à distance.#Ouvrez votre INVENTAIRE."
+				End If
+				Interface.Objectifs_Ajouter "- Prendre une arme à distance."
+			End If
+		ElseIf Persos(1).Objet_Equipes_Actif(0) Or Persos(1).Objet_Equipes_Actif(1) Or Persos(3).NumeroEquipe = 2 Then 
+			ACTIVER_AUTOMATE
+		Else
+			'Introduction de la partie.
+			If Jeu.Duree > 12 then
+				If Interface.Fenetres_Visible(4) Then
+					EFFETS_SUR_INVENTAIRE
+					Persos(2).Definir_Commentaires = ""
+					Persos(2).Definir_Commentaires = "Sélectionnez l'une de ces ARMES DE CONTACT."
+				Else
+					'Active l'effet sur le bouton Fenetre inventaire.
+					Persos(2).Definir_Commentaires = ""
+					Persos(2).Definir_Commentaires = "Déjà, vous devez prendre une arme en main.#Ouvrez votre INVENTAIRE."
+					Interface.Affichage_PleinEcran = False
+					Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonInfoPositionX(4) + 12, Interface.Definir_BoutonInfoPositionY(4) + 14
+				End If
+				Interface.Objectifs_Ajouter "- Prendre une arme de contact."
+			ElseIf Jeu.Duree > 6 then
+				Persos(2).Definir_Commentaires = ""
+				Persos(2).Definir_Commentaires = "Ok, je vais vous apprendre toutes les ~finesses~ du combat."
+			Else
+				Persos(2).Definir_Commentaires = "Bien, vous voilà maintenant dans la troisième partie d'initation."
+		        End if
+		End If
+	Else
+		Persos(2).Definir_Commentaires = ""
+		If Persos(1).Feminin Then
+			Persos(2).Definir_Commentaires = "Vous êtes morte. Retournez au château#pour pouvoir ressusciter."
+		Else
+			Persos(2).Definir_Commentaires = "Vous êtes mort. Retournez au château#pour pouvoir ressusciter."
+		End If
+		If Persos(1).DansSonChateau Then
+			Persos(1).DureeRessurection = Persos(1).DureeRessurection - 1
+		End If
+	End If
+End Sub
+
+Sub ACTIVER_AUTOMATE()
+	Persos(2).Definir_Commentaires = ""
+	Persos(2).Definir_Commentaires = "Vous êtes prêt pour un combat au corps à corps ?#Cliquez sur cet automate pour l'ATTAQUER."
+	If Persos(4).NumeroEquipe <> 2 Then
+		Persos(3).Aller_A Persos(1).PositionX, Persos(1).PositionY - Persos(3).Hauteur
+	End If
+	'If Persos(3).Definir_Vie < Persos(3).MaxVie And Persos(1).Attaquable Then
+	'	Persos(3).Attaquer_Perso 0
+	'End If
+	Persos(3).NumeroEquipe = 2
+	Interface.Objectifs_Ajouter "- Vaincre l'automate."
+End Sub
+
+Sub ACTIVER_ROBOT()
+	Persos(2).Definir_Commentaires = ""
+	Persos(2).Definir_Commentaires = "Vous êtes prêt pour un combat à distance ?#Cliquez sur ce robot l'ATTAQUER.#Essayer de garder vos distances."
+	If Persos(4).IndicePerso = 1 And Persos(4).Action = 300 or Persos(4).Action = 302 Then
+		Persos(4).Arreter
+	End If
+	If Persos(4).NumeroEquipe <> 2 Then
+		Persos(4).NumeroEquipe = 2
+		Interface.Objectifs_Ajouter "- Vaincre le robot."
+		Persos(4).Aller_A Persos(1).PositionX, Persos(1).PositionY - Persos(3).Hauteur * 6
+		Persos(4).IA = True
+	End If
+	Persos(2).Aller_A Persos(4).PositionX, Persos(4).PositionY - Persos(2).Hauteur
+End Sub
+
+Sub ACTIVER_AUTOMATES()
+	If Persos(5).NumeroEquipe <> 2 Then
+		Persos(2).IA = True
+		Persos(2).Definir_Commentaires = ""
+		Persos(2).Definir_Commentaires = "Prêt à affronter tous ces mannequins ?#Je sens qu'ils vont voler en morceaux !"
+		Interface.Actionner_Boutons_Infos 4
+
+		Persos(5).IA = True
+		Persos(6).IA = True
+		Persos(7).IA = True
+		Persos(8).IA = True
+		Persos(9).IA = True
+		Persos(10).IA = True
+		Persos(11).IA = True
+		Persos(12).IA = True
+		Persos(13).IA = True
+		Persos(14).IA = True
+
+		Persos(5).Vivant = True
+		Persos(6).Vivant = True
+		Persos(7).Vivant = True
+		Persos(8).Vivant = True
+		Persos(9).Vivant = True
+		Persos(10).Vivant = True
+		Persos(11).Vivant = True
+		Persos(12).Vivant = True
+		Persos(13).Vivant = True
+		Persos(14).Vivant = True
+
+		Persos(5).NumeroEquipe = 2
+		Persos(6).NumeroEquipe = 2
+		Persos(7).NumeroEquipe = 2
+		Persos(8).NumeroEquipe = 2
+		Persos(9).NumeroEquipe = 2
+		Persos(10).NumeroEquipe = 2
+		Persos(11).NumeroEquipe = 2
+		Persos(12).NumeroEquipe = 2
+		Persos(13).NumeroEquipe = 2
+		Persos(14).NumeroEquipe = 2
+
+		Persos(5).Attaquer_Perso 0
+		Persos(6).Attaquer_Perso 0
+		Persos(7).Attaquer_Perso 0
+		Persos(8).Attaquer_Perso 0
+		Persos(9).Attaquer_Perso 0
+		Persos(10).Attaquer_Perso 1
+		Persos(11).Attaquer_Perso 1
+		Persos(12).Attaquer_Perso 1
+		Persos(13).Attaquer_Perso 1
+		Persos(14).Attaquer_Perso 1
+
+		Jeu.Activer_Effet_Perso 17, Persos(5)
+		Jeu.Activer_Effet_Perso 17, Persos(6)
+		Jeu.Activer_Effet_Perso 17, Persos(7)
+		Jeu.Activer_Effet_Perso 17, Persos(8)
+		Jeu.Activer_Effet_Perso 17, Persos(9)
+		Jeu.Activer_Effet_Perso 17, Persos(10)
+		Jeu.Activer_Effet_Perso 17, Persos(11)
+		Jeu.Activer_Effet_Perso 17, Persos(12)
+		Jeu.Activer_Effet_Perso 17, Persos(13)
+		Jeu.Activer_Effet_Perso 17, Persos(14)
+		Interface.Objectifs_Ajouter "- Vaincre 10 mannequins."
+	End If
+End Sub
+
+Sub DESACTIVER_AUTOMATES()
+	If Not Persos(5).Vivant Then
+		Persos(5).IA = False
+	End If
+	If Not Persos(6).Vivant Then
+		Persos(6).IA = False
+	End If
+	If Not Persos(6).Vivant Then
+		Persos(7).IA = False
+	End If
+	If Not Persos(6).Vivant Then
+		Persos(8).IA = False
+	End If
+	If Not Persos(6).Vivant Then
+		Persos(9).IA = False
+	End If
+	If Not Persos(6).Vivant Then
+		Persos(10).IA = False
+	End If
+	If Not Persos(6).Vivant Then
+		Persos(11).IA = False
+	End If
+	If Not Persos(6).Vivant Then
+		Persos(12).IA = False
+	End If
+	If Not Persos(6).Vivant Then
+		Persos(13).IA = False
+	End If
+	If Not Persos(6).Vivant Then
+		Persos(14).IA = False
+	End If
+End Sub
+
+Sub EFFETS_SUR_INVENTAIRE()
+	Dim i
+	for i=0 to 31
+		If Persos(1).Objet_Inventaire_Actif(i) Then
+			Interface.Activer_Effet_Visuel 35, Interface.Definir_InventaireBoutonsObjetsPositionX(i) + 16, Interface.Definir_InventaireBoutonsObjetsPositionY(i) + 16
+		End If
+	Next
+End Sub
+
+Sub EFFETS_SUR_INVENTAIRE_CATEGORIE(Byval Categorie)
+	Dim i
+	for i=0 to 31
+		If Persos(1).Objet_Inventaire_Actif(i) Then
+			If Parametres.Objet_Categorie(Persos(1).Objet_Inventaire_Type(i)) = Categorie Then
+				Interface.Activer_Effet_Visuel 35, Interface.Definir_InventaireBoutonsObjetsPositionX(i) + 16, Interface.Definir_InventaireBoutonsObjetsPositionY(i) + 16
+			End If
+		End If
+	Next	
+End Sub

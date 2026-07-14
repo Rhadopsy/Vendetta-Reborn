@@ -1,0 +1,43 @@
+#IA officielle. Un archer elfe qui s'équipe avec des arcs.
+
+Age_1
+#S'équipe avec un équipement de tir.
+ChangerMode_1
+Ressource_2=1
+Objet_18=1
+ChangerMode_2
+Patrouiller
+
+Age_2
+#S'équipe avec un équipement de tir.
+ChangerMode_1
+Ressource_2=1
+Objet_18=1
+ChangerMode_2
+Patrouiller
+
+Age_3
+#S'équipe avec un équipement de tir.
+ChangerMode_1
+Ressource_2=1
+Objet_18=1
+ChangerMode_2
+Patrouiller
+
+Age_4
+#S'équipe avec un équipement de tir.
+ChangerMode_1
+Ressource_2=1
+Objet_18=1
+ChangerMode_2
+Patrouiller
+
+Age_5
+#S'équipe avec un équipement de tir.
+ChangerMode_1
+Ressource_2=1
+Objet_18=1
+ChangerMode_2
+Patrouiller
+
+#Fin

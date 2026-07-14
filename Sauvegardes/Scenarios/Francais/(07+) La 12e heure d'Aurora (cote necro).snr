@@ -1,0 +1,46 @@
+Nombre_Fiefs=3
+Nombre_Ressources=200
+Nombre_Persos=180
+Monde_Largeur=256
+Monde_Hauteur=448
+Choix_terrain=1
+Epoque=4
+
+DEBUT
+
+Fief(1-2)_Peuple=1
+Fief(1-2)_Equipe=1
+Fief(3)_Peuple=1
+Fief(3)_Equipe=2
+Fief(1)_Position=2048,512
+Fief(2)_Position=2048,6656
+Fief(3)_Position=2048,3584
+Fief(3)_MaxVie=20000
+
+Personnages(1-15)_Fief=1
+Personnages(16-30)_Fief=2
+#Nécropolis.
+Maisons(1-30)_Type=31
+
+#Les nécromanciens.
+Personnages(1-30)_Argent=2000,50
+Personnages(1-30)_Ressource=0,20
+Personnages(1-30)_Ressource=21,20
+Personnages(1-15)_DansUnChateau=1
+Personnages(16-30)_DansUnChateau=2
+Personnages(1-30)_Fichier_IA=Nécromancien offensif.ia
+Personnages(1-30)_Objet=28
+Personnages(1-30)_Objet=29
+Personnages(1-30)_Objet=34
+#Personnages(1-30)_Objet=35,2
+
+#La ville.
+Personnages(31-180)_Fief=3
+Personnages(31-180)_DansUnChateau=3
+Personnages(31-180)_Argent=2000,50
+Personnages(31-180)_Ressource=0,20
+personnages(31-180)_Equipement=7,75
+Maisons(31-180)_Type=0
+Maisons(31-180)_Stock=85
+
+FIN

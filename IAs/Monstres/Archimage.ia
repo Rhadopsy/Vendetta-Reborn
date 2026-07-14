@@ -1,0 +1,38 @@
+#IA officielle. Un mage offensif qui attaque à coups de golems.
+
+Age_1
+#Fabrique ses golems et attaque.
+ChangerMode_1
+Objet_44=4
+ChangerMode_2
+Patrouiller
+
+Age_2
+#Fabrique ses golems et attaque.
+ChangerMode_1
+Objet_44=4
+ChangerMode_2
+Attaquer Ennemi
+
+Age_3
+#Fabrique ses golems et attaque.
+ChangerMode_1
+Objet_44=4
+ChangerMode_2
+Attaquer Donjon
+
+Age_4
+#Fabrique ses golems et attaque.
+ChangerMode_1
+Objet_44=4
+ChangerMode_2
+Attaquer Donjon
+
+Age_5
+#Fabrique ses golems et attaque.
+ChangerMode_1
+Objet_44=4
+ChangerMode_2
+Attaquer Donjon
+
+#Fin

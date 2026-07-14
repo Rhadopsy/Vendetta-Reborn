@@ -1,0 +1,5 @@
+Official map
+
+Size : 256*256
+
+Fours kingdoms separated by crossing rivers. In the middle, an island with many precious resources.

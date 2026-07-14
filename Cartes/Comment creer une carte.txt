@@ -1,0 +1,47 @@
+Chaque carte doit être placée dans un dossier spécifique.
+Le nom de la carte est le même que celui du dossier.
+
+Chaque dossier peut comprendre les fichiers suivants :
+	(Seuls les fichiers "Terrain.bmp" et "Chateaux.bmp" sont obligatoires.)
+
+"Apercu.bmp" correspond au petit carré d'aperçu quand on choisit la carte.
+	Cette image est facultative. En cas d'absence, c'est "Terrain.bmp" qui sert d'aperçu.
+	L'image peut être de n'importe quelle taille. L'aperçu est automatiquement redimensionné.
+	Sur l'écran, l'aperçu ne dépasse pas 120 pixels de longueur.
+
+"Carte.bmp" est l'image affichée dans la fenêtre carte du jeu.
+	Nécessite 288 pixels de longueur pour correspondre aux dimensions de la carte.
+	Cette image est facultative.
+	Pour plus de lisibilité, la carte doit être éclaircit.
+	(Par exemple : appliquez une correction gamma de 2.00 sur votre image)
+
+"Terrain.bmp" correspond à la surface du terrain.
+	Selon la couleur de chaque pixel, correspond un type de terrain donné.
+	Consultez "References terrain.bmp" pour connaître la correspondance exacte chaque de couleur.
+	Si la couleur n'est pas juste, la surface sera considérée comme une plaine.
+
+"Chateaux.bmp" indique par des points blancs les emplacements des châteaux.
+
+"Ressources.bmp" indique par des points non noirs les emplacements des ressources.
+	Selon la couleur de chaque pixel, correspond un type de ressource donné.
+	Consultez "References ressources.bmp" pour connaître la correspondance des couleurs.
+	Si la couleur n'est pas juste, la ressource sera tirée au hasard.
+	Le fond de l'image DOIT ETRE NOIR.
+	Cette image est facultative.
+
+	Règles à respecter pour les images : "Terrain.bmp", "Chateaux.bmp" et "Ressources.bmp".
+	- Ces 3 images doivent être de même dimensions
+	- Format BMP (Bitmap) uniquement.
+	- Elles doivent être enregistrées en 256 ou 16 millions de couleurs.
+	- Aucun mode de compression n'est supporté.
+	- Une carte ne doit pas faire moins de 100 pixels de large et 75 pixels de haut.
+
+"Description.txt" permet d'ajouter un commentaire à coté de l'aperçu. (facultatif)
+	"DescriptionFR.txt" et
+	"DescriptionEN.txt" ajoutent un commmentaire selon la langue du jeu. (facultatifs)
+
+"Informations.ini" est généré automatiquement par le programme pour gagner en vitesse de chargement.
+	Suite à une modifiation de "Ressources.bmp" ou "Chateaux.bmp", 
+		SUPPRIMEZ CE FICHIER pour réinitialisez les calculs.
+	Pour éviter de supprimer ce fichier à chaque fois,
+		désactivez "Générer le fichier Informations.ini" dans les "Options"-->"Cartes".

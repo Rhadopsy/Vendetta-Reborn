@@ -1,0 +1,36 @@
+; Pack non officiel ajoutant de nouveaux éléments.
+; Version 1.
+; 28/04/2006 : Créé par Syl pour la version 2.5.
+; 24/06/2007 : Ajout de 13 nouveaux trésors pour la version 3 Béta 16.
+
+; Avec la participation de :
+	- Fab.
+	- Tot19.
+
+Ajoute 2 nouvelles races jouables.
+	-Le centaure.
+	-Le lutin.
+
+Ajoute 1 nouveau peuple.
+	-Les golems.
+
+Ajoute 1 nouveau monstre.
+	-Le géogolem
+
+Ajoute 25 nouveaux objets.
+	-Le capitalisme			(Trésor commun)
+	-Le pistolet mitrailleur	(Arsenal)
+	-Le géogolem			(Atelier tectonique)
+	-Le générateur de golems	(Trésor commun)
+	-La robe d'archimage		(Guilde de magie)
+	-La transe de la flèche 	(Trésor des elfes)
+	-La fourrure			(Trésor sur des monstres)
+	-Le manteau de fourrure		(Créé à partir d'1 objet)
+	-La pelle			(Atelier)
+	-Armure de bronze		(Trésor)
+	-Armure d'argent		(Trésor)
+	-Armure d'or			(Trésor)
+	-Les talents			(13 trésors)
+
+Modifie 1 bâtiment.
+	-La ferme de blé

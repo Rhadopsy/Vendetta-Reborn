@@ -1,0 +1,38 @@
+#IA officielle. Le vampire.
+
+Age_1
+#Fabrique une armée de squelettes.
+ChangerMode_1
+Objet_35=3
+ChangerMode_2
+Patrouiller
+
+Age_2
+#Fabrique une armée de squelettes.
+ChangerMode_1
+Objet_35=3
+ChangerMode_2
+Attaquer Ennemi
+
+Age_3
+#Fabrique une armée de squelettes.
+ChangerMode_1
+Objet_35=3
+ChangerMode_2
+Attaquer Donjon
+
+Age_4
+#Fabrique une armée de squelettes.
+ChangerMode_1
+Objet_35=3
+ChangerMode_2
+Attaquer Donjon
+
+Age_5
+#Fabrique une armée de squelettes.
+ChangerMode_1
+Objet_35=3
+ChangerMode_2
+Attaquer Donjon
+
+#Fin

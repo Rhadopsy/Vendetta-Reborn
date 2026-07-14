@@ -1,0 +1,53 @@
+Nombre_Fiefs=2
+Nombre_Ressources=50
+Nombre_Persos=450
+Monde_Largeur=128
+Monde_Hauteur=128
+Choix_terrain=1
+Epoque=4
+
+DEBUT
+
+Fief(1)_Peuple=1
+Fief(1)_Equipe=1
+Fief(2)_Peuple=4
+Fief(2)_Equipe=2
+Fief(1)_Position=1024,1024
+Fief(1)_MaxVie=6000
+Fief(2)_Vie=0
+
+Personnages(1-50)_Fief=1
+#La ville.
+Maisons(1-50)_Type=0
+Maisons(1-50)_Stock=85
+
+#Les villageois.
+Personnages(1-50)_Argent=2000,50
+Personnages(1-50)_Ressource=0,20
+personnages(1-50)_Equipement=7,75
+Personnages(1-50)_DansUnChateau=1
+
+#L'Armée de squelettes.
+Personnages(51-450)_Fief=2
+Personnages(51-450)_Vitesse=2
+#Personnages(51-450)_Fichier_IA=Bataille.ia
+
+Rangees=20
+#Bataillon de Gauche.
+Personnages(51-150)_Position=70,768
+Personnages(51-150)_Direction=640,0
+
+#Bataillon de droite.
+Personnages(151-250)_Position=1958,768
+Personnages(151-250)_Direction=-640,0
+
+Rangees=5
+#Bataillon d'en haut.
+Personnages(251-350)_Position=830,128
+Personnages(251-350)_Direction=0,640
+
+#Bataillon d'en bas.
+Personnages(351-450)_Position=830,1888
+Personnages(351-450)_Direction=0,-640
+
+FIN

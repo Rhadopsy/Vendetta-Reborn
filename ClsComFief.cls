@@ -1,0 +1,62 @@
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "ClsComFief"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+' Vendetta - Standalone Role Playing game, simulate a MMORPG with AI
+' Copyright (C) 2003-2007  S. HARLAUT (sharlaut@netcourrier.com)
+'
+' This program is free software; you can redistribute it and/or
+' modify it under the terms of the GNU General Public License
+' as published by the Free Software Foundation; either version 2
+' of the License, or (at your option) any later version.
+'
+' This program is distributed in the hope that it will be useful,
+' but WITHOUT ANY WARRANTY; without even the implied warranty of
+' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+' GNU General Public License for more details.
+'
+' You should have received a copy of the GNU General Public License
+' along with this program; if not, write to the Free Software
+' Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+Option Explicit
+
+'Cette classe sert à vérifier si les données ont été changées, on envoie un message réseau.
+
+Public PositionX As Long
+Public PositionY As Long
+
+Public Vie As Double
+Public MaxVie As Double
+Public RecuperationVie As Long
+
+Private Ressources() As Double
+Public TypePeuple As Integer
+
+Public Epoque As Integer
+Public TempsChangementEpoque As Long
+
+Public NumeroEquipe As Long
+
+Public NombreCitoyens As Long
+Public NombreMorts As Long
+Public Empereur As Long
+
+Public Sub Init(ByVal Parametres As ClsJeuParam)
+    ReDim Ressources(Parametres.NombreRessources - 1)
+End Sub
+
+Public Property Get Definir_ressources(ByVal Index As Integer) As Double
+    Definir_ressources = Ressources(Index)
+End Property
+Public Property Let Definir_ressources(ByVal Index As Integer, ByVal Valeur As Double)
+    Ressources(Index) = Valeur
+End Property

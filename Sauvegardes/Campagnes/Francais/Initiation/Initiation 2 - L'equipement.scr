@@ -1,0 +1,164 @@
+Sub Commencer()
+	Persos(1).Objet_Inventaire_Vider_Tout
+        Persos(1).Objet_Equipes_Vider_Tout
+	Persos(1).Definir_Argent= Parametres.Ressources_PrixVente(15) * Parametres.Objet_PrixRessources(96,15) * Parametres.CoefficientAchat
+	Persos(2).IA = False
+	Jeu.VictoireStandard = False
+	Interface.AfficherBoutonsInfos = True
+	Interface.Fermer_Toutes_les_fenetres
+	Maisons(2).Definir_Stock = 8
+	Chateaux(1).Vie = 0
+End Sub
+
+Sub Jouer()
+	If Persos(1).Definir_Argent >= Parametres.Objet_PrixVente(96) Or Jeu.Definir_Victoire Then
+		Persos(2).Definir_Commentaires = ""
+		If Persos(1).Feminin Then
+			Persos(2).Definir_Commentaires = "Bravo, cette transaction t'as fait gagner de l'argent.#Tu sais maintenant comment acheter, fabriquer et vendre.#Il te reste encore de nombreux autres métiers à découvrir.#Mais maintenant, tu sauras te débrouiller toute seule."
+		Else
+			Persos(2).Definir_Commentaires = "Bravo, cette transaction t'as fait gagner de l'argent.#Tu sais maintenant comment acheter, fabriquer et vendre.#Il te reste encore de nombreux autres métiers à découvrir.#Mais maintenant, tu sauras te débrouiller tout seul."
+		End If
+		Jeu.Definir_Victoire = True
+		Interface.Objectifs_Ajouter " "
+	ElseIf Persos(2).Objet_NombreType(96) > 0 And Persos(1).Objet_NombreType(96) = 0 Then
+		If Persos(1).Visible Then
+			Persos(2).Definir_Commentaires = "Non merci, je ne veux pas de ta bouette."
+			Persos(2).ObjetSelectionne = 96
+			Persos(2).Aller_Donner 0, Persos(2).ObjetSelectionne
+		Else
+			Persos(2).Definir_Commentaires = "Non merci, je ne veux pas de ta bouette.#Sort de là, que je te la redonne."
+		End If
+	ElseIf Maisons(1).Definir_Nombre_Objets_Deposes > 0 Then
+		Persos(2).Definir_Commentaires = ""
+		Persos(2).Definir_Commentaires = "Arrête de jouer et récupère ta brouette."
+	ElseIf Tresors.Count > 0 Then
+		Persos(2).Definir_Commentaires = ""
+		Persos(2).Definir_Commentaires = "T'as laissé tomber quelque-chose.#RAMASSE LE, je ne veux pas de gachis."
+	ElseIf Persos(1).Objet_NombreType(96) > 0 Or Persos(1).ObjetSelectionne = 96 Then
+		If Persos(1).DansSonChateau Then
+			If Persos(1).ObjetSelectionne = 96 Then
+				Persos(2).Definir_Commentaires = ""
+				Persos(2).Definir_Commentaires = "Maintenant, clique en dehors de ton inventaire#pour la VENDRE."
+			ElseIf Interface.Fenetres_Visible(4) Then
+				Persos(2).Definir_Commentaires = ""
+				Persos(2).Definir_Commentaires = "Sélectionne ta BROUETTE avec ton curseur#en cliquant dessus."
+				If Persos(1).Objet_Equipes_Actif(0) Then
+					Interface.Activer_Effet_Visuel 35, Interface.Definir_InventaireBoutonsObjetsPositionX(32) + 16, Interface.Definir_InventaireBoutonsObjetsPositionY(32) + 16
+				End If
+			Else
+				'Active l'effet sur le bouton Fenetre inventaire.
+				Persos(2).Definir_Commentaires = ""
+				Persos(2).Definir_Commentaires = "Ouvre ta FENETRE INVENTAIRE."
+				Interface.Affichage_PleinEcran = False
+				Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonInfoPositionX(4) + 12, Interface.Definir_BoutonInfoPositionY(4) + 14
+			End If
+			Interface.Objectifs_Ajouter "- Obtenir 400 pièces d'argent."
+		Else
+			Persos(2).Aller_A Chateaux(1).PositionX + Chateaux(1).Largeur/2, Chateaux(1).PositionY + Chateaux(1).Hauteur/2
+			Persos(2).Definir_Commentaires = ""
+			Persos(2).Definir_Commentaires = "C'est pratique une brouette, ça permet#de transporter plus de ressources et#de se fatiguer moins vite.#Mais c'est pas ça qui m'intéresse.#Allons faire un tour au château.#Pour cela, clique sur le CHATEAU."
+			Interface.Objectifs_Ajouter "- Entrer dans le château."
+			Chateaux(1).Vie = Chateaux(1).MaxVie
+		End If
+	ElseIf Maisons(1).Visible And Maisons(1).TypeBatiment = 9 then
+		If Maisons(2).Definir_Stock = 0 Then
+			If Maisons(1).Definir_Stock > 0 then
+				'Le joueur a finir de fabriquer son objet.
+				If Not Persos(1).DansSaMaison Then
+					Persos(2).Definir_Commentaires = ""
+					Persos(2).Definir_Commentaires = "RENTRE dans ta maison, si#tu veux récupérer ta brouette."
+				ElseIf Interface.Fenetres_Visible(0) Then
+					'Active l'effet sur le bouton Acheter la fonte.
+					Persos(2).Definir_Commentaires = ""
+					Persos(2).Definir_Commentaires = "Récupère maintenant ta BROUETTE."
+					Interface.Objectifs_Ajouter "- Emporter la brouette."
+					If Interface.Definir_DefilementObjetDecalageX < 3 Then
+						Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonsDefilementPositionX(0,1) + 8, Interface.Definir_BoutonsDefilementPositionY(0,1) + 18
+					Else
+						Interface.Activer_Effet_Visuel 35, Interface.Definir_BoutonsObjetsPositionX(8) + 16, Interface.Definir_BoutonsObjetsPositionY(8) + 16
+					End If
+				Else
+					'Active l'effet sur le bouton Fenetre batiment.
+					Persos(2).Definir_Commentaires = ""
+					Persos(2).Definir_Commentaires = "Ouvre la FENETRE BATIMENT pour accéder#aux options de ta maison."
+					Interface.Affichage_PleinEcran = False
+					Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonInfoPositionX(0) + 14, Interface.Definir_BoutonInfoPositionY(0) + 14
+				End If
+			Else
+				'Le joueur a suffisament de fonte.
+				If Persos(1).DansSaMaison Then
+					If Persos(1).Inactif then
+						If Interface.Fenetres_Visible(0) Then
+							Interface.Objectifs_Ajouter "- Fabriquer une brouette."
+							If Interface.Definir_DefilementObjetDecalageX < 1 Then
+								Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonsDefilementPositionX(0,1) + 8, Interface.Definir_BoutonsDefilementPositionY(0,1) + 18
+								Persos(2).Definir_Commentaires = ""
+								Persos(2).Definir_Commentaires = "Fait DEFILER la liste des objets jusqu'à#un objet constructible."
+							Else
+								Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonFabriquerPositionX(8) + 12, Interface.Definir_BoutonFabriquerPositionY(8) + 14
+								Persos(2).Definir_Commentaires = ""
+								Persos(2).Definir_Commentaires = "Fabrique toi une BROUETTE."
+							End If
+						Else
+							'Active l'effet sur le bouton Fenetre batiment.
+							Persos(2).Definir_Commentaires = ""
+							Persos(2).Definir_Commentaires = "Ouvre la FENETRE BATIMENT pour accéder#aux options de ta maison."
+							Interface.Affichage_PleinEcran = False
+							Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonInfoPositionX(0) + 14, Interface.Definir_BoutonInfoPositionY(0) + 14
+						End If
+					Else
+						Persos(1).EtatFabricationObjet = Persos(1).EtatFabricationObjet + 10
+						Persos(2).Definir_Commentaires = ""
+						Persos(2).Definir_Commentaires = "Je sais, c'est dur de travailler. Mais tu verras,#avec un peu d'entraînement, tu fabriqueras#tes objets de plus en plus vite."
+					End If
+				Else
+					Persos(2).Aller_A Maisons(1).PositionX + Maisons(1).Largeur - Persos(2).Largeur, Maisons(1).PositionY + Maisons(1).Hauteur - Persos(2).Hauteur
+					Persos(2).Definir_Commentaires = ""
+					Persos(2).Definir_Commentaires = "Tu peux maintenant te fabriquer un objet.#Pour cela, retourne dans ton ATELIER."
+					Interface.Objectifs_Ajouter "- Rentrer dans l'atelier."
+				End If
+			End If
+		ElseIf Persos(1).DansUneMaison And Parametres.Batiment_ID(Maisons(Persos(1).IndiceMaison + 1).TypeBatiment) = 20 Then
+			'Le joueur est dans la fonderie.
+			Persos(2).Aller_A Maisons(2).PositionX + Maisons(2).Largeur - Persos(2).Largeur, Maisons(2).PositionY + Maisons(2).Hauteur - Persos(2).Hauteur
+			Interface.Objectifs_Ajouter "- Acheter de la fonte."
+			If Interface.Fenetres_Visible(0) Then
+				'Active l'effet sur le bouton Acheter la fonte.
+				Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonTransfertStockMaisonPositionX(2) + 14, Interface.Definir_BoutonTransfertStockMaisonPositionY(2) + 14
+				Persos(2).Definir_Commentaires = ""
+				Persos(2).Definir_Commentaires = "Clique sur ce bouton pour ACHETER#tout mon stock de FONTE."
+			Else
+				'Active l'effet sur le bouton Fenetre batiment.
+				Persos(2).Definir_Commentaires = ""
+				Persos(2).Definir_Commentaires = "Ouvre la FENETRE BATIMENT pour accéder#aux options du magasin."
+				Interface.Affichage_PleinEcran = False
+				Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonInfoPositionX(0) + 14, Interface.Definir_BoutonInfoPositionY(0) + 14
+			End If
+		Else
+			'Introduction de la partie.
+			If Jeu.Duree > 12 then
+				Persos(2).Aller_A Maisons(2).PositionX + Maisons(2).Largeur - Persos(2).Largeur, Maisons(2).PositionY + Maisons(2).Hauteur - Persos(2).Hauteur
+				Persos(2).Definir_Commentaires = ""
+				Persos(2).Definir_Commentaires = "Déjà, t'auras besoin de ressources pour travailler.#Clique donc sur ma fonderie pour y ENTRER."
+				Interface.Objectifs_Ajouter "- Entrer dans la fonderie."
+			ElseIf Jeu.Duree > 6 then
+				Persos(2).Definir_Commentaires = ""
+				Persos(2).Definir_Commentaires = "Ok, je vais te montrer comment te fabriquer ton équipement."
+			Else
+				Persos(2).Definir_Commentaires = "Salut " & Persos(1).Nom & ". Te voici donc dans la seconde partie d'initation ?"
+		        End if
+		End If
+	Else
+		Persos(1).Definir_Ressources(3) = 9
+		If Maisons(1).Visible Then
+			Persos(2).Definir_Commentaires = ""
+			Persos(2).Definir_Commentaires = "Non, non et non ! C'est un atelier qu'il te faut."
+		Else
+			Persos(2).Definir_Commentaires = ""
+			Persos(2).Definir_Commentaires = "T'as détruit ton Atelier ? Va falloir que#tu le RECONSTRUISES pour continuer."
+		End If
+		Interface.Affichage_PleinEcran = False
+		Interface.ForcerCurseurSurBoutonConstruire = True
+		Interface.Activer_Effet_Visuel 34, Interface.Definir_BoutonConstruirePositionX(10) + 14, Interface.Definir_BoutonConstruirePositionY(10) + 14
+	End If
+End Sub

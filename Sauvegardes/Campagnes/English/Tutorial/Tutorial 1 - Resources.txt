@@ -1,0 +1,7 @@
+Story: At the begining, you are starving and lost nowhere. Luckly, a feline help you out and explain how to make bread.
+
+Advices  : Only listen the instructions.
+Warning, felines love animals. Don’t make angry them.
+
+Objective : Restore your stamina.
+Difficulty : Very easy.

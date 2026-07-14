@@ -1,47 +1,39 @@
-# Vendetta — modernisation communautaire
+# Vendetta Reborn
 
-Vendetta est un ancien jeu libre de gestion, stratégie et RPG créé par Quentin Santos. Ce dépôt repart de la [dernière révision SVN officielle, r268](https://sourceforge.net/p/vendetta2/code/HEAD/tree/), en conservant les données du jeu et sa licence GPL-3.0-or-later.
+Ce dépôt contient désormais les sources originales de **Vendetta 3.0.0.17**, reçues sous la forme de l'archive `Vendetta-3.0.0.17-src.zip`.
 
-Cette branche de modernisation remplace le socle SFML 1.x par SFML 2.6, adopte C++17 et CMake, et supprime les dépendances POSIX qui empêchaient une compilation native sous Windows. La couche de gameplay Python 2.6 est isolée et désactivée par défaut pendant sa migration vers Python 3 ; le moteur C++ reste utilisable sans elle.
+Il s'agit d'un jeu complet écrit en **Visual Basic 6**, et non du prototype C++/SFML précédemment étudié. Ce dernier reste disponible sur la branche `prototype-sfml`.
 
-## Fedora
+## État de cette branche
 
-Prérequis (Fedora 44 ou version récente) :
+- code source VB6 original et ressources de jeu importés sans conversion ;
+- exécutable historique `Vendetta.exe` volontairement exclu : il n'est pas nécessaire pour conserver les sources et n'a pas été exécuté ;
+- point d'entrée : `Sub Main` dans `ModMain.bas` ;
+- projet VB6 : `PrjImperator.vbp` ;
+- version déclarée : 3.0.0, révision 17 dans le nom de l'archive ;
+- licence principale : GNU GPL v2 ou ultérieure, selon les en-têtes des sources et `license.txt`.
 
-```bash
-sudo dnf install gcc-c++ cmake ninja-build SFML-devel
-```
+L'empreinte de l'archive d'origine est conservée dans `SOURCE_ARCHIVE.sha256`.
 
-Compilation et lancement :
+## Compatibilité actuelle
 
-```bash
-cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
-cmake --build build
-./build/vendetta
-```
+Le projet dépend notamment du runtime VB6, de DirectX 7 pour VB (`dx7vb.dll`), de Microsoft Script Control, MSXML 3, `COMCTL32.OCX` et `MSINET.OCX`. Il utilise DirectDraw, DirectInput, DirectSound, DirectMusic et DirectPlay, ainsi que plusieurs API Win32.
 
-## Windows 10/11
+Il ne peut donc pas être compilé nativement sur Fedora ni être considéré comme compatible avec les Windows récents en l'état. Wine et d'anciens composants Windows peuvent servir à l'archéologie ou à une comparaison ponctuelle, mais la remise au goût du jour nécessite un portage progressif.
 
-Installez Visual Studio 2022 avec le composant « Développement Desktop en C++ », puis [vcpkg](https://learn.microsoft.com/vcpkg/get_started/get-started). Dans un terminal Developer PowerShell :
+Voir [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) pour l'inventaire et [docs/PORTING_PLAN.md](docs/PORTING_PLAN.md) pour la stratégie proposée.
 
-```powershell
-vcpkg install sfml:x64-windows
-cmake -S . -B build -A x64 `
-  -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
-cmake --build build --config Release
-./build/Release/vendetta.exe
-```
+## Contenu principal
 
-Le répertoire `Data` est copié automatiquement à côté de l'exécutable. Les builds Fedora et Windows sont aussi vérifiés par GitHub Actions.
+- `ClsJeu*.cls` : règles et état du jeu ;
+- `ClsAff*.cls` : affichage DirectDraw ;
+- `ClsInt*.cls` : interface utilisateur ;
+- `ClsPer*.cls` : clavier, souris et autres périphériques ;
+- `ClsCom*.cls` : communications et réseau ;
+- `Mod*.bas` : modules globaux et initialisation ;
+- `Frm*.frm`, `MDIFrmMain.frm` : formulaires VB6 et éditeurs ;
+- `Donnees`, `Cartes`, `IAs`, `IAScripts`, `Mods`, `Images`, `Sons`, `Musiques` : données et ressources du jeu.
 
-## État du portage
+## Prochaine cible
 
-- SFML 2.6 et C++17 : portage initial terminé ;
-- chemins et parcours de répertoires : portables via `std::filesystem` ;
-- système de build : CMake, Fedora et Visual Studio ;
-- scripts de personnages : désactivés par défaut, migration Python 3 en cours ;
-- prochaine étape : tests d'exécution, corrections fonctionnelles et empaquetage des versions.
-
-## Origine et licence
-
-Le code original provient du projet [Vendetta sur SourceForge](https://sourceforge.net/projects/vendetta2/). Les sources restent distribuées selon les en-têtes d'origine, sous GNU GPL version 3 ou ultérieure. Consultez [LICENCE](LICENCE) et [THIRD_PARTY_ASSETS.md](THIRD_PARTY_ASSETS.md).
+La cible recommandée est **Godot 4.x**, avec une simulation portée indépendamment de l'affichage. Ce choix offre un export natif Linux et Windows et permet de réutiliser les données et ressources progressivement sans reproduire les dépendances COM/DirectX 7.

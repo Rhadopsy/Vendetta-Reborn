@@ -1,0 +1,5 @@
+Carte officielle
+
+Dimensions : 128*128
+
+Petite carte avec deux royaumes séparés par une chaîne de montagnes.

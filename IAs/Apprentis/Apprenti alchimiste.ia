@@ -1,0 +1,61 @@
+#IA officielle utilisée pour l'apprenti alchimiste.
+Equiper_0
+
+Age_1
+#Collecte des ressources pour son maître.
+Ressource_1=20
+ChangerMode_3
+Ressource_18=20
+ChangerMode_3
+Ressource_7=20
+ChangerMode_3
+Batiment_6
+Travailler
+
+Age_2
+#Collecte des ressources pour son maître.
+Ressource_1=20
+ChangerMode_3
+Ressource_18=20
+ChangerMode_3
+Ressource_7=20
+ChangerMode_3
+Batiment_6
+Travailler
+
+Age_3
+#Collecte des ressources pour son maître.
+Ressource_19=20
+ChangerMode_3
+Ressource_20=20
+ChangerMode_3
+Batiment_27
+Travailler
+
+Age_4
+#Collecte des ressources pour son maître.
+Ressource_19=20
+ChangerMode_3
+Ressource_20=20
+ChangerMode_3
+Ressource_1=20
+ChangerMode_3
+Objet_110=1
+ChangerMode_3
+Batiment_41
+Travailler
+
+Age_5
+#Collecte des ressources pour son maître.
+Ressource_19=20
+ChangerMode_3
+Ressource_20=20
+ChangerMode_3
+Ressource_1=20
+ChangerMode_3
+Objet_110=1
+ChangerMode_3
+Batiment_41
+Travailler
+
+#Fin

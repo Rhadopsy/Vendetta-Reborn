@@ -1,0 +1,36 @@
+#IA officielle utilisée pour l'apprenti tectomage.
+Equiper_0
+
+Age_1
+#Collecte des ressources pour son maître.
+Ressource_13=20
+Batiment_3
+Travailler
+
+Age_2
+#Collecte des ressources pour son maître.
+Batiment_18
+Travailler
+
+Age_3
+#Collecte des ressources pour son maître.
+Objet_44=1
+ChangerMode_3
+Batiment_29
+Travailler
+
+Age_4
+#Collecte des ressources pour son maître.
+Objet_44=1
+ChangerMode_3
+Batiment_38
+Travailler
+
+Age_5
+#Collecte des ressources pour son maître.
+Objet_44=1
+ChangerMode_3
+Batiment_38
+Travailler
+
+#Fin

@@ -1,0 +1,2 @@
+Placez ici les fichiers de musiques au format MP3, WAV ou MIDI.
+Ces musiques sont jouées quand la partie est gagnée.

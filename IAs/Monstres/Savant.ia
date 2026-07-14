@@ -1,0 +1,49 @@
+#IA officielle. Un savant qui se fabrique des armes à feu.
+Equiper_0
+
+Age_1
+#S'équipe avec une carabine.
+ChangerMode_1
+Objet_94=1
+Ressource_26=1
+Objet_148=1
+ChangerMode_2
+Patrouiller
+
+Age_2
+#S'équipe avec une carabine.
+ChangerMode_1
+Objet_94=1
+Ressource_26=1
+Objet_148=1
+ChangerMode_2
+Patrouiller
+
+Age_3
+#S'équipe avec une carabine.
+ChangerMode_1
+Objet_94=1
+Ressource_26=1
+Objet_148=1
+ChangerMode_2
+Patrouiller
+
+Age_4
+#S'équipe avec une carabine.
+ChangerMode_1
+Objet_94=1
+Ressource_26=1
+Objet_148=1
+ChangerMode_2
+Patrouiller
+
+Age_5
+#S'équipe avec une carabine.
+ChangerMode_1
+Objet_94=1
+Ressource_26=1
+Objet_148=1
+ChangerMode_2
+Patrouiller
+
+#Fin

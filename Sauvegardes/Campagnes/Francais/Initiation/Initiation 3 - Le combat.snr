@@ -1,0 +1,49 @@
+Nombre_Fiefs=2
+Nombre_Ressources=4
+Nombre_Persos=14
+Monde_Largeur=100
+Monde_Hauteur=75
+Choix_terrain=0
+Epoque=2
+
+DEBUT
+
+Fief(1)_Peuple=1
+Fief(1)_Equipe=1
+Fief(2)_Peuple=7
+Fief(2)_Equipe=1
+Fief(1)_Position=748,728
+Fiefs(2)_Vie=0
+
+Personnages(1-4)_Fief=1
+Personnages(5-14)_Fief=2
+
+#Le joueur.
+Personnage(1)_Position=800,600
+
+#Son Entraineur.
+Personnage(2)_Position=800,472
+Personnage(2)_Race=5
+Personnage(2)_Nom=Block
+Personnage(2)_Sexe=0
+Personnage(2)_Fichier_IA=Berserk.ia
+
+#Les adversaires.
+Personnage(3)_Race=38
+Personnage(3)_Position=768,440
+Personnage(4)_Race=39
+Personnage(4)_Vitesse=2
+Personnage(4)_Position=832,440
+Personnage(5-14)_Race=28
+
+#Des ressources.
+Ressources(1)_Type=1
+Ressources(2)_Type=2
+Ressources(3)_Type=3
+Ressources(4)_Type=8
+Ressources(1)_Position=736,664
+Ressources(2)_Position=768,664
+Ressources(3)_Position=832,664
+Ressources(4)_Position=864,664
+
+FIN

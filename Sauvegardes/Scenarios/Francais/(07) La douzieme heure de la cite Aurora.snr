@@ -1,0 +1,52 @@
+Nombre_Fiefs=3
+Nombre_Ressources=200
+Nombre_Persos=80
+Monde_Largeur=256
+Monde_Hauteur=448
+Choix_terrain=1
+Epoque=4
+
+DEBUT
+
+Fief(1)_Peuple=1
+Fief(1)_Equipe=1
+Fief(2-3)_Peuple=1
+Fief(2-3)_Equipe=2
+Fief(1)_Position=2048,3584
+Fief(2)_Position=2048,512
+Fief(3)_Position=2048,6656
+Fief(1)_MaxVie=10000
+
+#La ville.
+Personnages(1-50)_Fief=1
+Personnages(1-50)_DansUnChateau=1
+Personnages(1-50)_Argent=2000,50
+Personnages(1-50)_Ressource=0,20
+personnages(1-50)_Equipement=7,75
+Maisons(1-50)_Type=0
+Maisons(1-50)_Stock=85
+
+Personnages(51-65)_Fief=2
+Personnages(66-80)_Fief=3
+#Les nécropolis.
+Maisons(51-80)_Type=31
+
+#Les nécromanciens.
+Personnages(51-80)_Argent=2000,50
+Personnages(51-80)_MaxVie=100
+Personnages(51-80)_MaxEnergie=60
+Personnages(51-80)_MaxMagie=120
+Personnages(51-80)_MaxMoral=30
+Personnages(51-80)_MaxAttaque=60
+Personnages(51-80)_MaxDefense=30
+Personnages(51-80)_Ressource=0,20
+Personnages(51-80)_Ressource=21,20
+Personnages(51-65)_DansUnChateau=2
+Personnages(66-80)_DansUnChateau=3
+Personnages(51-80)_Fichier_IA=Nécromancien offensif.ia
+Personnages(51-80)_Objet=28
+Personnages(51-80)_Objet=29
+Personnages(51-80)_Objet=34
+#Personnages(51-80)_Objet=35,2
+
+FIN

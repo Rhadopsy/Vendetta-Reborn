@@ -1,0 +1,26 @@
+Did you know ?#
+###################################################################
+#Version 2.4.
+- Right click on the windows "moving button" to move it in its
+starting position.
+- The third mouse button can be used to throw a missile heading for
+the cursor.
+- Right click on a temporary effect to stop it.
+###################################################################
+#Customize.
+- You can entirely customize Vendetta by changing the ini files or
+graphics.
+###################################################################
+#Interface.
+- With spacebar, you can hide this message and close every windows.
+- Press F9 to show another advice.
+###################################################################
+#Rules-skills.
+- Mercantile skill can decrease the price in the shop. But it
+useless into castle.
+###################################################################
+#Rules-economy.
+###################################################################
+#Rules-fights.
+###################################################################
+#Rules-strategy.

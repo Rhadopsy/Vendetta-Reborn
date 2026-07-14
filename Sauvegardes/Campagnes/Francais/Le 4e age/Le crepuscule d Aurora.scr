@@ -1,0 +1,107 @@
+Sub Commencer()
+	Dim i
+	For i=101 to 550
+		Persos(i).IA = False
+		Persos(i).Vivant = False
+		Persos(i).LongueurPas = 0
+	Next
+	Jeu.VictoireStandard = False
+	'Interface.Fermer_Toutes_les_fenetres
+	Persos(1).DansSonChateau = False
+	For i=2 To 100
+		If Not Persos(i).Joueur then
+			Persos(i).IA = False
+		End If
+	Next
+End Sub
+
+Sub Jouer()
+	Dim i
+	If Jeu.Definir_Victoire = True Then
+		Interface.Objectifs_Ajouter ""
+	ElseIf Chateaux(1).Vie <= 0 Then
+		Jeu.Definir_Defaite = True
+	End If
+	
+	If Persos(101).IA Then
+		If Jeu.Chrono > 0 Then
+			Jeu.Chrono = Jeu.Chrono - 1
+		ElseIf Jeu.Chrono = 0 Then
+			Jeu.Chrono = -1
+			ACTIVER_SQUELETTES
+		ElseIf Fiefs(2).NombreMorts > 400 Then
+			Interface.Objectifs_Ajouter "- Eliminer tous les squelettes qui restent."
+		End If
+	Else
+		'Introduction.
+		If Jeu.IntituleChrono = "" Then
+			If Jeu.Duree > 18 then
+				Jeu.Chrono = 6000
+				Jeu.IntituleChrono = "Arrivée des morts vivants dans - "
+				Persos(1).Definir_Commentaires = ""
+				Persos(1).Definir_Commentaires = "Dans ce cas, nous leur ferons face ici !#Ce château sera notre meilleur protection."
+				For i=2 To 100
+					If Not Persos(i).Joueur then
+						Persos(i).IA = True
+					End If
+				Next
+			ElseIf Jeu.Duree > 12 then
+				Persos(2).Definir_Commentaires = ""
+				Persos(2).Definir_Commentaires = "Non, c'est impossible de leur échapper, nous sommes cernés.#Il en arrive de partout. Ils seront là dans 10 minutes."
+			ElseIf Jeu.Duree > 6 then
+				Persos(2).Definir_Commentaires = ""
+				Persos(1).Definir_Commentaires = "Des centaines ?!? Nous allons nous préparer à évacuer les lieux."
+			Else
+				Persos(2).Definir_Commentaires = "Alerte "& Persos(1).Nom & " ! Des centaines de morts-vivants arrivent par ici."
+				Persos(1).DureeImmobilisation = 120
+		        End if
+		ElseIf Jeu.Chrono = 0 Then
+			APPARITION_SQUELETTES
+			Interface.Objectifs_Ajouter "- Défendre le château."
+			Jeu.Chrono = 320
+			'For i = 1 To 100
+				'Persos(i).DureeImmobilisation = 320
+			'Next
+			Jeu.IntituleChrono = ""
+			Jeu.VictoireStandard = True
+		ElseIf Jeu.Chrono > 0 Then
+			Jeu.Chrono = Jeu.Chrono - 1
+		End If
+	End If
+End Sub
+
+Sub ACTIVER_SQUELETTES()
+	For i=2 To 100
+		If Not Persos(i).Joueur then
+			Persos(i).ChoisirIA = False
+		End If
+	Next
+	For i=101 to 550
+		Persos(i).IA = True
+	Next
+	Persos(1).Definir_Commentaires = ""
+	Persos(1).Definir_Commentaires = "Préparez vous au combat !!!"
+End Sub
+
+Sub APPARITION_SQUELETTES()
+	Dim i
+	Persos(1).Definir_Commentaires = ""
+	Persos(1).Definir_Commentaires = "Alerte !!! Les squelettes approchent !!!#Défendons le château au péril de nos vies."
+	Musique.Jouer_Musique 7
+	For i=101 to 550
+		Persos(i).Vivant = True
+	Next
+	For i=101 to 200
+		Persos(i).Aller_A Persos(i).PositionX + 640, Persos(i).PositionY
+	Next
+	For i=201 to 300
+		Persos(i).Aller_A Persos(i).PositionX - 640, Persos(i).PositionY
+	Next
+	For i=301 to 400
+		Persos(i).Aller_A Persos(i).PositionX, Persos(i).PositionY + 640
+	Next
+	For i=401 to 550
+		Persos(i).Aller_A Persos(i).PositionX, Persos(i).PositionY - 640
+	Next
+	Persos(101).IA = True
+End Sub

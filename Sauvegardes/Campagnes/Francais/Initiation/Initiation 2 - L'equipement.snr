@@ -1,0 +1,34 @@
+Nombre_Fiefs=1
+Nombre_Ressources=1
+Nombre_Persos=2
+Monde_Largeur=100
+Monde_Hauteur=75
+Choix_terrain=0
+Epoque=2
+
+DEBUT
+
+Fief(1)_Peuple=1
+Fief(1)_Equipe=1
+Fief(1)_Position=748,408
+
+Personnages(1-2)_Fief=1
+
+#Le joueur.
+Personnage(1)_Position=800,600
+Maisons(1)_Type=10
+Maisons(1)_Position=696,536
+
+#Son Entraineur.
+Personnage(2)_Position=800,472
+Personnage(2)_Race=2
+Personnage(2)_Nom=Gorgon
+Personnage(2)_Sexe=0
+Maisons(2)_Type=20
+Maisons(2)_Position=864,536
+
+#Un Pommier.
+Ressources(1)_Type=2
+Ressources(1)_Position=864,600
+
+FIN

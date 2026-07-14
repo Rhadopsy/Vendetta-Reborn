@@ -1,11 +1,15 @@
-/build*/
-/.cache/
-/.idea/
-/.vscode/
-*.o
-*.obj
-*.exe
-*.dll
-*.so
-*.dylib
-*.user
+# Modernisation / Godot
+.godot/
+build/
+dist/
+exports/
+*.pck
+
+# Local editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Historical executable is not source
+/Vendetta.exe
