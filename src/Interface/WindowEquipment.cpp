@@ -33,7 +33,7 @@ namespace InterfaceModule
 		mTitle = "Équipement";
 	}
 	
-	void WinEquipment::Configure(TiXmlElement* const element)
+	void WinEquipment::Configure(const TiXmlElement* const element)
 	{
 		Window::Configure(element);
 		mEmplacementSprite = Configuration->GetSprite(element, "EmplacementSprite");
@@ -42,7 +42,7 @@ namespace InterfaceModule
 	TiXmlElement* WinEquipment::Save() const
 	{
 		TiXmlElement* saveNode = new TiXmlElement("WinEquipment");
-		this->Window::Save(saveNode);
+		this->Window::SaveState(saveNode);
 		return saveNode;
 	}
 	

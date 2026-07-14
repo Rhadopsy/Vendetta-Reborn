@@ -87,7 +87,8 @@ ConfigurationClass::~ConfigurationClass()
 
 TiXmlElement* ConfigurationClass::Configure()
 {
-	std::vector<std::unique_ptr<TiXmlDocument>> documents;
+	mDocuments.clear();
+	auto& documents = mDocuments;
 	unsigned int i = 0;
 	std::vector<std::filesystem::path> configFiles;
 	const std::filesystem::path configDirectory("./Data/Config/");

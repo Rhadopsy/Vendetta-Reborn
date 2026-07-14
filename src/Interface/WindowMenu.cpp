@@ -27,6 +27,6 @@ namespace InterfaceModule
 	TiXmlElement* WinMenu::Save() const
 	{
 		TiXmlElement* saveNode = new TiXmlElement("WinMenu");
-		return Window::Save(saveNode);
+		return Window::SaveState(saveNode);
 	}
 }

@@ -33,7 +33,7 @@ namespace InterfaceModule
 			
 			virtual void Configure(const TiXmlElement* const element = NULL);
 			virtual void Load(const TiXmlElement* const element = NULL);
-			virtual TiXmlElement* Save(TiXmlElement* const element = NULL) const;
+			TiXmlElement* SaveState(TiXmlElement* const element = NULL) const;
 			
 			virtual void draw(sf::RenderTarget* const render);
 			virtual void setPosition(const int& x, const int& y);

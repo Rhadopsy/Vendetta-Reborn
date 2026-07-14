@@ -32,7 +32,7 @@ namespace InterfaceModule
 		public:
 			WinInventory();
 			
-			void Configure(const TiXmlElement* const element = NULL);
+			void Configure(const TiXmlElement* const element = NULL) override;
 			void Load(const TiXmlElement* const element = NULL);
 			TiXmlElement* Save() const;
 			

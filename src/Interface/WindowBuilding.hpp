@@ -32,13 +32,14 @@ namespace InterfaceModule
 		public:
 			WinBuilding();
 			
-			void Configure(const TiXmlElement* const element = NULL);
+			void Configure(const TiXmlElement* const element = NULL) override;
 			void Load(const TiXmlElement* const element = NULL);
 			TiXmlElement* Save() const;
 			
 			void draw(sf::RenderTarget* const render);
 			bool Catch(const int& x, const int& y, const sf::Event& Event, InterfaceModule::DragNDrop* const drag);
 			
+			using Window::getText;
 			std::string getText(const int& x, const int& y, const GameSystem::Character* const personnage) const;
 			
 			void LoadBuilding(GameSystem::Building* const building);

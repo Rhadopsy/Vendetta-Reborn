@@ -100,7 +100,7 @@ namespace InterfaceModule
 	TiXmlElement* WinBuilding::Save() const
 	{
 		TiXmlElement* saveNode = new TiXmlElement("WinBuilding");
-		this->Window::Save(saveNode);
+		this->Window::SaveState(saveNode);
 		
 		AddProperty(saveNode, "FabriqueItems", mItems);
 		AddProperty(saveNode, "QuantiteATransformer", mAmount);

@@ -66,7 +66,7 @@ namespace InterfaceModule
 	TiXmlElement* WinInventory::Save() const
 	{
 		TiXmlElement* saveNode = new TiXmlElement("WinInventory");
-		this->Window::Save(saveNode);
+		this->Window::SaveState(saveNode);
 		
 		AddProperty(saveNode, "PageIssue", mPageIssue);
 		

@@ -110,7 +110,7 @@ namespace InterfaceModule
 		}
 	}
 	
-	TiXmlElement* Window::Save(TiXmlElement* const element) const
+	TiXmlElement* Window::SaveState(TiXmlElement* const element) const
 	{
 		TiXmlElement* saveNode = element ? element : new TiXmlElement("Window");
 		

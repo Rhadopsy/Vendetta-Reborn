@@ -11,11 +11,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
-        run: dnf install -y gcc-c++ cmake ninja-build SFML-devel
+        run: dnf install -y gcc-c++ cmake ninja-build SFML-devel xorg-x11-server-Xvfb
       - name: Configure
         run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
       - name: Build
         run: cmake --build build
+      - name: Smoke test startup
+        shell: bash
+        run: |
+          set +e
+          timeout 10s xvfb-run -a ./build/vendetta
+          status=$?
+          set -e
+          if [ "$status" -ne 0 ] && [ "$status" -ne 124 ]; then
+            exit "$status"
+          fi
 
   windows:
     runs-on: windows-latest

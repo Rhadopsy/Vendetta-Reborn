@@ -22,6 +22,9 @@
 #include "tinyxml/tinyxml.h"
 #include "myvector.hpp"
 
+#include <memory>
+#include <vector>
+
 #include "GameSystem/TypeField.hpp"
 #include "GameSystem/TypeRessource.hpp"
 #include "GameSystem/TypeBuilding.hpp"
@@ -83,6 +86,8 @@ class ConfigurationClass
 		Types::Status* GetStatus(const unsigned int& idStatus);
 	
 	private:
+		std::vector<std::unique_ptr<TiXmlDocument>> mDocuments;
+
 		Vector <legacy::Image*> mImages;
 		Vector <std::string*> mImagePaths;
 		

@@ -28,7 +28,7 @@ namespace InterfaceModule
 		public:
 			WinEquipment();
 			
-			void Configure(TiXmlElement* const element = NULL);
+			void Configure(const TiXmlElement* const element = NULL) override;
 			TiXmlElement* Save() const;
 			
 			void draw(sf::RenderTarget* const render);
