@@ -44,17 +44,17 @@ Private Sub Class_Initialize()
     On Error GoTo Erreur
     Dim i As Integer
     Dim NombreResolutions As Integer
-    
+
     FichierINI = "Ecran"
     SectionINI = "Ecran"
-    
+
     FicIni.Fichier = FicIni.Chemin & FichierINI
     FicIni.Section = SectionINI
-    
+
     ModeFenetre = Val(FicIni.Parametre("ModeFenetre"))
     NombreResolutions = Val(FicIni.Parametre("NombreResolution"))
     Resolution = Val(FicIni.Parametre("Resolution")) - 1
-    
+
     ReDim ResolutionX(NombreResolutions - 1)
     ReDim ResolutionY(NombreResolutions - 1)
     For i = 0 To NombreResolutions - 1
@@ -62,7 +62,7 @@ Private Sub Class_Initialize()
         ResolutionX(i) = FicIni.Parametre("Largeur")
         ResolutionY(i) = FicIni.Parametre("Hauteur")
     Next i
-    
+
     Largeur = ResolutionX(Resolution)
     Hauteur = ResolutionY(Resolution)
     Exit Sub
@@ -87,10 +87,10 @@ Public Sub Init(ByRef dx As DirectX7, _
     'On Local Error Resume Next
     Err.Number = 0
     Set di = dx.DirectInputCreate()
-    
+
     'FrmMoteur2D.Top = 0
     'FrmMoteur2D.Left = 0
-    
+
     'If ModeFenetre Then
     If ModeFenetre Then
         FrmMoteur2D.BorderStyle = 1
@@ -100,7 +100,7 @@ Public Sub Init(ByRef dx As DirectX7, _
         FrmMoteur2D.Left = 0
         FrmMoteur2D.Width = Largeur * 15 + 120
         FrmMoteur2D.Height = Hauteur * 15 + 160
-        'Centre la fenêtre manuellement.
+        'Centre la fenÃªtre manuellement.
         FrmMoteur2D.Left = (Screen.Width - FrmMoteur2D.Width) / 2
         FrmMoteur2D.Top = (Screen.Height - FrmMoteur2D.Height) / 2
         'FrmMoteur2D.Picture1.Width = FrmMoteur2D.ScaleWidth
@@ -130,59 +130,61 @@ Public Sub Init(ByRef dx As DirectX7, _
     'FrmMoteur2D.Picture1.ScaleHeight = Hauteur * 16
     'FrmMoteur2D.Picture1.ScaleWidth = Largeur * 16
     'Description de la surface Primaire.
-    sdprime.lFlags = DDSD_CAPS
-    sdprime.ddsCaps.lCaps = DDSCAPS_PRIMARYSURFACE
-    sdprime.lBackBufferCount = 1
+    sdprime.dwSize = LenB(sdprime)
+    sdprime.dwFlags = DDSD_CAPS
+    sdprime.ddsCaps.dwCaps = DDSCAPS_PRIMARYSURFACE
+    sdprime.dwBackBufferCountOrDepth = 1
     'Else
     '    dd.SetCooperativeLevel FrmMoteur2D.hwnd, DDSCL_FULLSCREEN Or DDSCL_EXCLUSIVE
     '    Changer_Resolution dd
     '    FrmMoteur2D.BorderStyle = 0
     '    'Description de la surface Primaire.
-    '    sdprime.lFlags = DDSD_CAPS Or DDSD_BACKBUFFERCOUNT
-    '    sdprime.ddsCaps.lCaps = DDSCAPS_COMPLEX Or DDSCAPS_FLIP Or DDSCAPS_PRIMARYSURFACE Or DDSCAPS_VIDEOMEMORY
-    '    sdprime.lBackBufferCount = 1
+    '    sdprime.dwFlags = DDSD_CAPS Or DDSD_BACKBUFFERCOUNT
+    '    sdprime.ddsCaps.dwCaps = DDSCAPS_COMPLEX Or DDSCAPS_FLIP Or DDSCAPS_PRIMARYSURFACE Or DDSCAPS_VIDEOMEMORY
+    '    sdprime.dwBackBufferCountOrDepth = 1
     'End If
-    
+
     Set surfPrim = Nothing
-    Set surfPrim = dd.CreateSurface(sdprime)
-    
+    dd.CreateSurface sdprime, surfPrim, Nothing
+
     'Backbuffer
     'If ModeFenetre Then
-    sdback.lFlags = DDSD_CAPS
-    sdback.ddsCaps.lCaps = DDSCAPS_OFFSCREENPLAIN
-    Set SurfBack = dd.CreateSurfaceFromFile(App.Path & "\Images\Fond" & Ecran.Width & ".bmp", sdback)
-    Set SurfTemp = dd.CreateSurfaceFromFile(App.Path & "\Images\Fond" & Ecran.Width & ".bmp", sdback)
-    
+    sdback.dwSize = LenB(sdback)
+    sdback.dwFlags = DDSD_CAPS
+    sdback.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN
+    Set SurfBack = CompatCreateSurfaceFromBitmap(dd, App.Path & "\Images\Fond" & Ecran.Width & ".bmp", 0)
+    Set SurfTemp = CompatCreateSurfaceFromBitmap(dd, App.Path & "\Images\Fond" & Ecran.Width & ".bmp", 0)
+
     'Set d3dDevice = d3d.CreateDevice("IID_IDirect3DHALDevice", SurfBack)
-    
+
     'Set SurfBack = surfPrim.GetAttachedSurface(cback)
-    Set ddClipper = dd.CreateClipper(0)
-    ddClipper.SetHWnd FrmMoteur2D.Picture1.hwnd
+    dd.CreateClipper 0, ddClipper, Nothing
+    ddClipper.SetHWnd 0, FrmMoteur2D.Picture1.hwnd
     surfPrim.SetClipper ddClipper
     'surfPrim.Flip Nothing, DDFLIP_WAIT
     'Else
-    '    cback.lCaps = DDSCAPS_BACKBUFFER Or DDSCAPS_LOCALVIDMEM
+    '    cback.dwCaps = DDSCAPS_BACKBUFFER Or DDSCAPS_LOCALVIDMEM
     '    'Set SurfBack = Nothing
-    '    Set SurfBack = surfPrim.GetAttachedSurface(cback)
+    '    surfPrim.GetAttachedSurface cback, SurfBack
     '    SurfBack.GetSurfaceDesc sdback
     'End If
-    
+
     MonFond.Left = 0
     MonFond.Top = 0
     MonFond.Right = Largeur
     MonFond.Bottom = Hauteur
-    
+
     If Err.Number <> 0 Then
         Err.Clear
         dd.RestoreDisplayMode
         dd.SetCooperativeLevel AnHWND, DDSCL_NORMAL
         MsgBox "Une erreur a eu lieu durant l'initalisation de DirectDraw", vbCritical + vbOKOnly, App.Title
     End If
-    
+
     If dd Is Nothing Then
-        MsgBox "Echec de la création de la surface DirectDraw", vbCritical + vbOKOnly, App.Title
+        MsgBox "Echec de la crÃ©ation de la surface DirectDraw", vbCritical + vbOKOnly, App.Title
     End If
-    
+
 End Sub
 
 Private Sub Changer_Resolution(ByRef dd As IDirectDraw7)
@@ -227,9 +229,9 @@ End Property
 Public Property Let Definir_Resolution(ByVal Valeur As Integer)
     FicIni.Fichier = FicIni.Chemin & FichierINI
     FicIni.Section = SectionINI
-    
+
     Resolution = Valeur
-    
+
     FicIni.Parametre("Resolution") = Valeur + 1
 End Property
 
@@ -239,10 +241,7 @@ End Property
 Public Property Let Definir_ModeFenetre(ByVal Valeur As Boolean)
     FicIni.Fichier = FicIni.Chemin & FichierINI
     FicIni.Section = SectionINI
-    
     ModeFenetre = Valeur
-    
+
     FicIni.Parametre("ModeFenetre") = -CDbl(Valeur)
 End Property
-
-
