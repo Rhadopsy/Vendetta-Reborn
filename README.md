@@ -7,7 +7,8 @@ Il s'agit d'un jeu complet écrit en **Visual Basic 6**, et non du prototype C++
 ## État de cette branche
 
 - code source VB6 original et ressources de jeu importés sans conversion ;
-- exécutable historique `Vendetta.exe` volontairement exclu : il n'est pas nécessaire pour conserver les sources et n'a pas été exécuté ;
+- exécutable historique `Vendetta.exe` conservé uniquement pour les tests de compatibilité Wine/Proton ; il provient de l'archive originale et n'a pas été exécuté pendant l'import ;
+- SHA-256 de `Vendetta.exe` : `914cacd4fea78f82b91e5480e52a0bb619005718d5eeb257c2b4451211936898` ;
 - point d'entrée : `Sub Main` dans `ModMain.bas` ;
 - projet VB6 : `PrjImperator.vbp` ;
 - version déclarée : 3.0.0, révision 17 dans le nom de l'archive ;
