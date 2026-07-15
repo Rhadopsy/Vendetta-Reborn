@@ -40,14 +40,14 @@ Private Sub Class_Initialize()
     Set Sprite = New ClsAffSprite
 End Sub
 
-Public Sub Charger(ByRef dd As DirectDraw7)
+Public Sub Charger(ByRef dd As IDirectDraw7)
     Sprite.Charger dd, Chemin & "Ressources"
 End Sub
 
 Public Sub Afficher(ByVal X As Long, _
                     ByVal Y As Long, _
                     ByVal TypeRessource As Long, _
-                    ByRef SurfBack As DirectDrawSurface7)
+                    ByRef SurfBack As IDirectDrawSurface7)
     'On charge la bonne image en fonction des paramètres.
     Sprite.Selection 0, _
                      HauteurImage, _

@@ -17,9 +17,13 @@ Attribute VB_Name = "ModMain"
 ' Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 Option Explicit
 
+#If TWINBASIC Then
+Public Declare PtrSafe Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As LongPtr, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Long) As LongPtr
+Public Declare PtrSafe Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
+#Else
 Public Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Long, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Long) As Long
-
 Public Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
+#End If
 
 Public Const FichierChargement = "Chargement"
 Public Const SectionChargement1 = "Chargement_1"
@@ -66,7 +70,7 @@ Public Messages() As ClsJeuMessages
 Public Stastistiques As ClsJeuStastistiques
 
 'Chargement des classes d'affichage.
-Public dd As DirectDraw7                     'creation objet DirectDraw
+Public dd As IDirectDraw7                     'creation objet DirectDraw
 Public AffPerso As ClsAffPerso
 Public AffApparence As ClsAffApparence
 Public AffTerrain As ClsAffTerrain
@@ -806,7 +810,11 @@ Public Sub Ouvir_PageWeb(ByVal Chemin As String)
 '    Exit Sub
 'Erreur:
 '    MsgBox CheminIExplorerIntrouvable, vbCritical
+#If TWINBASIC Then
+    Dim hwnd As LongPtr
+#Else
     Dim hwnd As Long
+#End If
     Dim lpOperation As String
     Dim lpFile As String
     Dim lpParameters As String

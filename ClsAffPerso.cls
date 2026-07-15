@@ -68,7 +68,7 @@ Private Sub Class_Initialize()
     'ReDim Preserve DossiersPersos(UBound(DossiersPersos()) - 1)
 End Sub
 
-Public Sub Charger(ByRef dd As DirectDraw7, _
+Public Sub Charger(ByRef dd As IDirectDraw7, _
                    ByRef Parametres As ClsJeuParam)
     Dim i As Long, j As Long
     Dim Temp As String
@@ -170,7 +170,7 @@ Public Sub Afficher(ByVal X As Long, _
                     ByVal HauteurImage As Integer, _
                     ByVal Perso As ClsJeuPerso, _
                     ByVal ApparenceChoisie As Integer, _
-                    ByRef SurfBack As DirectDrawSurface7, _
+                    ByRef SurfBack As IDirectDrawSurface7, _
                     Optional ByVal ChoisirApparence As Boolean, _
                     Optional ByVal Translucide As Boolean, _
                     Optional ByVal DecalageX As Integer = 0, _
@@ -208,7 +208,7 @@ Private Sub Afficher2(ByVal X As Long, _
                       ByVal LargeurImage As Integer, _
                       ByVal HauteurImage As Integer, _
                       ByVal ApparenceChoisie As Integer, _
-                      ByRef SurfBack As DirectDrawSurface7, _
+                      ByRef SurfBack As IDirectDrawSurface7, _
                       ByVal ChoisirApparence As Boolean, _
                       ByVal Translucide As Boolean, _
                       ByVal DecalageX As Integer, _

@@ -45,7 +45,7 @@ Private Sub Class_Initialize()
     Set Sprites(0) = New ClsAffSprite
 End Sub
 
-Public Sub Charger(ByRef dd As DirectDraw7)
+Public Sub Charger(ByRef dd As IDirectDraw7)
     Dim i As Integer
     For i = 0 To NombreSprites - 1
         Sprites(i).Charger dd, Chemin & Images(i)
@@ -54,7 +54,7 @@ End Sub
 
 Public Sub Afficher(ByVal X As Long, _
                     ByVal Y As Long, _
-                    ByRef SurfBack As DirectDrawSurface7, _
+                    ByRef SurfBack As IDirectDrawSurface7, _
                     Optional ByVal TypeFenetre As Integer)
     'On charge la bonne image en fonction des paramètres.
     'Sprite.Selection Hauteur * Etat, _

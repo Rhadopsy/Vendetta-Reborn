@@ -41,29 +41,30 @@ Private OptimiserAffichageHauteur As Integer
 Private Const Chemin = "\Images\terrains\"
 Private Const Extension = ".bmp"
 
-Private Sprite As DirectDrawSurface7 'creation surface Primaire.
+Private Sprite As IDirectDrawSurface7 'creation surface Primaire.
 Private AffSprite As DDSURFACEDESC2  'description surface Primaire.
 Private RectSprite As RECT           'rectangle Titre.
 
-Private TerrainSprite() As DirectDrawSurface7 'creation surface Primaire.
+Private TerrainSprite() As IDirectDrawSurface7 'creation surface Primaire.
 Private AffTerrainSprite As DDSURFACEDESC2 'description surface Primaire.
 
 Private EtapeAnimation1 As Integer
 Private EtapeAnimation2 As Integer
 Private EtapeAnimationRetour As Boolean
 
-
 Private Sub Class_Initialize()
-    AffSprite.lFlags = DDSD_CAPS Or DDSD_CKSRCBLT
-    AffSprite.ddsCaps.lCaps = DDSCAPS_OFFSCREENPLAIN
-    AffTerrainSprite.lFlags = DDSD_CAPS Or DDSD_CKSRCBLT
-    AffTerrainSprite.ddsCaps.lCaps = DDSCAPS_OFFSCREENPLAIN
+    AffSprite.dwSize = LenB(AffSprite)
+    AffSprite.dwFlags = DDSD_CAPS Or DDSD_CKSRCBLT
+    AffSprite.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN
+    AffTerrainSprite.dwSize = LenB(AffTerrainSprite)
+    AffTerrainSprite.dwFlags = DDSD_CAPS Or DDSD_CKSRCBLT
+    AffTerrainSprite.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN
 End Sub
 
-Public Sub Charger(ByRef dd As DirectDraw7, ByVal TerrainZone As String)
-' Autant le faire directement pour éviter l'appel en cascade d'objets
+Public Sub Charger(ByRef dd As IDirectDraw7, ByVal TerrainZone As String)
+' Autant le faire directement pour Ã©viter l'appel en cascade d'objets
 On Local Error GoTo NomaP
-    Set Sprite = dd.CreateSurfaceFromFile(App.Path & Chemin & TerrainZone & Extension, AffSprite)
+    Set Sprite = CompatCreateSurfaceFromBitmap(dd, App.Path & Chemin & TerrainZone & Extension, 0)
     Set FrmMoteur2D.picTemp.Picture = LoadPicture(App.Path & Chemin & TerrainZone & Extension)
     Exit Sub
 NomaP:
@@ -76,15 +77,15 @@ Public Sub Afficher(ByVal X As Long, _
                     ByVal Y As Long, _
                     ByVal ApparenceTerrain As Long, _
                     ByVal TypeTerrain As Long, _
-                    ByRef SurfBack As DirectDrawSurface7)
-    'On charge la bonne image en fonction des paramètres.
+                    ByRef SurfBack As IDirectDrawSurface7)
+    'On charge la bonne image en fonction des paramÃ¨tres.
     Dim Etat As Integer
-    
+
     RectSprite.Top = Hauteur * TypeTerrain
     RectSprite.Bottom = Hauteur * (TypeTerrain + 1)
     RectSprite.Left = Largeur * ApparenceTerrain
     RectSprite.Right = Largeur * (ApparenceTerrain + 1)
-    
+
     SurfBack.BltFast X, Y, Sprite, RectSprite, DDBLTFAST_SRCCOLORKEY
 End Sub
 
@@ -107,20 +108,20 @@ Public Sub Animation_Suivante()
     End If
 End Sub
 
-Public Sub Modeliser_Carte(ByRef dd As DirectDraw7, ByVal Monde As ClsJeuMonde)
+Public Sub Modeliser_Carte(ByRef dd As IDirectDraw7, ByVal Monde As ClsJeuMonde)
     Dim i As Long, j As Long
     Dim k As Long, l As Long
     Dim m As Long, n As Long, o As Long
     Dim TpTerrain As Integer
     Dim CaTerrain As Integer
-    
+
     Dim RectBack As RECT
     Dim AffBack As DDSURFACEDESC2
     Dim AffFore As DDSURFACEDESC2
     Dim RectFore As RECT
-    
+
     Dim NombreEtapesAnimation As Integer
-    
+
     'Calcul la largeur des grandes cases maximales.
     For i = OptimiserAffichageLargeurMax To 0 Step -Monde.LargeurCase
         If (Monde.Largeur * Monde.LargeurCase) Mod i = 0 Then
@@ -135,9 +136,9 @@ Public Sub Modeliser_Carte(ByRef dd As DirectDraw7, ByVal Monde As ClsJeuMonde)
         End If
     Next i
     'Debug.Print OptimiserAffichageLargeur & ", " & OptimiserAffichageHauteur
-    
+
     NombreEtapesAnimation = IIf(Monde.TerrainAnime, Monde.NombreEtapesAnimation, 1)
-    
+
     'AffTerrainSprite.lHeight = Monde.Hauteur * Hauteur
     'AffTerrainSprite.lWidth = Monde.Largeur * Largeur
     'FrmMoteur2D.picCarte.Width = Monde.Largeur * Largeur
@@ -151,7 +152,7 @@ Public Sub Modeliser_Carte(ByRef dd As DirectDraw7, ByVal Monde As ClsJeuMonde)
     For l = 0 To NombreEtapesAnimation - 1
         For m = 0 To Int(Monde.Hauteur / OptimiserAffichageHauteur * Hauteur)
             For n = 0 To Int(Monde.Largeur / OptimiserAffichageLargeur * Largeur)
-                'Set TerrainSprite(l) = dd.CreateSurfaceFromFile(App.Path & Chemin & "Plaine" & Extension, AffTerrainSprite)
+                'Set TerrainSprite(l) = CompatCreateSurfaceFromBitmap(dd, App.Path & Chemin & "Plaine" & Extension, 0)
                 'Sprite.GetSurfaceDesc AffFore
                 'Sprite.Lock RectFore, AffFore, DDLOCK_WAIT, 0
                 'TerrainSprite(l).GetSurfaceDesc AffBack
@@ -160,7 +161,7 @@ Public Sub Modeliser_Carte(ByRef dd As DirectDraw7, ByVal Monde As ClsJeuMonde)
                     For j = 0 To OptimiserAffichageLargeur / Largeur
                         k = (i + (m * OptimiserAffichageHauteur / Hauteur)) * Monde.Largeur + j + (n * OptimiserAffichageLargeur / Largeur)
                         If i + (m * OptimiserAffichageHauteur / Hauteur) <= Monde.Hauteur - 1 And j + (n * OptimiserAffichageLargeur / Largeur) <= Monde.Largeur - 1 Then
-                            
+
                             TpTerrain = Monde.Param_TerrainApparence(k)
                             CaTerrain = Monde.Param_TerrainCategorie(k)
                             'Animation (dans le cas de l'eau).
@@ -169,9 +170,9 @@ Public Sub Modeliser_Carte(ByRef dd As DirectDraw7, ByVal Monde As ClsJeuMonde)
                             'RectSprite.Right = Largeur * (TpTerrain + 1)
                             'RectSprite.Top = Hauteur * CaTerrain
                             'RectSprite.Bottom = Hauteur * (CaTerrain + 1)
-                            
+
                             'TerrainSprite.BltFast i * Monde.LargeurCase, _
-                                                  j * Monde.HauteurCase, Sprite, RectSprite, DDBLTFAST_SRCCOLORKEY
+                            '                      j * Monde.HauteurCase, Sprite, RectSprite, DDBLTFAST_SRCCOLORKEY
                             FrmMoteur2D.picCarte.PaintPicture FrmMoteur2D.picTemp.Picture, _
                                                               j * Largeur, i * Hauteur, _
                                                               Largeur, Hauteur, _
@@ -179,25 +180,25 @@ Public Sub Modeliser_Carte(ByRef dd As DirectDraw7, ByVal Monde As ClsJeuMonde)
                                                               Largeur, Hauteur
                             'For m = 0 To Hauteur - 1
                             '    For n = 0 To Largeur - 1
-                                    'Debug.Print Sprite.GetLockedPixel(Largeur * TpTerrain + n + 1, Hauteur * CaTerrain + m + 1)
+                            '        Debug.Print Sprite.GetLockedPixel(Largeur * TpTerrain + n + 1, Hauteur * CaTerrain + m + 1)
                             '        TerrainSprite(l).SetLockedPixel j * Largeur + n, _
-                                                                    i * Hauteur + m, _
-                                                                    Sprite.GetLockedPixel(Largeur * TpTerrain + n, Hauteur * CaTerrain + m)
+                            '                                         i * Hauteur + m, _
+                            '                                         Sprite.GetLockedPixel(Largeur * TpTerrain + n, Hauteur * CaTerrain + m)
                             '    Next n
                             'Next m
                             'k = k + 1
                             'FrmMoteur2D.Afficher_Image_Chargement dd, 80, _
-                            "Optimisation de l'affichage " & Format(((k + (l * Monde.Hauteur * Monde.Largeur)) / (Monde.Hauteur * Monde.Largeur) / NombreEtapesAnimation) * 100, "00") & " %"
+                            '    "Optimisation de l'affichage " & Format(((k + (l * Monde.Hauteur * Monde.Largeur)) / (Monde.Hauteur * Monde.Largeur) / NombreEtapesAnimation) * 100, "00") & " %"
                         End If
                     Next j
                 Next i
-                
+
                 FrmMoteur2D.Afficher_Image_Chargement dd, 80, _
                                                       Parametres.Etiquette_Chargement(7) & Format(o / UBound(TerrainSprite()) * 100, "00") & " " & Parametres.EtiquettePourcent & Parametres.Etiquette_Chargement(8)
                 If Clavier.Quitter Then
                     Monde.TerrainOptimise = False
                     ReDim TerrainSprite(0)
-                    'Décharge les images.
+                    'DÃ©charge les images.
                     Set FrmMoteur2D.picCarte.Picture = LoadPicture("")
                     FrmMoteur2D.picCarte.Height = 0: FrmMoteur2D.picCarte.Width = 0
                     Set FrmMoteur2D.picTemp.Picture = LoadPicture("")
@@ -207,16 +208,16 @@ Public Sub Modeliser_Carte(ByRef dd As DirectDraw7, ByVal Monde As ClsJeuMonde)
                 'Sprite.Unlock RectFore
                 'TerrainSprite(l).Unlock RectBack
                 SavePicture FrmMoteur2D.picCarte.Image, App.Path & Chemin & "Carte" & o + 1 & Extension
-                Set TerrainSprite(o) = dd.CreateSurfaceFromFile(App.Path & Chemin & "Carte" & o + 1 & Extension, AffTerrainSprite)
+                Set TerrainSprite(o) = CompatCreateSurfaceFromBitmap(dd, App.Path & Chemin & "Carte" & o + 1 & Extension, 0)
                 Kill App.Path & Chemin & "Carte" & o + 1 & Extension
                 Set FrmMoteur2D.picCarte.Picture = LoadPicture("")
-                
+
                 'k = 0
                 o = o + 1
             Next n
         Next m
     Next l
-    'Décharge les images.
+    'DÃ©charge les images.
     Set FrmMoteur2D.picCarte.Picture = LoadPicture("")
     FrmMoteur2D.picCarte.Height = 0: FrmMoteur2D.picCarte.Width = 0
     Set FrmMoteur2D.picTemp.Picture = LoadPicture("")
@@ -227,7 +228,7 @@ End Sub
 Public Sub AfficheVeryFast(ByVal PositionX As Long, ByVal PositionY As Long, _
                            ByVal DecalageX As Long, ByVal DecalageY As Long, _
                            ByVal EcranWidth As Long, ByVal EcranHeight As Long, _
-                           ByRef SurfBack As DirectDrawSurface7)
+                           ByRef SurfBack As IDirectDrawSurface7)
     'RectSprite.Left = DecalageX
     'RectSprite.Right = EcranWidth + DecalageX
     'RectSprite.Top = DecalageY
@@ -239,11 +240,11 @@ Public Sub AfficheVeryFast(ByVal PositionX As Long, ByVal PositionY As Long, _
     Dim MondeLargeur As Long: MondeLargeur = Monde.Largeur
     Dim TpTerrain As Integer
     Dim CaTerrain As Integer
-    
+
     'RectSprite.Bottom = Hauteur
-        
+
     With SurfBack
-    
+
     For i = 0 To EcranWidth / OptimiserAffichageLargeur + 1
         k = Int(DecalageY / OptimiserAffichageHauteur) * Int(Monde.Largeur / OptimiserAffichageLargeur * Largeur + 1) + i + Int(DecalageX / OptimiserAffichageLargeur) + _
                 (Int((Monde.Hauteur * Hauteur / OptimiserAffichageHauteur) + 1) * Int((Monde.Largeur * Largeur / OptimiserAffichageLargeur) + 1) * EtapeAnimation2)
@@ -257,17 +258,17 @@ Public Sub AfficheVeryFast(ByVal PositionX As Long, ByVal PositionY As Long, _
                 RectSprite.Right = OptimiserAffichageLargeur
                 RectSprite.Top = 0
                 RectSprite.Bottom = OptimiserAffichageHauteur
-                
+
                 If (cY + OptimiserAffichageHauteur) > ScreenHeight Then
-                    'Dépasse en bas de l'écran.
+                    'DÃ©passe en bas de l'Ã©cran.
                     RectSprite.Bottom = RectSprite.Bottom - (cY + OptimiserAffichageHauteur - ScreenHeight)
                 End If
                 If cY < PositionY Then
-                    'Dépasse en haut de l'écran.
+                    'DÃ©passe en haut de l'Ã©cran.
                     RectSprite.Top = RectSprite.Top - cY
                     cY = PositionY
                 End If
-    
+
                 If (cX + OptimiserAffichageLargeur) > ScreenWidth Then
                     RectSprite.Right = RectSprite.Right - (cX + RectSprite.Right - RectSprite.Left - ScreenWidth)
                     .BltFast cX, cY, TerrainSprite(k), RectSprite, DDBLTFAST_SRCCOLORKEY
@@ -280,16 +281,16 @@ Public Sub AfficheVeryFast(ByVal PositionX As Long, ByVal PositionY As Long, _
             End If
             k = k + MondeLargeur * Largeur / OptimiserAffichageLargeur + 1
         Next j
-        
+
     Next i
-    
+
     End With
 End Sub
 
 Public Sub AfficheFast(ByVal PositionX As Long, ByVal PositionY As Long, _
                        ByVal DecalageX As Long, ByVal DecalageY As Long, _
                        ByVal EcranWidth As Long, ByVal EcranHeight As Long, _
-                       ByRef SurfBack As DirectDrawSurface7)
+                       ByRef SurfBack As IDirectDrawSurface7)
 
     Dim i As Long, j As Long, k As Long
     Dim cX As Long, cX2 As Long, cY As Long
@@ -297,11 +298,11 @@ Public Sub AfficheFast(ByVal PositionX As Long, ByVal PositionY As Long, _
     Dim MondeLargeur As Long: MondeLargeur = Monde.Largeur
     Dim TpTerrain As Integer
     Dim CaTerrain As Integer
-    
+
     RectSprite.Bottom = Hauteur
-        
+
     With SurfBack
-    
+
     For i = 0 To EcranWidth / Largeur
         k = Int(DecalageY / Largeur) * MondeLargeur + i + Int(DecalageX / Hauteur)
         cX = i * Largeur - DecalageX Mod Largeur + PositionX
@@ -316,12 +317,12 @@ Public Sub AfficheFast(ByVal PositionX As Long, ByVal PositionY As Long, _
             RectSprite.Right = Largeur * (TpTerrain + 1)
             RectSprite.Top = Hauteur * CaTerrain
             RectSprite.Bottom = Hauteur * (CaTerrain + 1)
-            
+
             If (cY + Hauteur) > ScreenHeight Then
-                'Dépasse en bas de l'écran.
+                'DÃ©passe en bas de l'Ã©cran.
                 RectSprite.Bottom = RectSprite.Bottom - (cY + Hauteur - ScreenHeight)
             ElseIf cY < PositionY Then
-                'Dépasse en haut de l'écran.
+                'DÃ©passe en haut de l'Ã©cran.
                 RectSprite.Top = RectSprite.Top - cY
                 cY = PositionY
             End If
@@ -335,16 +336,14 @@ Public Sub AfficheFast(ByVal PositionX As Long, ByVal PositionY As Long, _
                 RectSprite.Left = RectSprite.Left - cX2
                 .BltFast PositionX, cY, Sprite, RectSprite, DDBLTFAST_SRCCOLORKEY
             End If
-            
+
             k = k + MondeLargeur
         Next j
-        
+
     Next i
-    
+
     End With
 End Sub
-                       
-                       
 
 Private Sub Class_Terminate()
     Set Sprite = Nothing

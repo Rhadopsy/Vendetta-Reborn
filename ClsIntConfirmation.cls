@@ -76,7 +76,7 @@ Private Sub Class_Initialize()
     AffFenetre.Definir_Image(0) = FichierImageFenetre
 End Sub
 
-Public Sub Init(ByRef dd As DirectDraw7)
+Public Sub Init(ByRef dd As IDirectDraw7)
     'Charge les sprites.
     AffFenetre.Charger dd
     AffBouton.Charger dd, 7
@@ -99,7 +99,7 @@ Public Sub Afficher_Fenetre(ByVal Indice As Integer, _
     MessagePositionY = PositionY + EtiquettePositionY
 End Sub
 
-Public Sub Afficher(ByRef SurfBack As DirectDrawSurface7)
+Public Sub Afficher(ByRef SurfBack As IDirectDrawSurface7)
     'Affiche la fenêtre.
     AffFenetre.Afficher PositionX, PositionY, SurfBack
     'Affiche les boutons.

@@ -86,7 +86,7 @@ Public Sub Init()
     Actualiser_Temps
 End Sub
 
-Public Sub Charger(ByRef dd As DirectDraw7)
+Public Sub Charger(ByRef dd As IDirectDraw7)
     Dim i As Integer
     'If AfficherTemps Then
         For i = 0 To NombreTemps - 1
@@ -129,7 +129,7 @@ Public Sub Afficher(ByVal DecalageX As Long, _
                     ByVal HauteurEcran As Integer, _
                     ByVal EcranDecalageX As Integer, _
                     ByVal EcranDecalageY As Integer, _
-                    ByRef SurfBack As DirectDrawSurface7, _
+                    ByRef SurfBack As IDirectDrawSurface7, _
                     Optional ByVal ForcerAffichage As Boolean)
     Dim i As Integer, j As Integer
     If AfficherTemps Or ForcerAffichage Then

@@ -136,7 +136,7 @@ Private Sub Class_Initialize()
     HauteurBoutonCompetences = Val(FicIni.Parametre("HauteurBoutonCompetences"))
 End Sub
 
-Public Sub Charger(ByVal dd As DirectDraw7, _
+Public Sub Charger(ByVal dd As IDirectDraw7, _
                    ByVal TypeBouton As Integer, _
                    Optional ByVal NomFichier As String, _
                    Optional ByVal CheminFichier As String)
@@ -199,7 +199,7 @@ Public Sub Afficher(ByVal X As Long, _
                     ByVal Y As Long, _
                     ByVal TypeBouton As Long, _
                     ByVal Etat As Integer, _
-                    ByRef SurfBack As DirectDrawSurface7, _
+                    ByRef SurfBack As IDirectDrawSurface7, _
                     Optional ByVal Transparent As Boolean, _
                     Optional ByVal Translucide As Boolean, _
                     Optional ByVal ValeurTransparence As Single)

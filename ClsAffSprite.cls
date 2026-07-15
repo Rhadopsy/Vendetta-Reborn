@@ -29,99 +29,54 @@ Attribute VB_Exposed = False
 ' Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 Option Explicit
 
-'Affichage Directx.
-Private Sprite As DirectDrawSurface7 'creation surface Primaire.
-Private AffSprite As DDSURFACEDESC2  'description surface Primaire.
-Private RectSprite As RECT           'rectangle Titre.
-Private RectSprite2 As RECT           'rectangle Titre.
-
-Private DDBLTFX As DDBLTFX
+'Affichage DirectX.
+Private Sprite As IDirectDrawSurface7
+Private RectSprite As RECT
+Private RectSprite2 As RECT
 
 Const Chemin = "\Images\"
 Const Extension = ".bmp"
 Const SngAlpha As Single = 0.5
 
-Dim i As Long
-Dim j As Long
-Dim IColorS As Long
-Dim IColorB As Long
-Dim iNewColor As Long
-Dim RectBack As RECT
-Dim AffBack As DDSURFACEDESC2
-Dim AffFore As DDSURFACEDESC2
-Dim RectFore As RECT
-
-Private Sub Class_Initialize()
-    DDBLTFX.ddckDestColorKey_high = 0
-    DDBLTFX.ddckDestColorKey_low = 0
-    DDBLTFX.ddckSrcColorKey_high = 0
-    DDBLTFX.ddckSrcColorKey_low = 0
-End Sub
-
-Public Sub Charger(ByRef dd As DirectDraw7, _
+Public Sub Charger(ByRef dd As IDirectDraw7, _
                    ByVal Fichier As String, _
                    Optional ByVal CheminAbsolu As Boolean, _
                    Optional ByVal GestionErreurs As Boolean = True)
+    Dim NomFichier As String
+
     On Local Error GoTo Erreur
-    'EcranLargeur = ScreenWidth
-    'EcranHauteur = ScreenHeight
-    AffSprite.lFlags = DDSD_CAPS Or DDSD_CKSRCBLT
-    AffSprite.ddsCaps.lCaps = DDSCAPS_OFFSCREENPLAIN
-    'AffSprite.lWidth =
-    'AffSprite.lHeight =
+
     If CheminAbsolu Then
-        Set Sprite = dd.CreateSurfaceFromFile(App.Path & "\" & Fichier & Extension, AffSprite)
+        NomFichier = App.Path & "\" & Fichier & Extension
     Else
-        Set Sprite = dd.CreateSurfaceFromFile(App.Path & Chemin & Fichier & Extension, AffSprite)
+        NomFichier = App.Path & Chemin & Fichier & Extension
     End If
+
+    Set Sprite = CompatCreateSurfaceFromBitmap(dd, NomFichier, 0)
     Exit Sub
+
 Erreur:
     If GestionErreurs Then
-        'Debug.Print "Le fichier image :" & vbCrLf & App.Path & Chemin & Fichier & Extension & vbCrLf & "est manquant.", vbCritical
-        If CheminAbsolu Then
-            MsgBox "Le fichier image :" & vbCrLf & App.Path & "\" & Fichier & Extension & vbCrLf & "ne peux être chargé." & vbCrLf & Err.Description, vbCritical
-        Else
-            MsgBox "Le fichier image :" & vbCrLf & App.Path & Chemin & Fichier & Extension & vbCrLf & "ne peux être chargé." & vbCrLf & Err.Description, vbCritical
-        End If
+        MsgBox "Le fichier image :" & vbCrLf & NomFichier & vbCrLf & _
+               "ne peux Ãªtre chargÃ©." & vbCrLf & Err.Description, vbCritical
         FrmMoteur2D.FatalEnd
     End If
 End Sub
 
 Public Sub Afficher(ByVal X As Long, _
                     ByVal Y As Long, _
-                    ByRef SurfBack As DirectDrawSurface7, _
+                    ByRef SurfBack As IDirectDrawSurface7, _
                     ByVal Transparent As Boolean, _
                     Optional ByVal Translucide As Boolean, _
                     Optional ByVal DecalageX As Integer = 0, _
                     Optional ByVal DecalageY As Integer = 0, _
                     Optional ByVal ValeurTansparence As Single = SngAlpha)
-    With SurfBack
-    
+
     If Translucide Then
-        Sprite.GetSurfaceDesc AffFore
-        Sprite.Lock RectFore, AffFore, DDLOCK_WAIT, 0
-        .GetSurfaceDesc AffBack
-        .Lock RectBack, AffBack, DDLOCK_WAIT, 0
-        For i = 0 To RectSprite.Right - RectSprite.Left
-            For j = 0 To RectSprite.Bottom - RectSprite.Top
-                If i + X >= 0 And _
-                   i + X <= ScreenWidth And _
-                   j + Y >= 0 And _
-                   j + Y <= ScreenHeight And _
-                   Sprite.GetLockedPixel(i + RectSprite.Left, j + RectSprite.Top) > 0 Then
-                    IColorS = Sprite.GetLockedPixel(i + RectSprite.Left, j + RectSprite.Top)
-                    IColorB = SurfBack.GetLockedPixel(i + X - ScreenPositionX, j + Y - ScreenPositionY)
-                    iNewColor = AffBack.ddpfPixelFormat.lRBitMask And (IColorS And AffFore.ddpfPixelFormat.lRBitMask) * ValeurTansparence + (IColorB And AffBack.ddpfPixelFormat.lRBitMask) * (1 - ValeurTansparence)
-                    iNewColor = iNewColor Or _
-                                AffBack.ddpfPixelFormat.lGBitMask And (IColorS And AffFore.ddpfPixelFormat.lGBitMask) * ValeurTansparence + (IColorB And AffBack.ddpfPixelFormat.lGBitMask) * (1 - ValeurTansparence)
-                    iNewColor = iNewColor Or _
-                                AffBack.ddpfPixelFormat.lBBitMask And (IColorS And AffFore.ddpfPixelFormat.lBBitMask) * ValeurTansparence + (IColorB And AffBack.ddpfPixelFormat.lBBitMask) * (1 - ValeurTansparence)
-                    .SetLockedPixel i + X - ScreenPositionX, j + Y - ScreenPositionY, iNewColor
-                End If
-            Next j
-        Next i
-        Sprite.Unlock RectFore
-        .Unlock RectBack
+        CompatSurfaceBlendColorKey SurfBack, Sprite, RectSprite, _
+                                   X - ScreenPositionX, _
+                                   Y - ScreenPositionY, _
+                                   ValeurTansparence, 0
     Else
         If X < 0 Then
             RectSprite.Left = RectSprite.Left - X
@@ -149,27 +104,38 @@ Public Sub Afficher(ByVal X As Long, _
         If DecalageY > 0 Then
             RectSprite.Bottom = RectSprite.Bottom - DecalageY
         End If
-        .BltFast X + DecalageX + ScreenPositionX, Y + DecalageY + ScreenPositionY, Sprite, RectSprite, IIf(Transparent, DDBLTFAST_SRCCOLORKEY, DDBLTFAST_NOCOLORKEY)
+        SurfBack.BltFast X + DecalageX + ScreenPositionX, _
+                         Y + DecalageY + ScreenPositionY, _
+                         Sprite, RectSprite, _
+                         IIf(Transparent, DDBLTFAST_SRCCOLORKEY, DDBLTFAST_NOCOLORKEY)
     End If
-    
-    End With
 End Sub
 
 Public Sub Afficher2(ByVal X As Long, _
-                    ByVal Y As Long, _
-                    ByRef SurfBack As DirectDrawSurface7, _
-                    ByVal Transparent As Boolean, _
-                    Optional ByVal Zoom As Single)
+                     ByVal Y As Long, _
+                     ByRef SurfBack As IDirectDrawSurface7, _
+                     ByVal Transparent As Boolean, _
+                     Optional ByVal Zoom As Single)
+    Dim BltFx As DDBLTFX
+    Dim BltFlags As DDBLTFLAGS
+
     With RectSprite
-    RectSprite2.Top = RectSprite.Top
-    RectSprite2.Bottom = RectSprite.Bottom
-    RectSprite2.Left = RectSprite.Left
-    RectSprite2.Right = RectSprite.Right
-    RectSprite.Top = RectSprite.Top + Y
-    RectSprite.Bottom = RectSprite.Bottom + Y - (RectSprite.Bottom - RectSprite.Bottom * Zoom)
-    RectSprite.Left = RectSprite.Left + X
-    RectSprite.Right = RectSprite.Right + X - (RectSprite.Right - RectSprite.Right * Zoom)
-    SurfBack.Blt RectSprite, Sprite, RectSprite2, IIf(Transparent, DDBLT_KEYSRC, 0)
+        RectSprite2.Top = RectSprite.Top
+        RectSprite2.Bottom = RectSprite.Bottom
+        RectSprite2.Left = RectSprite.Left
+        RectSprite2.Right = RectSprite.Right
+        RectSprite.Top = RectSprite.Top + Y
+        RectSprite.Bottom = RectSprite.Bottom + Y - (RectSprite.Bottom - RectSprite.Bottom * Zoom)
+        RectSprite.Left = RectSprite.Left + X
+        RectSprite.Right = RectSprite.Right + X - (RectSprite.Right - RectSprite.Right * Zoom)
+
+        BltFx.dwSize = LenB(BltFx)
+        If Transparent Then
+            BltFlags = DDBLT_KEYSRC
+        Else
+            BltFlags = 0
+        End If
+        SurfBack.Blt RectSprite, Sprite, RectSprite2, BltFlags, BltFx
     End With
 End Sub
 
@@ -194,4 +160,3 @@ End Property
 Private Sub Class_Terminate()
     Set Sprite = Nothing
 End Sub
-

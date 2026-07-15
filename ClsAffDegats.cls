@@ -54,7 +54,7 @@ Public FontNormale As IFont
 Private Sub Class_Initialize()
     FicIni.Fichier = FicIni.Chemin & FichierINI
     FicIni.Section = SectionINI
-    
+
     AfficherDegats = CBool(FicIni.Parametre("AfficherDegats"))
     TailleNormale = Val(FicIni.Parametre("TailleNormale"))
     TailleCritique = Val(FicIni.Parametre("TailleCritique"))
@@ -119,29 +119,27 @@ Public Sub Afficher_Degats(ByVal DecalageX As Long, _
                            ByVal DecalageY As Long, _
                            ByVal EcranWidth As Long, _
                            ByVal EcranHeight As Long, _
-                           ByRef SurfBack As DirectDrawSurface7)
+                           ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Long
     Dim X As Integer, Y As Integer
+
     If AfficherDegats Then
         For i = 1 To Degats.Count
-            If Degats(i).Critique Then
-                SurfBack.SetFont FontCritique
-            Else
-                SurfBack.SetFont FontDegats
-            End If
-            SurfBack.SetForeColor Degats(i).Couleur
             X = Degats(i).X - DecalageX
             Y = Degats(i).Y - DecalageY
             If X > ScreenPositionX And _
                X < EcranWidth + ScreenPositionX And _
                Y > ScreenPositionY And _
                Y < EcranHeight + ScreenPositionY Then
-                SurfBack.DrawText X, _
-                                  Y, _
-                                  Degats(i).Score, False
+                If Degats(i).Critique Then
+                    CompatSurfaceDrawText SurfBack, FontCritique, Degats(i).Couleur, _
+                                          X, Y, CStr(Degats(i).Score)
+                Else
+                    CompatSurfaceDrawText SurfBack, FontDegats, Degats(i).Couleur, _
+                                          X, Y, CStr(Degats(i).Score)
+                End If
             End If
         Next i
-        SurfBack.SetFont FontNormale
     End If
 End Sub
 
@@ -160,7 +158,7 @@ Public Sub Actualiser_Degats()
     Wend
 End Sub
 
-'Propriétés
+'PropriÃ©tÃ©s
 Public Property Get Definir_AfficherDegats() As Boolean
     Definir_AfficherDegats = AfficherDegats
 End Property
@@ -170,4 +168,3 @@ Public Property Let Definir_AfficherDegats(ByVal Valeur As Boolean)
     AfficherDegats = Valeur
     FicIni.Parametre("AfficherInfoBulle") = -CBool(AfficherDegats)
 End Property
-

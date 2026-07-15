@@ -64,6 +64,17 @@ Public Type DEVMODE
         dmDisplayFrequency As Long
 End Type
 'Fonctions
+#If TWINBASIC Then
+Private Declare PtrSafe Function GetWindowDC Lib "user32" (ByVal hwnd As LongPtr) As LongPtr
+Public Declare PtrSafe Function ReleaseDC Lib "user32" (ByVal hwnd As LongPtr, ByVal hdc As LongPtr) As Long
+Public Declare PtrSafe Function CreateDC Lib "gdi32" Alias "CreateDCA" (ByVal lpDriverName As String, ByVal lpDeviceName As String, ByVal lpOutput As String, lpInitData As DEVMODE) As LongPtr
+Public Declare PtrSafe Function DeleteDC Lib "gdi32" (ByVal hdc As LongPtr) As Long
+Public Declare PtrSafe Function CreateCompatibleDC Lib "gdi32" (ByVal hdc As LongPtr) As LongPtr
+Public Declare PtrSafe Function CreateCompatibleBitmap Lib "gdi32" (ByVal hdc As LongPtr, ByVal nWidth As Long, ByVal nHeight As Long) As LongPtr
+Public Declare PtrSafe Function SelectObject Lib "gdi32" (ByVal hdc As LongPtr, ByVal hObject As LongPtr) As LongPtr
+Public Declare PtrSafe Function GetDeviceCaps Lib "gdi32" (ByVal hdc As LongPtr, ByVal nIndex As Long) As Long
+Public Declare PtrSafe Function BitBlt Lib "gdi32" (ByVal hDestDC As LongPtr, ByVal X As Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal hSrcDC As LongPtr, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long) As Long
+#Else
 Private Declare Function GetWindowDC Lib "user32" (ByVal hwnd As Long) As Long
 Public Declare Function ReleaseDC Lib "user32" (ByVal hwnd As Long, ByVal hdc As Long) As Long
 Public Declare Function CreateDC Lib "gdi32" Alias "CreateDCA" (ByVal lpDriverName As String, ByVal lpDeviceName As String, ByVal lpOutput As String, lpInitData As DEVMODE) As Long
@@ -73,18 +84,30 @@ Public Declare Function CreateCompatibleBitmap Lib "gdi32" (ByVal hdc As Long, B
 Public Declare Function SelectObject Lib "gdi32" (ByVal hdc As Long, ByVal hObject As Long) As Long
 Public Declare Function GetDeviceCaps Lib "gdi32" (ByVal hdc As Long, ByVal nIndex As Long) As Long
 Public Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal X As Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long) As Long
+#End If
 
 ' Déclarations API nécessaires au placement d'information dans le Presse Papier
 
 Public Const CF_BITMAP = 2
 
+#If TWINBASIC Then
+Public Declare PtrSafe Function OpenClipboard Lib "user32" (ByVal hwnd As LongPtr) As Long
+Public Declare PtrSafe Function EmptyClipboard Lib "user32" () As Long
+Public Declare PtrSafe Function SetClipboardData Lib "user32" (ByVal wFormat As Long, ByVal hMem As LongPtr) As LongPtr
+Public Declare PtrSafe Function CloseClipboard Lib "user32" () As Long
+#Else
 Public Declare Function OpenClipboard Lib "user32" (ByVal hwnd As Long) As Long
 Public Declare Function EmptyClipboard Lib "user32" () As Long
 Public Declare Function SetClipboardData Lib "user32" (ByVal wFormat As Long, ByVal hMem As Long) As Long
 Public Declare Function CloseClipboard Lib "user32" () As Long
+#End If
 
 ' Cette fonction place une image BITMAP dans le presse-papier
+#If TWINBASIC Then
+Public Function putInClipboard(hBitMap As LongPtr)
+#Else
 Public Function putInClipboard(hBitMap As Long)
+#End If
     OpenClipboard FrmMoteur2D.hwnd ' Remplace form1.hwnd par ton pointeur d'écran
     EmptyClipboard
     SetClipboardData CF_BITMAP, hBitMap
@@ -93,7 +116,11 @@ End Function
 
 ' Cette fonction produit une image bitmap et la place dans le presse papier
 Public Sub GrabScreen()
+#If TWINBASIC Then
+Dim hdcScreen As LongPtr, hdcCompatible As LongPtr, hbmScreen As LongPtr
+#Else
 Dim hdcScreen As Long, hdcCompatible As Long, hbmScreen As Long
+#End If
 Dim nullStr As String, nullDEVMODE As DEVMODE
 hdcScreen = GetWindowDC(0)
 hdcCompatible = CreateCompatibleDC(hdcScreen)

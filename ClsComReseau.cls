@@ -232,7 +232,7 @@ Public Sub Rafraichir_Parties(Optional ByVal Locales As Boolean)
     On Error GoTo Erreur
     'Initialiser_Connexion
     If JouerEnLigne And Not Locales Then
-        SessionsEnLigne.ouvrirXML2 (FrmParam.Inet1.OpenURL(URL_Serveur & URL_ListeParties))
+        SessionsEnLigne.ouvrirXML2 (CompatHttpGet(URL_Serveur & URL_ListeParties))
     Else
         Dim TempSession As DirectPlaySessionData
         
@@ -350,7 +350,7 @@ Public Sub Session_Creer()
     Dplay.Open SessionData, DPOPEN_CREATE
     
     If JouerEnLigne Then
-        ServeurEnLigneID = FrmParam.Inet1.OpenURL(URL_Serveur & URL_AjouterPartie & "?" & _
+        ServeurEnLigneID = CompatHttpGet(URL_Serveur & URL_AjouterPartie & "?" & _
                                          URLEncode(URL_NomPartie) & "=" & URLEncode(NomSession) & Chr(38) & _
                                          URLEncode(URL_NomJoueur) & "=" & URLEncode(NomJoueur) & Chr(38) & _
                                          URLEncode(URL_NoPort) & "=" & URLEncode(NumeroPort))
@@ -403,7 +403,7 @@ Public Sub Session_Fermer()
     On Error Resume Next
     If Serveur Then
         If JouerEnLigne Then
-            FrmParam.Inet1.OpenURL (URL_Serveur & URL_SupprimerPartie & "?FILENAME=" & URLEncode(ServeurEnLigneID))
+            CompatHttpGet (URL_Serveur & URL_SupprimerPartie & "?FILENAME=" & URLEncode(ServeurEnLigneID))
         End If
     '    objDPServer.CancelAsyncOperation 0, DPNCANCEL_ALL_OPERATIONS
     '    objDPServer.UnRegisterMessageHandler

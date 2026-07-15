@@ -433,7 +433,7 @@ Public Sub Actualiser_Messages(ByVal Perso As ClsJeuPerso, _
     End With
 End Sub
 
-Public Sub Afficher_Messages(ByRef SurfBack As DirectDrawSurface7)
+Public Sub Afficher_Messages(ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Integer
     Dim Temps As Single 'Variable temporaire contenant le timer.
     If Afficher Then

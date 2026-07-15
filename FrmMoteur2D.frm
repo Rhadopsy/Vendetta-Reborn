@@ -88,13 +88,13 @@ Const AfficherChemin = True
 Public NombreJoueursMO As Integer 'Nombre de joueurs sur le même ordinateur.
 
 'Variables DirectX
-Public di As DirectInput                     'creation objet DirectInput
-Dim ddClipper As DirectDrawClipper           'Clipper utilisé en mode fénêtre.
+Public di As IDirectInput7                     'creation objet IDirectInput7
+Dim ddClipper As IDirectDrawClipper           'Clipper utilisé en mode fénêtre.
 
-Dim surfPrim As DirectDrawSurface7           'creation surface Primaire
+Dim surfPrim As IDirectDrawSurface7           'creation surface Primaire
 Dim sdprime As DDSURFACEDESC2                'description surface Primaire
 
-Dim SurfBack As DirectDrawSurface7           'creation surface Back-Buffer
+Dim SurfBack As IDirectDrawSurface7           'creation surface Back-Buffer
 Dim sdback As DDSURFACEDESC2                 'description surface Back-Buffer
 Dim cback As DDSCAPS2                        '
 Dim MonFond As RECT                           'Image qui recouvre l'arrière-plan.
@@ -2703,7 +2703,7 @@ Private Sub Afficher_Infos_Bulles_Terrain(ByVal Curseur As Integer, ByVal Perso 
     End If
 End Sub
 
-Public Sub Afficher_Image_Chargement(ByRef dd As DirectDraw7, _
+Public Sub Afficher_Image_Chargement(ByRef dd As IDirectDraw7, _
                                      Optional ByVal Pourcentage As Integer, _
                                      Optional ByVal Message As String)
     Dim Temp As String

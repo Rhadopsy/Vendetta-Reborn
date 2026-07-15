@@ -212,14 +212,7 @@ Begin VB.Form FrmParam
       Top             =   360
       Visible         =   0   'False
       Width           =   4335
-      Begin InetCtlsObjects.Inet Inet1 
-         Left            =   3600
-         Top             =   240
-         _ExtentX        =   1005
-         _ExtentY        =   1005
-         _Version        =   393216
-      End
-      Begin VB.OptionButton OptionJouerEnLigne 
+      Begin VB.OptionButton OptionJouerEnLigne
          Caption         =   "Option1"
          Height          =   255
          Index           =   1

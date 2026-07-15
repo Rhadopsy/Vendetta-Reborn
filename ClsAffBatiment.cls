@@ -34,7 +34,7 @@ Const FichierChateaux = "Chateaux-"
 Private Sprites() As ClsAffSprite
 
 Public Sub Charger(ByVal Categorie As Integer, _
-                   ByRef dd As DirectDraw7, _
+                   ByRef dd As IDirectDraw7, _
                    ByVal Parametres As ClsJeuParam)
     Dim i As Integer
     With Parametres
@@ -71,7 +71,7 @@ Public Sub Afficher(ByVal X As Long, _
                     ByVal Y As Long, _
                     ByVal TypeBatiment As Long, _
                     ByVal Etat As Long, _
-                    ByRef SurfBack As DirectDrawSurface7, _
+                    ByRef SurfBack As IDirectDrawSurface7, _
                     ByVal Largeur As Long, _
                     ByVal Hauteur As Long, _
                     Optional ByVal EtapeAnimation As Integer = 0)

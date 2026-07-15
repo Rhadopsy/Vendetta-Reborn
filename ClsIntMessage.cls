@@ -44,7 +44,7 @@ Const HauteurCaractere = 16
 Public Sub Afficher(ByVal X As Long, _
                     ByVal Y As Long, _
                     ByVal Message As String, _
-                    ByRef SurfBack As DirectDrawSurface7, _
+                    ByRef SurfBack As IDirectDrawSurface7, _
                     Optional ByVal Couleur As Long, _
                     Optional ByVal ChangerCouleur As Boolean)
     If Message <> "" Then
