@@ -35,13 +35,13 @@ Const SectionINI = "Sons"
 Private Jouer As Boolean
 Public Chemin As String
 
-Private ds As DirectSound
+Private ds As IDirectSound
 Private SoundDesc As DSBUFFERDESC
 Private WavFormat As WAVEFORMATEX
 
 Private Type Son
     Actif As Boolean
-    DsSound As DirectSoundBuffer
+    DsSound As IDirectSoundBuffer
 End Type
 
 Private Sons() As Son
@@ -63,7 +63,7 @@ Public Sub Init(ByVal Fenetre As Form, ByVal dx As DirectX7, ByVal Parametres As
         Set ds = dx.DirectSoundCreate("")
         ds.SetCooperativeLevel Fenetre.hwnd, DSSCL_NORMAL
         For i = 0 To NbEffets - 1
-            'Set Sons(i).DsSound = New DirectSoundBuffer
+            'Set Sons(i).DsSound = New IDirectSoundBuffer
             If Left(Parametres.Effet_Son(i), 1) = "." Then
                 'Chemin absolu (fichier mod)
                 Sons(i).Actif = Charger_Son(i, App.Path & Right(Parametres.Effet_Son(i), Len(Parametres.Effet_Son(i)) - 1))

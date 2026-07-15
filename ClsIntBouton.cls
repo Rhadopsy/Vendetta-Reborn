@@ -66,7 +66,7 @@ End Sub
 Public Sub Afficher_Info_Bulle(ByVal X As Long, _
                                ByVal Y As Long, _
                                ByVal Message As ClsIntMessage, _
-                               ByRef SurfBack As DirectDrawSurface7, _
+                               ByRef SurfBack As IDirectDrawSurface7, _
                                Optional ByVal ForcerAffichage As Boolean)
     Dim LargeurFond As Integer
     Dim HauteurFond As Integer

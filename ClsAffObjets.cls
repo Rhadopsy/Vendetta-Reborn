@@ -39,7 +39,7 @@ Const Transparent = True
 
 Private Sprites() As ClsAffSprite
 
-Public Sub Charger(ByRef dd As DirectDraw7, _
+Public Sub Charger(ByRef dd As IDirectDraw7, _
                    ByVal Parametres As ClsJeuParam, _
                    Optional ByVal Ressources As Boolean)
     Dim i As Integer
@@ -71,7 +71,7 @@ End Sub
 Public Sub Afficher(ByVal X As Long, _
                     ByVal Y As Long, _
                     ByVal TypeObjet As Long, _
-                    ByRef SurfBack As DirectDrawSurface7, _
+                    ByRef SurfBack As IDirectDrawSurface7, _
                     Optional ByVal Translucide As Boolean, _
                     Optional ByVal ValeurTransparence As Single, _
                     Optional ByVal IndiceApparence As Integer)
@@ -95,7 +95,7 @@ End Sub
 Public Sub Afficher2(ByVal X As Long, _
                     ByVal Y As Long, _
                     ByVal TypeObjet As Long, _
-                    ByRef SurfBack As DirectDrawSurface7, _
+                    ByRef SurfBack As IDirectDrawSurface7, _
                     Optional ByVal Translucide As Boolean, _
                     Optional ByVal IndiceApparence As Integer, _
                     Optional ByVal Z As Single = 1)

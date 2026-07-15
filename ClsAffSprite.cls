@@ -30,7 +30,7 @@ Attribute VB_Exposed = False
 Option Explicit
 
 'Affichage Directx.
-Private Sprite As DirectDrawSurface7 'creation surface Primaire.
+Private Sprite As IDirectDrawSurface7 'creation surface Primaire.
 Private AffSprite As DDSURFACEDESC2  'description surface Primaire.
 Private RectSprite As RECT           'rectangle Titre.
 Private RectSprite2 As RECT           'rectangle Titre.
@@ -58,7 +58,7 @@ Private Sub Class_Initialize()
     DDBLTFX.ddckSrcColorKey_low = 0
 End Sub
 
-Public Sub Charger(ByRef dd As DirectDraw7, _
+Public Sub Charger(ByRef dd As IDirectDraw7, _
                    ByVal Fichier As String, _
                    Optional ByVal CheminAbsolu As Boolean, _
                    Optional ByVal GestionErreurs As Boolean = True)
@@ -89,7 +89,7 @@ End Sub
 
 Public Sub Afficher(ByVal X As Long, _
                     ByVal Y As Long, _
-                    ByRef SurfBack As DirectDrawSurface7, _
+                    ByRef SurfBack As IDirectDrawSurface7, _
                     ByVal Transparent As Boolean, _
                     Optional ByVal Translucide As Boolean, _
                     Optional ByVal DecalageX As Integer = 0, _
@@ -157,7 +157,7 @@ End Sub
 
 Public Sub Afficher2(ByVal X As Long, _
                     ByVal Y As Long, _
-                    ByRef SurfBack As DirectDrawSurface7, _
+                    ByRef SurfBack As IDirectDrawSurface7, _
                     ByVal Transparent As Boolean, _
                     Optional ByVal Zoom As Single)
     With RectSprite

@@ -70,7 +70,7 @@ Public Messages() As ClsJeuMessages
 Public Stastistiques As ClsJeuStastistiques
 
 'Chargement des classes d'affichage.
-Public dd As DirectDraw7                     'creation objet DirectDraw
+Public dd As IDirectDraw7                     'creation objet DirectDraw
 Public AffPerso As ClsAffPerso
 Public AffApparence As ClsAffApparence
 Public AffTerrain As ClsAffTerrain

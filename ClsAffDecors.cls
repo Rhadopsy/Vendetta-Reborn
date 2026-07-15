@@ -43,7 +43,7 @@ Private Sub Class_Initialize()
     ReDim Hauteur(0)
 End Sub
 
-Public Sub Charger(ByRef dd As DirectDraw7, ByVal Parametres As ClsJeuParam)
+Public Sub Charger(ByRef dd As IDirectDraw7, ByVal Parametres As ClsJeuParam)
     Dim i As Long
     ReDim Sprites(Parametres.NombreDecors - 1)
     ReDim Largeur(Parametres.NombreDecors - 1)
@@ -63,7 +63,7 @@ End Sub
 Public Sub Afficher(ByVal X As Long, _
                     ByVal Y As Long, _
                     ByVal TypeDecor As Long, _
-                    ByRef SurfBack As DirectDrawSurface7, _
+                    ByRef SurfBack As IDirectDrawSurface7, _
                     Optional ByVal EtapeAnimation As Integer = 0)
     'On charge la bonne image en fonction des paramètres.
     Sprites(TypeDecor).Selection 0, _

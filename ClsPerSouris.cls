@@ -40,7 +40,7 @@ Private Relachement() As Boolean 'Mémorise l'état du clique précédent.
 Private BoutonRelache() As Boolean
 
 'Driver Souris.
-Private diDEVMouse As DirectInputDevice
+Private diDEVMouse As IDirectInputDevice7
 Private mState As DIMOUSESTATE
 'Private DernierClic As Double
 Private TempClique() As Boolean
@@ -58,8 +58,8 @@ Erreur:
     End
 End Sub
 
-Public Sub Init(ByRef di As DirectInput, _
-                ByRef dd As DirectDraw7, _
+Public Sub Init(ByRef di As IDirectInput7, _
+                ByRef dd As IDirectDraw7, _
                 ByRef Fenetre As Form, _
                 ByRef X As Single, _
                 ByRef Y As Single, _
@@ -130,8 +130,8 @@ Public Sub Centrer_curseur(ByRef X As Single, _
     Y = H / 2
 End Sub
 
-Public Sub Positions(ByRef di As DirectInput, _
-                     ByRef dd As DirectDraw7, _
+Public Sub Positions(ByRef di As IDirectInput7, _
+                     ByRef dd As IDirectDraw7, _
                      ByRef Fenetre As Form, _
                      ByRef X As Single, _
                      ByRef Y As Single, _

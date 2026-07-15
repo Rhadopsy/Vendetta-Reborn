@@ -119,7 +119,7 @@ Public Sub Afficher_Degats(ByVal DecalageX As Long, _
                            ByVal DecalageY As Long, _
                            ByVal EcranWidth As Long, _
                            ByVal EcranHeight As Long, _
-                           ByRef SurfBack As DirectDrawSurface7)
+                           ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Long
     Dim X As Integer, Y As Integer
     If AfficherDegats Then

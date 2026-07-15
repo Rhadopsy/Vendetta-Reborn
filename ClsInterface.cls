@@ -609,7 +609,7 @@ Public Sub Init1(ByVal NumeroJoueur As Integer, _
     MessageConfirmationNon = FicIni.Parametre("MessageConfirmationNon")
 End Sub
 
-Public Sub Init2(ByRef dd As DirectDraw7, _
+Public Sub Init2(ByRef dd As IDirectDraw7, _
                 ByRef Ecran As ClsPerEcran, _
                 ByRef Parametres As ClsJeuParam)
     Dim i As Long, j As Long, k As Long, l As Long
@@ -827,7 +827,7 @@ Public Sub Afficher(ByVal SourisX As Integer, _
                     ByRef Fief As ClsJeuFief, _
                     ByRef ArmeeSelectionnee As Boolean, _
                     ByRef Parametres As ClsJeuParam, _
-                    ByRef SurfBack As DirectDrawSurface7, _
+                    ByRef SurfBack As IDirectDrawSurface7, _
                     ByVal X As Long, ByVal Y As Long, _
                     ByVal Largeur As Integer, ByVal Hauteur As Integer)
     Afficher_Cadre SurfBack
@@ -880,7 +880,7 @@ End Sub
 Public Sub Afficher_Objet_Curseur(ByVal Perso As ClsJeuPerso, _
                                   ByVal X As Integer, _
                                   ByVal Y As Integer, _
-                                  ByRef SurfBack As DirectDrawSurface7)
+                                  ByRef SurfBack As IDirectDrawSurface7)
     'Affiche l'objet sélectionné sous le curseur de la souris.
     'X et Y sont les coordonnées de l'emplacement de l'objet.
     Dim i As Integer
@@ -924,7 +924,7 @@ End Sub
 
 Public Sub Afficher_Contour_Fenetre(ByVal X As Single, _
                                     ByVal Y As Single, _
-                                    ByRef SurfBack As DirectDrawSurface7)
+                                    ByRef SurfBack As IDirectDrawSurface7)
     'Affiche le contour de la fenêtre quand on la déplace.
     SurfBack.SetFillStyle 1
     SurfBack.SetForeColor &HFFFFFF
@@ -989,7 +989,7 @@ Public Sub Actualiser_Effets_Visuels()
     End If
 End Sub
 
-Private Sub Afficher_Effets_Visuels(ByVal SurfBack As DirectDrawSurface7)
+Private Sub Afficher_Effets_Visuels(ByVal SurfBack As IDirectDrawSurface7)
     Dim i As Integer
     If Effets.Count > 0 Then
         For i = 1 To Effets.Count
@@ -1045,7 +1045,7 @@ Public Sub RePositionner_Fenetres(ByVal EcranPositionX As Integer, _
     Next i
 End Sub
 
-Private Sub Afficher_Cadre(ByRef SurfBack As DirectDrawSurface7)
+Private Sub Afficher_Cadre(ByRef SurfBack As IDirectDrawSurface7)
     If AfficherCadre Then
         AffCadre.Afficher 0, 0, SurfBack
     End If
@@ -1054,7 +1054,7 @@ End Sub
 Private Sub Afficher_Epoques(ByVal Perso As ClsJeuPerso, _
                              ByVal Fief As ClsJeuFief, _
                              ByVal Parametres As ClsJeuParam, _
-                             ByRef SurfBack As DirectDrawSurface7)
+                             ByRef SurfBack As IDirectDrawSurface7)
     Dim EpoqueHauteur As Integer
     Dim EpoqueLargeur As Integer
     Dim EpoqueDecalageX As Integer
@@ -1107,7 +1107,7 @@ Private Sub Afficher_Epoques(ByVal Perso As ClsJeuPerso, _
 End Sub
 
 Public Sub Afficher_FPS(ByVal NombreFrames As String, _
-                        ByRef SurfBack As DirectDrawSurface7)
+                        ByRef SurfBack As IDirectDrawSurface7)
     If AfficherFPS Then
         SurfBack.SetForeColor FPSCouleur
         AffMessage.Afficher FPSPositionX, FPSPositionY, FPSMessage & NombreFrames, SurfBack
@@ -1120,7 +1120,7 @@ Private Sub Afficher_Fenetres(ByVal Perso As ClsJeuPerso, _
                               ByVal Chateau As ClsJeuBatiment, _
                               ByVal Fief As ClsJeuFief, _
                               ByVal Parametres As ClsJeuParam, _
-                              ByRef SurfBack As DirectDrawSurface7, _
+                              ByRef SurfBack As IDirectDrawSurface7, _
                               ByVal X As Long, ByVal Y As Long, _
                               ByVal Largeur As Integer, ByVal Hauteur As Integer)
     'Fenetres(0).Visible = (Perso.Vivant And _
@@ -1203,7 +1203,7 @@ Private Sub Afficher_Fenetres(ByVal Perso As ClsJeuPerso, _
 End Sub
 
 Private Sub Afficher_TouchesObjets(ByVal Perso As ClsJeuPerso, _
-                                   ByRef SurfBack As DirectDrawSurface7)
+                                   ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Integer
     Dim Temp As Integer
     SurfBack.SetFont AffDegat.FontDegats
@@ -1283,7 +1283,7 @@ Public Sub Actualiser_BoutonsConstruire(ByRef Perso As ClsJeuPerso, _
     Next i
 End Sub
 
-Private Sub Afficher_BoutonsConstruire(ByRef SurfBack As DirectDrawSurface7)
+Private Sub Afficher_BoutonsConstruire(ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Long
     For i = 0 To NombreBoutonsConstruire - 1
         AffBoutonsConstruire(i).Afficher BoutonsConstruire(i).PositionX, _
@@ -1297,7 +1297,7 @@ End Sub
 Private Sub Afficher_BoutonsDeplacement(ByVal Perso As ClsJeuPerso, _
                                         ByVal Maison As ClsJeuBatiment, _
                                         ByVal ArmeeSelectionnee As Boolean, _
-                                        ByRef SurfBack As DirectDrawSurface7)
+                                        ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Long
     Dim Etat As Integer
     For i = 0 To UBound(BoutonsDeplacement())
@@ -1546,7 +1546,7 @@ Private Sub Actualiser_Raccourcis_Objets(ByVal Perso As ClsJeuPerso)
 End Sub
 
 Private Sub Afficher_Raccourcis_Objets(ByVal Perso As ClsJeuPerso, _
-                                       ByRef SurfBack As DirectDrawSurface7)
+                                       ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Integer, j As Integer, k As Integer
     For i = 0 To NombreRaccourciObjets - 1
         AffBoutonsRaccourciObjets.Afficher BoutonsRaccourciObjets(i).PositionX, _
@@ -1611,7 +1611,7 @@ End Sub
 
 Public Sub Afficher_Duree_Recharge(ByVal X As Integer, ByVal Y As Integer, _
                                    ByVal NumeroObjet As Integer, ByVal Perso As ClsJeuPerso, _
-                                   ByRef SurfBack As DirectDrawSurface7)
+                                   ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Single
     'Dim TempX As Single, TempY As Single, TempR As Single
     'Dim Temp As Single
@@ -1660,7 +1660,7 @@ Public Sub Afficher_Duree_Recharge(ByVal X As Integer, ByVal Y As Integer, _
 End Sub
 
 Private Sub Afficher_Effets_Temporaires(ByVal Perso As ClsJeuPerso, _
-                                        ByRef SurfBack As DirectDrawSurface7)
+                                        ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Integer
     Actualiser_Effets_Temporaires Perso
     With Perso
@@ -1697,7 +1697,7 @@ Private Sub Afficher_Effets_Temporaires(ByVal Perso As ClsJeuPerso, _
     End With
 End Sub
 
-Private Sub Afficher_BoutonsInfos(ByRef SurfBack As DirectDrawSurface7)
+Private Sub Afficher_BoutonsInfos(ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Integer
     For i = 0 To NombreBoutonsInfos - 1
         If i = 8 Then
@@ -1795,7 +1795,7 @@ End Sub
 
 Private Sub Afficher_BoutonsRadiaux(ByVal SourisX As Integer, _
                                     ByVal SourisY As Integer, _
-                                    ByRef SurfBack As DirectDrawSurface7)
+                                    ByRef SurfBack As IDirectDrawSurface7)
     Dim i  As Integer
     SurfBack.SetForeColor &HFFFFFF
     SurfBack.setDrawWidth 3
@@ -1834,13 +1834,13 @@ Private Sub Afficher_BoutonsRadiaux(ByVal SourisX As Integer, _
 End Sub
 
 Private Sub Afficher_BoutonsRadiaux_Entourer(ByVal Bouton As ClsIntBouton, _
-                                             ByRef SurfBack As DirectDrawSurface7)
+                                             ByRef SurfBack As IDirectDrawSurface7)
     With Bouton
     SurfBack.DrawRoundedBox .PositionX - 1, .PositionY - 1, .PositionX + .Largeur + 1, .PositionY + .Hauteur + 1, 1, 1
     End With
 End Sub
 
-Private Sub Afficher_BoutonsMenu(ByRef SurfBack As DirectDrawSurface7)
+Private Sub Afficher_BoutonsMenu(ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Integer
     If BoutonsInfos(7).Enabled Then
         If Jeu.Campagne Then
@@ -1865,7 +1865,7 @@ Private Sub Afficher_BoutonsMenu(ByRef SurfBack As DirectDrawSurface7)
     End If
 End Sub
 
-Private Sub Afficher_ModeAuto(ByRef Perso As ClsJeuPerso, ByRef SurfBack As DirectDrawSurface7)
+Private Sub Afficher_ModeAuto(ByRef Perso As ClsJeuPerso, ByRef SurfBack As IDirectDrawSurface7)
     If Perso.IA Then
         SurfBack.SetForeColor MessageModeAutoCouleur
         AffMessage.Afficher MessageModeAutoPositionX, MessageModeAutoPositionY, MessageModeAutoMessage, SurfBack
@@ -1875,7 +1875,7 @@ End Sub
 Private Sub Afficher_Action(ByRef Perso As ClsJeuPerso, _
                             ByRef Maison As ClsJeuBatiment, _
                             ByRef Parametres As ClsJeuParam, _
-                            ByRef SurfBack As DirectDrawSurface7)
+                            ByRef SurfBack As IDirectDrawSurface7)
     Dim Message As String
     With Perso
     'Etiquette de construction.
@@ -1959,7 +1959,7 @@ Private Sub Afficher_Action(ByRef Perso As ClsJeuPerso, _
     AffMessage.Afficher MessageActionPositionX, MessageActionPositionY, Message, SurfBack
 End Sub
 
-Private Sub Afficher_Vie(ByRef Perso As ClsJeuPerso, ByRef SurfBack As DirectDrawSurface7)
+Private Sub Afficher_Vie(ByRef Perso As ClsJeuPerso, ByRef SurfBack As IDirectDrawSurface7)
     SurfBack.SetForeColor 0
     Afficher_Barre_Statut IIf(Perso.Vie > Perso.Definir_Vie, Perso.Definir_Vie, IIf(Perso.Vie > 0, Perso.Vie, 0)), Perso.Definir_Vie, Perso.Definir_MaxVie, ViePositionX + BarresStatutDecalageX, ViePositionY + BarresStatutDecalageY, SurfBack, BarresStatutLargeur, BarresStatutHauteur
     SurfBack.SetForeColor &HFFFFFF
@@ -1968,7 +1968,7 @@ Private Sub Afficher_Vie(ByRef Perso As ClsJeuPerso, ByRef SurfBack As DirectDra
         AffMessage.Afficher ViePositionX + BarresStatutDecalageX + BarresStatutScoreDecalageX - Len(Int(Perso.Vie) & " / " & Perso.Definir_MaxVie) * BarresStatutScoreLargeurTexte, ViePositionY + BarresStatutDecalageY + BarresStatutScoreDecalageY, Int(Perso.Vie) & " / " & Perso.Definir_MaxVie, SurfBack, BarresStatutScoreCouleur, True
     End If
 End Sub
-Private Sub Afficher_Energie(ByRef Perso As ClsJeuPerso, ByRef SurfBack As DirectDrawSurface7)
+Private Sub Afficher_Energie(ByRef Perso As ClsJeuPerso, ByRef SurfBack As IDirectDrawSurface7)
     SurfBack.SetForeColor 0
     Afficher_Barre_Statut IIf(Perso.Energie > 0, Perso.Energie, 0), Perso.Definir_Energie, Perso.Definir_MaxEnergie, EnergiePositionX + BarresStatutDecalageX, EnergiePositionY + BarresStatutDecalageY, SurfBack, BarresStatutLargeur, BarresStatutHauteur
     SurfBack.SetForeColor &HFFFFFF
@@ -1977,7 +1977,7 @@ Private Sub Afficher_Energie(ByRef Perso As ClsJeuPerso, ByRef SurfBack As Direc
         AffMessage.Afficher EnergiePositionX + BarresStatutDecalageX + BarresStatutScoreDecalageX - Len(Int(Perso.Energie) & " / " & Perso.Definir_MaxEnergie) * BarresStatutScoreLargeurTexte, EnergiePositionY + BarresStatutDecalageY + BarresStatutScoreDecalageY, Int(Perso.Energie) & " / " & Perso.Definir_MaxEnergie, SurfBack, BarresStatutScoreCouleur, True
     End If
 End Sub
-Private Sub Afficher_Magie(ByRef Perso As ClsJeuPerso, ByRef SurfBack As DirectDrawSurface7)
+Private Sub Afficher_Magie(ByRef Perso As ClsJeuPerso, ByRef SurfBack As IDirectDrawSurface7)
     SurfBack.SetForeColor 0
     Afficher_Barre_Statut IIf(Perso.Magie > 0, Perso.Magie, 0), Perso.Definir_Magie, Perso.Definir_MaxMagie, MagiePositionX + BarresStatutDecalageX, MagiePositionY + BarresStatutDecalageY, SurfBack, BarresStatutLargeur, BarresStatutHauteur
     SurfBack.SetForeColor &HFFFFFF
@@ -1986,7 +1986,7 @@ Private Sub Afficher_Magie(ByRef Perso As ClsJeuPerso, ByRef SurfBack As DirectD
         AffMessage.Afficher MagiePositionX + BarresStatutDecalageX + BarresStatutScoreDecalageX - Len(Int(Perso.Magie) & " / " & Perso.Definir_MaxMagie) * BarresStatutScoreLargeurTexte, MagiePositionY + BarresStatutDecalageY + BarresStatutScoreDecalageY, Int(Perso.Magie) & " / " & Perso.Definir_MaxMagie, SurfBack, BarresStatutScoreCouleur, True
     End If
 End Sub
-Private Sub Afficher_Moral(ByRef Perso As ClsJeuPerso, ByRef SurfBack As DirectDrawSurface7)
+Private Sub Afficher_Moral(ByRef Perso As ClsJeuPerso, ByRef SurfBack As IDirectDrawSurface7)
     SurfBack.SetForeColor 0
     Afficher_Barre_Statut IIf(Perso.Moral > 0, Perso.Moral, 0), Perso.Definir_Moral, Perso.Definir_MaxMoral, MoralPositionX + BarresStatutDecalageX, MoralPositionY + BarresStatutDecalageY, SurfBack, BarresStatutLargeur, BarresStatutHauteur
     SurfBack.SetForeColor &HFFFFFF
@@ -2000,7 +2000,7 @@ Public Sub Afficher_Barre_Statut(ByVal Min1 As Double, _
                                  ByVal Max As Double, _
                                  ByVal PositionX As Long, _
                                  ByVal PositionY As Long, _
-                                 ByRef SurfBack As DirectDrawSurface7, _
+                                 ByRef SurfBack As IDirectDrawSurface7, _
                                  ByVal Largeur As Long, _
                                  ByVal Hauteur As Long, _
                                  Optional ByVal Couleur As Long, _
@@ -2079,7 +2079,7 @@ Public Sub Afficher_Barre_Statut(ByVal Min1 As Double, _
     End If
 End Sub
 
-Private Sub Afficher_Barre_Statut_Auto(ByRef SurfBack As DirectDrawSurface7)
+Private Sub Afficher_Barre_Statut_Auto(ByRef SurfBack As IDirectDrawSurface7)
     
     If AutoRecuperationCarac(0) Then
         SurfBack.SetForeColor BarresStatutContourCouleur2
@@ -2155,7 +2155,7 @@ Public Sub Afficher_Contour_Barre_Statut(ByVal PositionX As Long, _
                                          ByVal Largeur As Integer, _
                                          ByVal Hauteur As Integer, _
                                          ByVal PCent As Single, _
-                                         ByRef SurfBack As DirectDrawSurface7)
+                                         ByRef SurfBack As IDirectDrawSurface7)
     SurfBack.DrawBox PositionX - BarresStatutContourEpaisseur, _
                      PositionY - BarresStatutContourEpaisseur, _
                      PositionX + Largeur + BarresStatutContourEpaisseur, _
@@ -2170,7 +2170,7 @@ End Sub
 Public Sub Afficher_Info_Bulles_Terrain(ByVal X As Long, _
                                         ByVal Y As Long, _
                                         ByVal Message As String, _
-                                        ByRef SurfBack As DirectDrawSurface7)
+                                        ByRef SurfBack As IDirectDrawSurface7)
     'On utilise temporairement le bouton Deplacement0 pour afficher l'info bulle.
     BoutonsDeplacement(0).InfoBulle = Message
     BoutonsDeplacement(0).Afficher_Info_Bulle X, Y, AffMessage, SurfBack, True
@@ -2185,7 +2185,7 @@ End Sub
                                      ByRef SaMaison As ClsJeuBatiment, _
                                      ByRef Fief As ClsJeuFief, _
                                      ByRef Parametres As ClsJeuParam, _
-                                     ByRef SurfBack As DirectDrawSurface7) As Boolean
+                                     ByRef SurfBack As IDirectDrawSurface7) As Boolean
     'Dim NoBouton As Long
     'Dim i As Integer
     'Souris_Sur_Interface = False
@@ -2204,14 +2204,14 @@ End Sub
                               ByRef SaMaison As ClsJeuBatiment, _
                               ByRef Fief As ClsJeuFief, _
                               ByRef Parametres As ClsJeuParam, _
-                              ByRef SurfBack As DirectDrawSurface7, _
+                              ByRef SurfBack As IDirectDrawSurface7, _
                               Optional ByVal CliqueDroit As Boolean, _
                               Optional ByVal ToucheClavier As Integer) As Boolean
 '    Clique_Bouton = Interieur_Boutons(x, y, NoBouton, Perso, Maison, SaMaison, Fief, Parametres, SurfBack, True, CliqueDroit, ToucheClavier)
 'End Function
 
 Private Sub Afficher_Stastistiques(ByRef Message As ClsIntMessage, _
-                                   ByRef SurfBack As DirectDrawSurface7)
+                                   ByRef SurfBack As IDirectDrawSurface7)
     If Not ComReseau.Connecte Then
     Message.Afficher StastistiquesPositionX, _
                      StastistiquesPositionYTemp, _
@@ -2224,7 +2224,7 @@ End Sub
 Private Sub Afficher_Dialogue(ByVal X As Long, ByVal Y As Long, _
                               ByVal Largeur As Integer, _
                               ByVal Hauteur As Integer, _
-                              ByRef SurfBack As DirectDrawSurface7)
+                              ByRef SurfBack As IDirectDrawSurface7)
     'Affiche le cadre.
     Dim l As Integer, H  As Integer
     Dim i As Integer
@@ -2546,7 +2546,7 @@ Public Function Interieur_Boutons(ByVal NoJoueur As Integer, _
                                   ByRef SaMaison As ClsJeuBatiment, _
                                   ByRef Fief As ClsJeuFief, _
                                   ByRef Parametres As ClsJeuParam, _
-                                  ByRef SurfBack As DirectDrawSurface7, _
+                                  ByRef SurfBack As IDirectDrawSurface7, _
                                   ByRef CliqueGauche As Boolean, _
                                   ByRef CliqueDroit As Boolean, _
                                   ByRef CliqueEnfonceGauche As Boolean, _
@@ -4483,7 +4483,7 @@ Private Function Interieur_BoutonsDefilement(ByVal X As Long, _
                                              ByRef NoBouton As Long, _
                                              ByVal Clique As Boolean, _
                                              ByVal CliqueMaintenuEnfonce As Boolean, _
-                                             ByRef SurfBack As DirectDrawSurface7, _
+                                             ByRef SurfBack As IDirectDrawSurface7, _
                                              Optional ByVal Fabrique As Boolean) As Boolean
     Dim Temp As Single
     Dim i As Integer

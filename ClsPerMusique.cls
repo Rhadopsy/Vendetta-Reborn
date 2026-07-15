@@ -71,10 +71,10 @@ Private Declare PtrSafe Function mciSendString Lib "winmm.dll" Alias "mciSendStr
 Private Declare Function mciSendString Lib "winmm.dll" Alias "mciSendStringA" (ByVal lpstrCommand As String, ByVal lpstrReturnString As String, ByVal uReturnLength As Long, ByVal hwndCallback As Long) As Long
 #End If
 'Variables pour Direct Music.
-Dim Perf As DirectMusicPerformance
-Dim Seg As DirectMusicSegment
-Dim Segstate As DirectMusicSegmentState
-Dim Loader As DirectMusicLoader
+Dim Perf As IDirectMusicPerformance
+Dim Seg As IDirectMusicSegment
+Dim Segstate As IDirectMusicSegmentState
+Dim Loader As IDirectMusicLoader
 Public GetStartTime As Long
 
 Private Sub Class_Initialize()

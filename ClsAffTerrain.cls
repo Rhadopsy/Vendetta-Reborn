@@ -41,11 +41,11 @@ Private OptimiserAffichageHauteur As Integer
 Private Const Chemin = "\Images\terrains\"
 Private Const Extension = ".bmp"
 
-Private Sprite As DirectDrawSurface7 'creation surface Primaire.
+Private Sprite As IDirectDrawSurface7 'creation surface Primaire.
 Private AffSprite As DDSURFACEDESC2  'description surface Primaire.
 Private RectSprite As RECT           'rectangle Titre.
 
-Private TerrainSprite() As DirectDrawSurface7 'creation surface Primaire.
+Private TerrainSprite() As IDirectDrawSurface7 'creation surface Primaire.
 Private AffTerrainSprite As DDSURFACEDESC2 'description surface Primaire.
 
 Private EtapeAnimation1 As Integer
@@ -60,7 +60,7 @@ Private Sub Class_Initialize()
     AffTerrainSprite.ddsCaps.lCaps = DDSCAPS_OFFSCREENPLAIN
 End Sub
 
-Public Sub Charger(ByRef dd As DirectDraw7, ByVal TerrainZone As String)
+Public Sub Charger(ByRef dd As IDirectDraw7, ByVal TerrainZone As String)
 ' Autant le faire directement pour éviter l'appel en cascade d'objets
 On Local Error GoTo NomaP
     Set Sprite = dd.CreateSurfaceFromFile(App.Path & Chemin & TerrainZone & Extension, AffSprite)
@@ -76,7 +76,7 @@ Public Sub Afficher(ByVal X As Long, _
                     ByVal Y As Long, _
                     ByVal ApparenceTerrain As Long, _
                     ByVal TypeTerrain As Long, _
-                    ByRef SurfBack As DirectDrawSurface7)
+                    ByRef SurfBack As IDirectDrawSurface7)
     'On charge la bonne image en fonction des paramètres.
     Dim Etat As Integer
     
@@ -107,7 +107,7 @@ Public Sub Animation_Suivante()
     End If
 End Sub
 
-Public Sub Modeliser_Carte(ByRef dd As DirectDraw7, ByVal Monde As ClsJeuMonde)
+Public Sub Modeliser_Carte(ByRef dd As IDirectDraw7, ByVal Monde As ClsJeuMonde)
     Dim i As Long, j As Long
     Dim k As Long, l As Long
     Dim m As Long, n As Long, o As Long
@@ -227,7 +227,7 @@ End Sub
 Public Sub AfficheVeryFast(ByVal PositionX As Long, ByVal PositionY As Long, _
                            ByVal DecalageX As Long, ByVal DecalageY As Long, _
                            ByVal EcranWidth As Long, ByVal EcranHeight As Long, _
-                           ByRef SurfBack As DirectDrawSurface7)
+                           ByRef SurfBack As IDirectDrawSurface7)
     'RectSprite.Left = DecalageX
     'RectSprite.Right = EcranWidth + DecalageX
     'RectSprite.Top = DecalageY
@@ -289,7 +289,7 @@ End Sub
 Public Sub AfficheFast(ByVal PositionX As Long, ByVal PositionY As Long, _
                        ByVal DecalageX As Long, ByVal DecalageY As Long, _
                        ByVal EcranWidth As Long, ByVal EcranHeight As Long, _
-                       ByRef SurfBack As DirectDrawSurface7)
+                       ByRef SurfBack As IDirectDrawSurface7)
 
     Dim i As Long, j As Long, k As Long
     Dim cX As Long, cX2 As Long, cY As Long

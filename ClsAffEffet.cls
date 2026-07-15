@@ -40,7 +40,7 @@ Private NombreEtapes() As Integer
 Private DureeEtape() As Double
 Private Son() As String
 
-Public Sub Charger(ByRef dd As DirectDraw7, _
+Public Sub Charger(ByRef dd As IDirectDraw7, _
                    ByRef Parametres As ClsJeuParam)
     Dim i As Long
     ReDim Sprites(Parametres.NombreEffets - 1)
@@ -73,7 +73,7 @@ Public Sub Afficher(ByVal TypeEffet As Long, _
                     ByVal Etape As Integer, _
                     ByVal X As Long, _
                     ByVal Y As Long, _
-                    ByRef SurfBack As DirectDrawSurface7)
+                    ByRef SurfBack As IDirectDrawSurface7)
     If NombreEtapes(TypeEffet) > 0 Then
         'On charge la bonne image en fonction des paramètres.
         Sprites(TypeEffet).Selection 0, _

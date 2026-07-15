@@ -50,7 +50,7 @@ Private TempRelachement() As Boolean
 Private Relachement() As Boolean 'Mémorise l'état du clique précédent.
 Private BoutonRelache() As Boolean
 
-Private didev As DirectInputDevice               'Driver Clavier
+Private didev As IDirectInputDevice7               'Driver Clavier
 Private iKeyCounter  As Long
 Private diState As DIKEYBOARDSTATE               'Test des touches Clavier
 
@@ -65,7 +65,7 @@ Erreur:
     End
 End Sub
 
-Public Sub Init(ByRef di As DirectInput, _
+Public Sub Init(ByRef di As IDirectInput7, _
                 ByRef Fenetre As Form)
     'Initialisation du clavier.
     Set didev = di.CreateDevice("GUID_SysKeyboard")

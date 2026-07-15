@@ -72,17 +72,17 @@ Erreur:
 End Sub
 
 Public Sub Init(ByRef dx As DirectX7, _
-                ByRef dd As DirectDraw7, _
-                ByRef di As DirectInput, _
+                ByRef dd As IDirectDraw7, _
+                ByRef di As IDirectInput7, _
                 ByRef AnHWND As Long, _
-                ByRef surfPrim As DirectDrawSurface7, _
+                ByRef surfPrim As IDirectDrawSurface7, _
                 ByRef sdprime As DDSURFACEDESC2, _
-                ByRef SurfBack As DirectDrawSurface7, _
-                ByRef SurfTemp As DirectDrawSurface7, _
+                ByRef SurfBack As IDirectDrawSurface7, _
+                ByRef SurfTemp As IDirectDrawSurface7, _
                 ByRef sdback As DDSURFACEDESC2, _
                 ByRef cback As DDSCAPS2, _
                 ByRef MonFond As RECT, _
-                ByRef ddClipper As DirectDrawClipper)
+                ByRef ddClipper As IDirectDrawClipper)
 
     'On Local Error Resume Next
     Err.Number = 0
@@ -185,14 +185,14 @@ Public Sub Init(ByRef dx As DirectX7, _
     
 End Sub
 
-Private Sub Changer_Resolution(ByRef dd As DirectDraw7)
+Private Sub Changer_Resolution(ByRef dd As IDirectDraw7)
     On Error GoTo Erreur
     dd.SetDisplayMode Largeur, Hauteur, 16, 0, DDSDM_DEFAULT       ',DDSDM_STANDARDVGAMODE
     Exit Sub
 Erreur:
 End Sub
 
-Public Sub Femer_Ecran(ByRef dd As DirectDraw7, ByRef Fenetre As Form)
+Public Sub Femer_Ecran(ByRef dd As IDirectDraw7, ByRef Fenetre As Form)
     On Error GoTo Erreur
     dd.RestoreDisplayMode
     dd.SetCooperativeLevel Fenetre.hwnd, DDSCL_NORMAL

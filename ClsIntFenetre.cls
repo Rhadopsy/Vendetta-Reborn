@@ -488,7 +488,7 @@ Private Sub Class_Initialize()
     BoutonsCompetences4Etiquette = FicIni.Parametre("BoutonCompetence4Etiquette")
 End Sub
 
-Public Sub Init(ByRef dd As DirectDraw7, ByRef Parametres As ClsJeuParam)
+Public Sub Init(ByRef dd As IDirectDraw7, ByRef Parametres As ClsJeuParam)
     Dim i, j As Long
     Dim X, Y As Integer
     
@@ -682,7 +682,7 @@ Public Sub Afficher_InfosMaison(ByVal Titre As String, _
                                 ByRef Fenetre As ClsAffFenetre, _
                                 ByRef AffObjets As ClsAffObjets, _
                                 ByRef Message As ClsIntMessage, _
-                                ByRef SurfBack As DirectDrawSurface7)
+                                ByRef SurfBack As IDirectDrawSurface7)
     Afficher_Titre Titre, Message, SurfBack
     Afficher_BoutonFermer SurfBack
     Afficher_EtatBatiment Perso, Maison, Parametres, Message, SurfBack
@@ -702,7 +702,7 @@ Public Sub Afficher_InfosChateau(ByVal Titre As String, _
                                  ByRef Ressources As ClsAffObjets, _
                                  ByRef Fenetre As ClsAffFenetre, _
                                  ByRef Message As ClsIntMessage, _
-                                 ByRef SurfBack As DirectDrawSurface7)
+                                 ByRef SurfBack As IDirectDrawSurface7)
     Afficher_Titre Titre, Message, SurfBack
     Afficher_BoutonFermer SurfBack
     'Afficher_BoutonsBatiment SurfBack
@@ -722,7 +722,7 @@ Public Sub Afficher_InfosRessourcesPerso(ByVal Titre As String, _
                                          ByRef Ressources As ClsAffObjets, _
                                          ByRef Fenetre As ClsAffFenetre, _
                                          ByRef Message As ClsIntMessage, _
-                                         ByRef SurfBack As DirectDrawSurface7)
+                                         ByRef SurfBack As IDirectDrawSurface7)
     Afficher_Titre Titre, Message, SurfBack
     Afficher_BoutonFermer SurfBack
     Afficher_ListeRessourcesPerso Perso, Maison, Parametres, Ressources, Fenetre, Message, SurfBack
@@ -735,7 +735,7 @@ Public Sub Afficher_InfosCaracPerso1(ByVal Titre As String, _
                                     ByRef Parametres As ClsJeuParam, _
                                     ByRef Fenetre As ClsAffFenetre, _
                                     ByRef Message As ClsIntMessage, _
-                                    ByRef SurfBack As DirectDrawSurface7)
+                                    ByRef SurfBack As IDirectDrawSurface7)
     'Affichage des barres de progression sur le changement de niveau.
     Dim Niveau As Double
     Niveau = Perso.Niveau
@@ -769,7 +769,7 @@ Public Sub Afficher_InfosCaracPerso2(ByVal Titre As String, _
                                     ByRef Parametres As ClsJeuParam, _
                                     ByRef Fenetre As ClsAffFenetre, _
                                     ByRef Message As ClsIntMessage, _
-                                    ByRef SurfBack As DirectDrawSurface7)
+                                    ByRef SurfBack As IDirectDrawSurface7)
     Dim Niveau As Double
     'Afficher_Titre Titre, Message, SurfBack
     Afficher_BoutonFermer SurfBack
@@ -924,7 +924,7 @@ Public Sub Afficher_InfosCompetences1(ByVal TabComp As Collection, _
                                       ByRef Parametres As ClsJeuParam, _
                                       ByRef Fenetre As ClsAffFenetre, _
                                       ByRef Message As ClsIntMessage, _
-                                      ByRef SurfBack As DirectDrawSurface7)
+                                      ByRef SurfBack As IDirectDrawSurface7)
     'Affichage des barres de progression pour les compétences.
     Dim i As Integer
     Dim X As Integer
@@ -968,7 +968,7 @@ Public Sub Afficher_InfosCompetences2(ByVal TabComp As Collection, _
                                       ByVal CompetencesAfficherToutes As Boolean, _
                                       ByRef Fenetre As ClsAffFenetre, _
                                       ByRef Message As ClsIntMessage, _
-                                      ByRef SurfBack As DirectDrawSurface7)
+                                      ByRef SurfBack As IDirectDrawSurface7)
     'Dim i, j, k As Integer
     Dim i As Integer
     Dim X As Integer
@@ -1184,7 +1184,7 @@ Public Sub Afficher_InfosInventaire(ByVal Titre As String, _
                                     ByRef AffObjets As ClsAffObjets, _
                                     ByRef Fenetre As ClsAffFenetre, _
                                     ByRef Message As ClsIntMessage, _
-                                    ByRef SurfBack As DirectDrawSurface7)
+                                    ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Integer
     'Dim X As Integer
     'Dim Y As Integer
@@ -1263,7 +1263,7 @@ Public Sub Afficher_InfosBestiaire(ByVal Titre As String, _
                                    ByRef Perso As ClsJeuPerso, _
                                    ByRef Parametres As ClsJeuParam, _
                                    ByRef Message As ClsIntMessage, _
-                                   ByRef SurfBack As DirectDrawSurface7)
+                                   ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Integer
     Dim X As Integer
     Afficher_BoutonFermer SurfBack
@@ -1304,7 +1304,7 @@ End Sub
 Public Sub Afficher_Carte(ByVal Titre As String, _
                           ByRef Perso As ClsJeuPerso, _
                           ByRef Message As ClsIntMessage, _
-                          ByRef SurfBack As DirectDrawSurface7, _
+                          ByRef SurfBack As IDirectDrawSurface7, _
                           ByVal X As Long, ByVal Y As Long, _
                           ByVal Largeur As Integer, ByVal Hauteur As Integer)
     Dim Temp1, Temp2 As Long
@@ -1452,7 +1452,7 @@ Public Sub Afficher_InfosObjectifs(ByVal Titre As String, _
                                    ByVal Objectifs As Collection, _
                                    ByRef Fenetre As ClsAffFenetre, _
                                    ByRef Message As ClsIntMessage, _
-                                   ByRef SurfBack As DirectDrawSurface7)
+                                   ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Integer
     Dim X As Integer
     Afficher_BoutonFermer SurfBack
@@ -1479,7 +1479,7 @@ End Sub
 
 Private Sub Afficher_Titre(ByVal Titre As String, _
                            ByVal Message As ClsIntMessage, _
-                           ByRef SurfBack As DirectDrawSurface7)
+                           ByRef SurfBack As IDirectDrawSurface7)
     SurfBack.SetForeColor 0
     Message.Afficher TitrePositionX + PositionX, _
                      TitrePositionY + PositionY, _
@@ -1487,7 +1487,7 @@ Private Sub Afficher_Titre(ByVal Titre As String, _
                      SurfBack
 End Sub
 
-Private Sub Afficher_BoutonFermer(ByRef SurfBack As DirectDrawSurface7)
+Private Sub Afficher_BoutonFermer(ByRef SurfBack As IDirectDrawSurface7)
     AffBoutonAction.Afficher BoutonFermer.PositionX + PositionX, _
                              BoutonFermer.PositionY + PositionY, _
                              6, _
@@ -1502,7 +1502,7 @@ End Sub
 
 Private Sub Afficher_Argent_Perso(ByVal Perso As ClsJeuPerso, _
                                   ByRef Message As ClsIntMessage, _
-                                  ByRef SurfBack As DirectDrawSurface7)
+                                  ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Long
     Message.Afficher ArgentPersoPositionX + PositionX, _
                      ArgentPersoPositionY + PositionY, _
@@ -1528,7 +1528,7 @@ Private Sub Afficher_EtatBatiment(ByRef Perso As ClsJeuPerso, _
                                   ByRef Maison As ClsJeuBatiment, _
                                   ByRef Parametres As ClsJeuParam, _
                                   ByRef Message As ClsIntMessage, _
-                                  ByRef SurfBack As DirectDrawSurface7, _
+                                  ByRef SurfBack As IDirectDrawSurface7, _
                                   Optional ByVal Chateau As Boolean)
     Dim i As Long
     If Chateau Then
@@ -1565,7 +1565,7 @@ End Sub
 Private Sub Afficher_Argent_Batiment(ByRef Perso As ClsJeuPerso, _
                                      ByRef Maison As ClsJeuBatiment, _
                                      ByRef Message As ClsIntMessage, _
-                                     ByRef SurfBack As DirectDrawSurface7)
+                                     ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Long
     Message.Afficher ArgentMaisonPositionX + PositionX, _
                      ArgentMaisonPositionY + PositionY, _
@@ -1591,7 +1591,7 @@ Private Sub Afficher_StockBatiment(ByVal Interface As ClsInterface, _
                                    ByRef Maison As ClsJeuBatiment, _
                                    ByRef Parametres As ClsJeuParam, _
                                    ByRef Message As ClsIntMessage, _
-                                   ByRef SurfBack As DirectDrawSurface7)
+                                   ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Long
     Dim Temp As Integer
     'If Maison.MaxStock > 0 Then
@@ -1706,7 +1706,7 @@ Private Sub Afficher_Objets_Batiment(ByVal FileFabricationObjets As Collection, 
                                      ByRef Parametres As ClsJeuParam, _
                                      ByRef Message As ClsIntMessage, _
                                      ByRef AffObjets As ClsAffObjets, _
-                                     ByRef SurfBack As DirectDrawSurface7)
+                                     ByRef SurfBack As IDirectDrawSurface7)
     'Affiche les objets dans le batiment et les boutons pour les fabriquer.
     Dim i As Integer
     Dim j As Integer
@@ -2335,7 +2335,7 @@ Private Sub Afficher_ListeRessourcesPerso(ByRef Perso As ClsJeuPerso, _
                                           ByRef Ressources As ClsAffObjets, _
                                           ByRef Fenetre As ClsAffFenetre, _
                                           ByRef Message As ClsIntMessage, _
-                                          ByRef SurfBack As DirectDrawSurface7)
+                                          ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Long
     Dim j As Long
     Dim k As Long
@@ -2442,7 +2442,7 @@ Private Sub Afficher_ListeRessourcesFief(ByRef Perso As ClsJeuPerso, _
                                          ByRef Ressources As ClsAffObjets, _
                                          ByRef Fenetre As ClsAffFenetre, _
                                          ByRef Message As ClsIntMessage, _
-                                         ByRef SurfBack As DirectDrawSurface7)
+                                         ByRef SurfBack As IDirectDrawSurface7)
     Dim i As Long
     Dim j As Long
     Dim DecalageX As Integer
@@ -2481,7 +2481,7 @@ Private Sub Afficher_ListeRessourcesFief(ByRef Perso As ClsJeuPerso, _
     Afficher_BoutonsDefilement Parametres.NombreRessources - NombreLignesRessources, SurfBack
 End Sub
 
-Private Sub Afficher_Separateur_Ressources(X As Integer, Y As Integer, ByRef SurfBack As DirectDrawSurface7)
+Private Sub Afficher_Separateur_Ressources(X As Integer, Y As Integer, ByRef SurfBack As IDirectDrawSurface7)
     SurfBack.DrawLine X + SeparateurRessourceDecalageX, _
                       Y + SeparateurRessourceDecalageY, _
                       X + SeparateurRessourceDecalageX + SeparateurRessourceLongueur, _
@@ -2489,7 +2489,7 @@ Private Sub Afficher_Separateur_Ressources(X As Integer, Y As Integer, ByRef Sur
 End Sub
 
 Private Sub Afficher_BoutonsDefilement(ByVal NombreLignes As Integer, _
-                                       ByRef SurfBack As DirectDrawSurface7, _
+                                       ByRef SurfBack As IDirectDrawSurface7, _
                                        Optional ByVal Objet As Boolean)
     DefilementNombreLigne = NombreLignes
     If AfficherBoutonsDefilement Then
@@ -2524,7 +2524,7 @@ Private Sub Afficher_BoutonsDefilement(ByVal NombreLignes As Integer, _
 End Sub
 
 'Private Sub Afficher_BoutonsDefilementObjet(ByVal NombreLignes As Integer, _
-                                            ByRef SurfBack As DirectDrawSurface7)
+                                            ByRef SurfBack As IDirectDrawSurface7)
 '    DefilementNombreLigne = NombreLignes
 '    If AfficherBoutonsDefilement Then
 '        BoutonsDefilement(0).PositionX = BoutonDefilement1PositionX
@@ -2567,7 +2567,7 @@ End Property
 Public Sub BoutonDeplacer_Afficher_InfoBulle(ByVal X As Long, _
                                            ByVal Y As Long, _
                                            ByRef Message As ClsIntMessage, _
-                                           ByRef SurfBack As DirectDrawSurface7)
+                                           ByRef SurfBack As IDirectDrawSurface7)
      BoutonDeplacer.Afficher_Info_Bulle X, Y, Message, SurfBack
 End Sub
 
@@ -2590,7 +2590,7 @@ End Property
 Public Sub BoutonFermer_Afficher_InfoBulle(ByVal X As Long, _
                                            ByVal Y As Long, _
                                            ByRef Message As ClsIntMessage, _
-                                           ByRef SurfBack As DirectDrawSurface7)
+                                           ByRef SurfBack As IDirectDrawSurface7)
      BoutonFermer.Afficher_Info_Bulle X, Y, Message, SurfBack
 End Sub
 
@@ -2619,7 +2619,7 @@ Public Sub BoutonsManger_Afficher_InfoBulle(ByVal Index As Long, _
                                             ByVal Perso As ClsJeuPerso, _
                                             ByVal Parametres As ClsJeuParam, _
                                             ByRef Message As ClsIntMessage, _
-                                            ByRef SurfBack As DirectDrawSurface7)
+                                            ByRef SurfBack As IDirectDrawSurface7)
     'Affiche l'info bulle.
     Dim i As Integer
     Dim InfoBulle As String
@@ -2689,7 +2689,7 @@ Public Sub BoutonRestauration_Afficher_InfoBulle(ByVal Index As Long, _
                                                  ByVal X As Long, _
                                                  ByVal Y As Long, _
                                                  ByRef Message As ClsIntMessage, _
-                                                 ByRef SurfBack As DirectDrawSurface7)
+                                                 ByRef SurfBack As IDirectDrawSurface7)
      BoutonsRestaurer(Index).Afficher_Info_Bulle X, Y, Message, SurfBack
 End Sub
 
@@ -2716,7 +2716,7 @@ Public Sub BoutonCommerce_Afficher_InfoBulle(ByVal Index As Long, _
                                              ByVal X As Long, _
                                              ByVal Y As Long, _
                                              ByRef Message As ClsIntMessage, _
-                                             ByRef SurfBack As DirectDrawSurface7, _
+                                             ByRef SurfBack As IDirectDrawSurface7, _
                                              ByVal Achat As Boolean)
     'Dim Temp1 As String
     Dim Temp2 As String
@@ -2799,7 +2799,7 @@ End Property
 Public Sub BoutonArgentBoutonsPrendreAfficher_Info_Bulle(ByVal X As Long, _
                                                          ByVal Y As Long, _
                                                          ByRef Message As ClsIntMessage, _
-                                                         ByRef SurfBack As DirectDrawSurface7)
+                                                         ByRef SurfBack As IDirectDrawSurface7)
      BoutonArgentPrendre.Afficher_Info_Bulle X, Y, Message, SurfBack
 End Sub
 'Propriétés des boutons pour prendre des objets ressources.
@@ -2819,7 +2819,7 @@ Public Sub BoutonsRessourcesPrendre_Afficher_InfoBulle(ByVal Index As Long, _
                                                        ByVal X As Long, _
                                                        ByVal Y As Long, _
                                                        ByRef Message As ClsIntMessage, _
-                                                       ByRef SurfBack As DirectDrawSurface7)
+                                                       ByRef SurfBack As IDirectDrawSurface7)
      BoutonsRessourcesPrendre(Index).Afficher_Info_Bulle X, Y, Message, SurfBack
 End Sub
 
@@ -2837,7 +2837,7 @@ Public Sub BoutonTransfertArgentPerso_Afficher_InfoBulle(ByVal Index As Long, _
                                                          ByVal X As Long, _
                                                          ByVal Y As Long, _
                                                          ByRef Message As ClsIntMessage, _
-                                                         ByRef SurfBack As DirectDrawSurface7)
+                                                         ByRef SurfBack As IDirectDrawSurface7)
      BoutonsTransfertArgentPerso(Index).Afficher_Info_Bulle X, Y, Message, SurfBack
 End Sub
 Public Property Get BoutonTransfertArgentMaisonPositionX(ByVal Index As Long) As Long
@@ -2850,7 +2850,7 @@ Public Sub BoutonTransfertArgentMaison_Afficher_InfoBulle(ByVal Index As Long, _
                                                           ByVal X As Long, _
                                                           ByVal Y As Long, _
                                                           ByRef Message As ClsIntMessage, _
-                                                          ByRef SurfBack As DirectDrawSurface7)
+                                                          ByRef SurfBack As IDirectDrawSurface7)
      BoutonsTransfertArgentMaison(Index).Afficher_Info_Bulle X, Y, Message, SurfBack
 End Sub
 
@@ -2864,7 +2864,7 @@ Public Sub BoutonTransfertStockPerso_Afficher_InfoBulle(ByVal Index As Long, _
                                                         ByVal X As Long, _
                                                         ByVal Y As Long, _
                                                         ByRef Message As ClsIntMessage, _
-                                                        ByRef SurfBack As DirectDrawSurface7)
+                                                        ByRef SurfBack As IDirectDrawSurface7)
      BoutonsTransfertStockPerso(Index).Afficher_Info_Bulle X, Y, Message, SurfBack
 End Sub
 
@@ -2878,7 +2878,7 @@ Public Sub BoutonTransfertStockMaison_Afficher_InfoBulle(ByVal Index As Long, _
                                                          ByVal X As Long, _
                                                          ByVal Y As Long, _
                                                          ByRef Message As ClsIntMessage, _
-                                                         ByRef SurfBack As DirectDrawSurface7)
+                                                         ByRef SurfBack As IDirectDrawSurface7)
      BoutonsTransfertStockMaison(Index).Afficher_Info_Bulle X, Y, Message, SurfBack
 End Sub
 
@@ -2906,7 +2906,7 @@ Public Sub BoutonService_Afficher_InfoBulle(ByVal Index As Long, _
                                             ByVal X As Long, _
                                             ByVal Y As Long, _
                                             ByRef Message As ClsIntMessage, _
-                                            ByRef SurfBack As DirectDrawSurface7)
+                                            ByRef SurfBack As IDirectDrawSurface7)
      BoutonService.Afficher_Info_Bulle X, Y, Message, SurfBack
 End Sub
 
@@ -2933,7 +2933,7 @@ Public Sub BoutonFabriquer_Afficher_InfoBulle(ByVal Index As Long, _
                                               ByVal X As Long, _
                                               ByVal Y As Long, _
                                               ByRef Message As ClsIntMessage, _
-                                              ByRef SurfBack As DirectDrawSurface7)
+                                              ByRef SurfBack As IDirectDrawSurface7)
      BoutonsFabriquer(Index).Afficher_Info_Bulle X, Y, Message, SurfBack
 End Sub
 
@@ -2970,7 +2970,7 @@ Public Sub BoutonObjets_Afficher_InfoBulle(ByVal Index As Long, _
                                            ByVal Y As Long, _
                                            ByRef Message As ClsIntMessage, _
                                            ByRef AffObjets As ClsAffObjets, _
-                                           ByRef SurfBack As DirectDrawSurface7, _
+                                           ByRef SurfBack As IDirectDrawSurface7, _
                                            ByVal Inventaire As Boolean, _
                                            Optional ByVal CategorieObjet As Integer = -1, _
                                            Optional ByVal Duree As Long = 0, _
@@ -3010,7 +3010,7 @@ End Sub
 
 Public Sub Encadrer_Objet(ByVal CategorieObjet As Integer, _
                           ByRef AffObjets As ClsAffObjets, _
-                          ByRef SurfBack As DirectDrawSurface7, _
+                          ByRef SurfBack As IDirectDrawSurface7, _
                           Optional ByVal Inventaire As Boolean)
     SurfBack.SetForeColor EquipementContourCouleur
     SurfBack.SetFillStyle 1
@@ -3064,7 +3064,7 @@ Public Sub BoutonDefilement_Afficher_InfoBulle(ByVal Index As Long, _
                                                ByVal X As Long, _
                                                ByVal Y As Long, _
                                                ByRef Message As ClsIntMessage, _
-                                               ByRef SurfBack As DirectDrawSurface7)
+                                               ByRef SurfBack As IDirectDrawSurface7)
      BoutonsDefilement(Index).Afficher_Info_Bulle X, Y, Message, SurfBack
 End Sub
 
@@ -3103,7 +3103,7 @@ Public Sub BoutonInventaireMaison_Afficher_InfoBulle(ByVal Objet As Boolean, _
                                                      ByVal X As Long, _
                                                      ByVal Y As Long, _
                                                      ByRef Message As ClsIntMessage, _
-                                                     ByRef SurfBack As DirectDrawSurface7)
+                                                     ByRef SurfBack As IDirectDrawSurface7)
     If Bascule = 0 Or Not Perso.DansSaMaison Then
         If Objet Then
             BoutonInventaireMaison.InfoBulle = InventaireMaisonMessagePersoObjet
@@ -3208,6 +3208,6 @@ Public Sub BoutonsCompetences_Afficher_InfoBulle(ByVal Index As Long, _
                                                  ByVal X As Long, _
                                                  ByVal Y As Long, _
                                                  ByRef Message As ClsIntMessage, _
-                                                 ByRef SurfBack As DirectDrawSurface7)
+                                                 ByRef SurfBack As IDirectDrawSurface7)
     BoutonsCompetences(Index).Afficher_Info_Bulle X, Y, Message, SurfBack
 End Sub
