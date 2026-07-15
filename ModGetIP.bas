@@ -43,14 +43,26 @@ Public Type MIB_IPADDRTABLE
 End Type
 
 ' recupere le nombre d'interface sur le pc
+#If TWINBASIC Then
+Public Declare PtrSafe Function GetNumberOfInterfaces Lib "iphlpapi.dll" _
+   (ByRef PDWORD As Long) As Long
+#Else
 Public Declare Function GetNumberOfInterfaces Lib "iphlpapi.dll" _
    (ByRef PDWORD As Long) As Long
+#End If
 
 ' recupere les adresses IP de la machine
+#If TWINBASIC Then
+Public Declare PtrSafe Function GetIpAddrTable Lib "iphlpapi.dll" _
+     (ByRef pIpAddrTable As MIB_IPADDRTABLE, _
+      ByRef pdwSize As Long, _
+      ByVal bOrder As Long) As Long
+#Else
 Public Declare Function GetIpAddrTable Lib "iphlpapi.dll" _
      (ByRef pIpAddrTable As MIB_IPADDRTABLE, _
       ByRef pdwSize As Long, _
-      bOrder As Boolean) As Long
+      ByVal bOrder As Long) As Long
+#End If
 Public Function FIRST_IPADDRESS(ByVal ipAddress As Long) As Long
     FIRST_IPADDRESS = Val("&H" & Left(Right("00000000" & Hex(ipAddress), 8), 2))
 End Function

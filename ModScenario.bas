@@ -22,7 +22,7 @@ Public Const CheminCampagnes = "\Sauvegardes\Campagnes\"
 Public Const CheminScenario = "\Sauvegardes\Scenarios\"
 
 Public Const ExtensionFichiersScript = ".scr"
-Private SriptRunner As MSScriptControl.ScriptControl
+Private SriptRunner As Object
 Private Evenements As String
 
 Public Sub Charger_Scenario(ByVal Nom As String, _
@@ -434,10 +434,7 @@ Public Sub Evenements_Charger(ByVal Nom As String, _
     Wend
     Close #FreeNumber
     
-    Set SriptRunner = New MSScriptControl.ScriptControl
-    SriptRunner.Language = "VBScript"
-    SriptRunner.Reset
-    SriptRunner.AllowUI = False
+    Set SriptRunner = CompatCreerMoteurScript()
 
     Exit Sub
 Erreur:
@@ -446,7 +443,7 @@ End Sub
 Public Sub Evenements_Lancer(ByVal Commande As String)
     Dim i As Long
     Dim Perso As Collection, Maison As Collection, Chateau As Collection, Fief As Collection
-    If Not ComReseau.Client And Evenements <> "" Then
+    If Not ComReseau.Client And Evenements <> "" And Not SriptRunner Is Nothing Then
         Set Perso = New Collection
         Set Maison = New Collection
         Set Chateau = New Collection

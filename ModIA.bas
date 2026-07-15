@@ -91,7 +91,7 @@ Private NombreBatimentsDeNiveau() As Integer
 Private X As Long
 Private Y As Long
 Private Z As Long
-Private SriptRunner As MSScriptControl.ScriptControl
+Private SriptRunner As Object
 Private SurPerso1 As ClsSurPerso
 Private SurPerso2 As ClsSurPerso
 Public SurJeu As ClsSurJeu
@@ -99,10 +99,7 @@ Public SurJeu As ClsSurJeu
 Public Function IA_Init()
     Dim i As Long
     Dim j As Long
-    Set SriptRunner = New MSScriptControl.ScriptControl
-        SriptRunner.Language = "VBScript"
-        SriptRunner.Reset
-        SriptRunner.AllowUI = False
+    Set SriptRunner = CompatCreerMoteurScript()
     Set SurPerso1 = New ClsSurPerso
     Set SurPerso2 = New ClsSurPerso
     Set SurJeu = New ClsSurJeu
@@ -175,7 +172,7 @@ End Function
 
 Public Sub Comportement_IA_Persos(ByVal i As Long, Optional ByVal Simple As Boolean)
     If Persos(i).IA Then
-        If Persos(i).ChoisirIAScript Then
+        If Persos(i).ChoisirIAScript And Not SriptRunner Is Nothing Then
             SurPerso1.Init Persos(i)
             SurPerso2.Init Persos(Persos(i).IndicePerso)
             SriptRunner.Reset

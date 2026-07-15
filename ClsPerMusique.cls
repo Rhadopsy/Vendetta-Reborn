@@ -65,7 +65,11 @@ Private TempsMusiqueJouee As Double
 Private TypeMusiqueJouee As Integer
 Private NomMusiqueJouee As String
 
+#If TWINBASIC Then
+Private Declare PtrSafe Function mciSendString Lib "winmm.dll" Alias "mciSendStringA" (ByVal lpstrCommand As String, ByVal lpstrReturnString As String, ByVal uReturnLength As Long, ByVal hwndCallback As LongPtr) As Long
+#Else
 Private Declare Function mciSendString Lib "winmm.dll" Alias "mciSendStringA" (ByVal lpstrCommand As String, ByVal lpstrReturnString As String, ByVal uReturnLength As Long, ByVal hwndCallback As Long) As Long
+#End If
 'Variables pour Direct Music.
 Dim Perf As DirectMusicPerformance
 Dim Seg As DirectMusicSegment

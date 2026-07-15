@@ -4,9 +4,10 @@ Ce dépôt contient désormais les sources originales de **Vendetta 3.0.0.17**, 
 
 Il s'agit d'un jeu complet écrit en **Visual Basic 6**, et non du prototype C++/SFML précédemment étudié. Ce dernier reste disponible sur la branche `prototype-sfml`.
 
-## État de cette branche
+## État du projet
 
-- code source VB6 original et ressources de jeu importés sans conversion ;
+- sources VB6 et ressources du jeu importées depuis l'archive originale ;
+- adaptations de compatibilité isolées sur la branche `port/twinbasic-win32-win64` ;
 - exécutable historique `Vendetta.exe` conservé uniquement pour les tests de compatibilité Wine/Proton ; il provient de l'archive originale et n'a pas été exécuté pendant l'import ;
 - SHA-256 de `Vendetta.exe` : `914cacd4fea78f82b91e5480e52a0bb619005718d5eeb257c2b4451211936898` ;
 - point d'entrée : `Sub Main` dans `ModMain.bas` ;
@@ -18,11 +19,11 @@ L'empreinte de l'archive d'origine est conservée dans `SOURCE_ARCHIVE.sha256`.
 
 ## Compatibilité actuelle
 
-Le projet dépend notamment du runtime VB6, de DirectX 7 pour VB (`dx7vb.dll`), de Microsoft Script Control, MSXML 3, `COMCTL32.OCX` et `MSINET.OCX`. Il utilise DirectDraw, DirectInput, DirectSound, DirectMusic et DirectPlay, ainsi que plusieurs API Win32.
+La branche de portage supprime les références de compilation à Microsoft Script Control, MSXML et `MSINET.OCX`. Le moteur VBScript devient facultatif, le HTTP passe par MSXML chargé dynamiquement et les appels Win32 sont préparés pour `PtrSafe`/`LongPtr` sous twinBASIC.
 
-Il ne peut donc pas être compilé nativement sur Fedora ni être considéré comme compatible avec les Windows récents en l'état. Wine et d'anciens composants Windows peuvent servir à l'archéologie ou à une comparaison ponctuelle, mais la remise au goût du jour nécessite un portage progressif.
+DirectX 7 pour VB (`dx7vb.dll`) et `COMCTL32.OCX` restent nécessaires. La première cible réaliste est donc un exécutable **Win32** produit par twinBASIC, autonome vis-à-vis de `MSVBVM60.DLL` et `VB6FR.DLL`. Le Win64 ne deviendra exécutable qu'après remplacement du rendu, des entrées, de l'audio et du réseau DirectX 7 ainsi que des contrôles OCX restants.
 
-Voir [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) pour l'inventaire et [docs/PORTING_PLAN.md](docs/PORTING_PLAN.md) pour la stratégie proposée.
+Voir [docs/TWINBASIC_BUILD.md](docs/TWINBASIC_BUILD.md) pour construire et tester la cible intermédiaire, [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) pour l'inventaire et [docs/PORTING_PLAN.md](docs/PORTING_PLAN.md) pour le portage natif à long terme.
 
 ## Contenu principal
 
@@ -35,6 +36,7 @@ Voir [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) pour l'inventaire et [docs/POR
 - `Frm*.frm`, `MDIFrmMain.frm` : formulaires VB6 et éditeurs ;
 - `Donnees`, `Cartes`, `IAs`, `IAScripts`, `Mods`, `Images`, `Sons`, `Musiques` : données et ressources du jeu.
 
-## Prochaine cible
+## Cibles
 
-La cible recommandée est **Godot 4.x**, avec une simulation portée indépendamment de l'affichage. Ce choix offre un export natif Linux et Windows et permet de réutiliser les données et ressources progressivement sans reproduire les dépendances COM/DirectX 7.
+- court terme : twinBASIC Win32 pour retrouver un jeu lançable sans runtime VB6 ni DLL de langue ;
+- long terme : **Godot 4.x** pour supprimer DirectX 7/COM et produire des versions Linux et Windows x86_64 natives.

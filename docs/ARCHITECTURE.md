@@ -22,9 +22,11 @@ Le fichier `PrjImperator.vbp` est la source de vérité pour les composants, cla
 | `Donnees`, `Cartes`, `Mods`, `Sauvegardes` | Configuration, cartes, extensions et états persistants |
 | `Images`, `Sons`, `Musiques` | Ressources graphiques et audio |
 
-## Dépendances bloquantes
+## Dépendances historiques et état du portage
 
-Le projet référence directement le runtime VB6 et des technologies Windows anciennes : DirectX 7 pour VB, DirectDraw7, DirectInput, DirectSound, DirectMusic, DirectPlay4, Script Control, MSXML 3, Common Controls et Internet Transfer Control. Des appels directs à `user32`, `gdi32`, `kernel32`, `shell32`, `winmm` et `iphlpapi` complètent ce couplage.
+Le projet historique référence le runtime VB6 et des technologies Windows anciennes : DirectX 7 pour VB, DirectDraw7, DirectInput, DirectSound, DirectMusic, DirectPlay4, Script Control, MSXML 3, Common Controls et Internet Transfer Control.
+
+Sur la branche de portage, Script Control et MSXML sont chargés tardivement, Internet Transfer Control est supprimé, et les appels à `user32`, `gdi32`, `kernel32`, `shell32`, `winmm` et `iphlpapi` disposent de déclarations twinBASIC compatibles 32/64 bits. DirectX 7 pour VB et `COMCTL32.OCX` restent les deux blocages structurants.
 
 Ces dépendances forment la frontière à remplacer. Les règles du jeu et les formats de données restent la partie la plus réutilisable.
 

@@ -2,6 +2,10 @@
 
 L'objectif est un jeu natif sur Fedora et les Windows récents, sans runtime VB6, composants OCX ni DirectX 7. La cible proposée est Godot 4.x.
 
+## Jalon intermédiaire : twinBASIC Win32
+
+Avant le portage natif, une compilation twinBASIC Win32 sert à retrouver rapidement une version Windows/Proton testable sans `MSVBVM60.DLL` ni `VB6FR.DLL`. Cette cible conserve temporairement DirectX 7 et les Common Controls ; elle ne remplace donc pas les étapes ci-dessous et ne constitue pas encore le portage Linux/Win64.
+
 ## 0. Figer la référence originale
 
 - conserver cette branche comme photographie vérifiable des sources 3.0.0.17 ;

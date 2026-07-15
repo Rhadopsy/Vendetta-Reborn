@@ -17,7 +17,7 @@ Attribute VB_Exposed = False
 ' pour la génération d&#39;une documentation technique.<br>
 ' Cette classe est libre de tout droit, mais si vous apportiez des modifications, je vous serais reconnaissant de m'en faire part afin de mettre ce code source à jour si le besoin s'en faisait sentir.
 '
-'@require   Visual Basic 6<BR>La réfencerence Microsoft XML,V3.0 (msxml3.dll) dans votre projet
+'@require   Visual Basic 6<BR>Microsoft XML 6.0 ou 3.0 installé sur le système
 '@todo      Travailler sur des fichiers XML.<br>Vous pouvez lire,ecrire,créer votre fichier XML. La recherche de noeud dans le fichier est possible également via son nom et ses attributs.
 '@bug       Aucun pour le moment (sauf l&#39;orthographe...)
 '@history   Ne trouvant rien sur le Net pour travailler avec VB6 et XML de facon simple,<br> j&#39;ai créé ma classe.
@@ -29,25 +29,25 @@ Attribute VB_Exposed = False
 
 ''
 'Variable contenant le fichier de facon globale
-Private fXML As New DOMDocument30
+Private fXML As Object
 ''
 'Variable contenant le noeud principale sert de base pour les recherches dans le fichier
-Private root As IXMLDOMElement
+Private root As Object
 ''
 'Variable de création d&#39;un nouvel attribut
-Private newAtt As IXMLDOMAttribute
+Private newAtt As Object
 ''
 'Variable de mappage de sous noeuds
-Private namedNodeMap As IXMLDOMNamedNodeMap
+Private namedNodeMap As Object
 ''
 'Variable de création de noeuds
-Private newNode As IXMLDOMNode
+Private newNode As Object
 ''
 'Variable listant tout les sous noeuds
-Private listNode As IXMLDOMNodeList
+Private listNode As Object
 ''
 'Variable de gestion des erreurs XML (pas encore utilisé)
-Private erreurXML As IXMLDOMParseError
+Private erreurXML As Object
 ''
 'Variable contenant le nom du fichier charger dans l&#39;objet.<BR>
 'Elle est initialisé à l&#39;ouverture du fichier.
@@ -70,6 +70,7 @@ Private msgErreur As String
 '@version   1.0
 '@date  2004/06/16
 Private Sub Class_Initialize()
+ Set fXML = CompatCreerDocumentXML()
  validerNoeud = False
  modifierXML = False
  fichierXML = ""
@@ -82,9 +83,9 @@ End Sub
 '@version   1.0
 '@date  2004/06/16
 Private Sub Class_Terminate()
-fXML = Nothing
-root = Nothing
-newAtt = Nothing
+Set fXML = Nothing
+Set root = Nothing
+Set newAtt = Nothing
 Set namedNodeMap = Nothing
 Set newNode = Nothing
 Set listNode = Nothing
@@ -177,6 +178,7 @@ End Sub
 '@version   1.0
 '@date  2004/06/16
 Public Function ouvrirXML(nomXML As String, Optional chemin) As Boolean
+    If fXML Is Nothing Then Exit Function
     If IsMissing(chemin) Then chemin = App.Path
     fXML.async = False
     ouvrirXML = fXML.Load(chemin & "\" & nomXML)
@@ -190,6 +192,7 @@ Public Function ouvrirXML(nomXML As String, Optional chemin) As Boolean
 End Function
 
 Public Function ouvrirXML2(nomXML As String) As Boolean
+    If fXML Is Nothing Then Exit Function
     fXML.async = False
     ouvrirXML2 = fXML.loadXML(nomXML)
     If Not ouvrirXML2 Then
@@ -251,10 +254,10 @@ End Function
 '@version   1.1
 '@date  2004/06/21
 Public Sub ecrireNoeudXML(nvNoeud As String, chemin As String, Optional atts As String = "")
-    Dim noeud2 As IXMLDOMNode
+    Dim noeud2 As Object
     Set root = fXML.documentElement
     fXML.SetProperty "SelectionLanguage", "XPath"
-    Set newNode = fXML.createNode(NODE_ELEMENT, nvNoeud, "")
+    Set newNode = fXML.createNode(1, nvNoeud, "")
     If chemin <> "" Then
         Set listNode = root.getElementsByTagName(chemin)
         For i = 0 To listNode.length - 1
@@ -314,7 +317,7 @@ End Sub
 '@version   1.1
 '@date      2004/06/16
 Public Sub ecrireDataXML(noeud As String, data As String, Optional atts As String = "")
-    Dim datasec As IXMLDOMCDATASection
+    Dim datasec As Object
     fXML.SetProperty "SelectionLanguage", "XPath"
     Set root = fXML.documentElement
     Set datasec = fXML.createCDATASection(data)
@@ -365,7 +368,7 @@ End Function
 '@version   1.0
 '@date  2004/06/17
 Public Function lireNoeudXML(nomNoeud As String, Optional atts As String = "") As String()
-    Dim noeud As IXMLDOMNode
+    Dim noeud As Object
     Dim msg As String, retour() As String
     ReDim retour(0)
     fXML.SetProperty "SelectionLanguage", "XPath"
@@ -402,9 +405,9 @@ End Function
 '@version   1.0
 '@date  2004/06/17
 Public Function lireDataXML(nomNoeud As String, Optional atts As String = "") As String()
-    Dim noeud As IXMLDOMNode
+    Dim noeud As Object
     Dim retour() As String
-    Dim datasec As IXMLDOMCDATASection
+    Dim datasec As Object
     ReDim retour(0)
     fXML.SetProperty "SelectionLanguage", "XPath"
     Set root = fXML.documentElement
@@ -414,7 +417,7 @@ Public Function lireDataXML(nomNoeud As String, Optional atts As String = "") As
             If retour(UBound(retour)) <> "" Then ReDim Preserve retour(UBound(retour) + 1)
             If noeud.hasChildNodes Then
                 For i = 0 To noeud.childNodes.length - 1
-                    If noeud.childNodes.Item(i).nodeType = NODE_CDATA_SECTION Then
+                    If noeud.childNodes.Item(i).nodeType = 4 Then
                        Set datasec = noeud.childNodes.Item(i)
                        retour(UBound(retour)) = datasec.data
                     End If
@@ -426,9 +429,9 @@ Public Function lireDataXML(nomNoeud As String, Optional atts As String = "") As
 End Function
 
 Public Function lireDataXML2(nomNoeud As String, Optional atts As String = "") As String()
-    Dim noeud As IXMLDOMNode
+    Dim noeud As Object
     Dim retour() As String
-    Dim datasec As IXMLDOMCDATASection
+    Dim datasec As Object
     ReDim retour(0)
     fXML.SetProperty "SelectionLanguage", "XPath"
     Set root = fXML.documentElement
@@ -462,8 +465,8 @@ End Function
 '@version   1.0
 '@date  2004/06/17
 Public Function rechercherNoeudXML(nomNoeud As String, Optional atts As String = "") As String()
-Dim noeud As IXMLDOMNode 'variable pour parcourir la liste de noeuds trouver
-Dim noeud2 As IXMLDOMNode 'variable pour parcourir l'arborescence de noeud
+Dim noeud As Object 'variable pour parcourir la liste de noeuds trouver
+Dim noeud2 As Object 'variable pour parcourir l'arborescence de noeud
 Dim parent As String 'variable qui stock l'arborescence du fichier
 Dim tmp() As String 'variable stockant le tableau retourner
 ReDim tmp(0)
@@ -494,7 +497,7 @@ End Function
 '@author    Thomas Darmengeat
 '@version   1.0
 '@date  2004/06/17
-Private Function verifierAttribut(noeud As IXMLDOMNode, atts As String) As Boolean
+Private Function verifierAttribut(noeud As Object, atts As String) As Boolean
 Dim att() As String 'tableau contenant chaque attribut et sa valeur sous la forme att=valeur
 Dim att_tmp() As String 'tableau contenant le nom de l'attribut et sa valeur
     att = Split(atts, ",")
